@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: City Hall
   BuildingCost:
-  - Type: 0
+  - ResourceType: 0
     Amount: 0
   Dependencies:
   - {fileID: 11400000, guid: d9404931de1594b4aace5ea22f1c01f2, type: 2}
-  NextBuildingEvolution: {fileID: 0}
-  BuildingSprite: {fileID: 0}
+  BuildingSprite: {fileID: 21300000, guid: 1887af557258b68449586ce33ebb26c6, type: 3}

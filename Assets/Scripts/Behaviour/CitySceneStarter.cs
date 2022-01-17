@@ -2,11 +2,9 @@ using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
 using Hmm3Clone.State;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Hmm3Clone.Behaviour {
 	public class CitySceneStarter : GameComponent {
-		[NotNull] public Button OpenBuildingScreen;
 		[NotNull] public GameObject BuildingsScreen;
 
 		protected override void Awake() {
@@ -18,11 +16,6 @@ namespace Hmm3Clone.Behaviour {
 		
 		public void Start() {
 			BuildingsScreen.gameObject.SetActive(false);
-			OpenBuildingScreen.onClick.AddListener(ShowBuildingScreen);
-		}
-
-		void ShowBuildingScreen() {
-			BuildingsScreen.gameObject.SetActive(true);
 		}
 	}
 }

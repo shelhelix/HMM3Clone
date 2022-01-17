@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: TownHall
   BuildingCost:
-  - Type: 0
+  - ResourceType: 0
     Amount: 0
   Dependencies: []
-  NextBuildingEvolution: {fileID: 11400000, guid: 646c801cdaf23714d919d9ca566c3697, type: 2}
-  BuildingSprite: {fileID: 0}
+  BuildingSprite: {fileID: 21300000, guid: 106db9fdacc2717408e4c5ce8188fb2a, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
+using Hmm3Clone.Controller;
 using Hmm3Clone.State;
 using TMPro;
 using UnityEngine;
@@ -13,7 +14,8 @@ namespace Hmm3Clone.Behaviour {
         [NotNull] public TMP_Text BuildingName;
         [NotNull] public Button Button;
         [NotNull] public Image FrameBackground;
-
+        [NotNull] public Image BuildingPreview;
+        
         ResourceController _resourceController;
 
         CityState _state;
@@ -38,7 +40,7 @@ namespace Hmm3Clone.Behaviour {
                 : CanErect(activeBuildingInfo, _state)
                     ? Color.green
                     : Color.red;
-            
+            BuildingPreview.sprite = activeBuildingInfo.BuildingSprite;
         }
         
         bool CanErect(BuildingInfo buildingInfo, CityState state) {
