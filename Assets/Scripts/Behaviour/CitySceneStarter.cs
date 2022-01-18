@@ -1,6 +1,6 @@
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.State;
+using Hmm3Clone.Controller;
 using UnityEngine;
 
 namespace Hmm3Clone.Behaviour {
@@ -9,8 +9,7 @@ namespace Hmm3Clone.Behaviour {
 
 		protected override void Awake() {
 			base.Awake();
-			var cityState = new CityState();
-			cityState.ErectBuilding("TownHall");
+			var cityState = GameController.Instance.GetController<CityController>().GetCityState(CityController.TestCityName);
 			ActiveData.Instance.SetData(cityState);
 		}
 		

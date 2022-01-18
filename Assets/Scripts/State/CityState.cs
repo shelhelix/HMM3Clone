@@ -1,14 +1,26 @@
+using System;
 using System.Collections.Generic;
+using Hmm3Clone.Controller;
 
 namespace Hmm3Clone.State {
+	[Serializable]
 	public class CityState {
-		public List<string> ErectedBuildings = new List<string>();
+		public string CityName;
+		public List<BuildingType> ErectedBuildings = new List<BuildingType>();
 
-		public bool IsErected(string buildingName) {
+		public CityState() {
+			CityName = "NoName";
+		}
+		
+		public CityState(string cityName) {
+			CityName = cityName;
+		}
+
+		public bool IsErected(BuildingType buildingName) {
 			return ErectedBuildings.Contains(buildingName);
 		}
 
-		public void ErectBuilding(string buildingName) {
+		public void ErectBuilding(BuildingType buildingName) {
 			ErectedBuildings.Add(buildingName);
 		}
 	}

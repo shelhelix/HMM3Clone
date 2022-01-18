@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using GameComponentAttributes.Attributes;
 using Hmm3Clone.Controller;
 using TMPro;
@@ -19,7 +16,7 @@ namespace Hmm3Clone {
         }
 
         void Update() {
-            AmountText.text = _resourceController.GetAmount(ResourceType).ToString();
+            AmountText.text = _resourceController.GetResourceAmount(ResourceType).ToString();
         }
     }
 }

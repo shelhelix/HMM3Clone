@@ -1,11 +1,11 @@
 using GameComponentAttributes;
-using Hmm3Clone.State;
+using Hmm3Clone.Utils;
 using UnityEngine;
 
-namespace Hmm3Clone {
+namespace Hmm3Clone.Service {
 	public class AutoSaver : GameComponent {
 		void OnApplicationQuit() {
-			GameState.SaveState(GameController.Instance.ActiveState);
+			SaveUtils.SaveState(GameController.Instance.ActiveState);
 		}
 
 		[RuntimeInitializeOnLoadMethod]

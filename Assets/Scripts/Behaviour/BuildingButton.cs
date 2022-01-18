@@ -34,7 +34,7 @@ namespace Hmm3Clone.Behaviour {
 
         void InitView() {
             var activeBuildingInfo = GetActiveBuildingInfo();
-            BuildingName.text = activeBuildingInfo.Name;
+            BuildingName.text = activeBuildingInfo.Name.ToString();
             FrameBackground.color = _state.IsErected(activeBuildingInfo.Name)
                 ? Color.yellow
                 : CanErect(activeBuildingInfo, _state)

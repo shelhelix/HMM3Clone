@@ -2,20 +2,25 @@ using System.Collections.Generic;
 using Hmm3Clone.Controller;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
+using UnityEngine.Assertions;
 
 namespace Hmm3Clone {
 	public class GameController : Singleton<GameController> {
 		public GameState ActiveState;
 		
-		List<object> _controllers = new List<object>();
+		List<IController> _controllers = new List<IController>();
 
 		public GameController() {
-			ActiveState = GameState.LoadState();
+			ActiveState = SaveUtils.LoadState();
 			_controllers.Add(new ResourceController(ActiveState.ResourcesState));
+			_controllers.Add(new TurnController(ActiveState.TurnState));
+			_controllers.Add(new CityController(GetController<ResourceController>(), GetController<TurnController>(), ActiveState.MapState));
 		}
 
-		public T GetController<T>() where T : class {
-			return _controllers.Find(x => x is T) as T;
+		public T GetController<T>() where T : class, IController {
+			var res = _controllers.Find(x => x is T) as T;
+			Assert.IsNotNull(res);
+			return res;
 		}
 	}
 }
