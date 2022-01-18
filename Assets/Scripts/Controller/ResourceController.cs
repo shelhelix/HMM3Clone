@@ -19,6 +19,12 @@ namespace Hmm3Clone.Controller {
 			return GetResource(resourceType).Amount;
 		}
 
+		public void SubResources(Resource resource) {
+			var resourceBalance = GetResource(resource.ResourceType);
+			Assert.IsTrue(resourceBalance.Amount >= resource.Amount);
+			resourceBalance.Amount -= resource.Amount;
+		}
+		
 		public void AddResource(Resource resource) {
 			var resourceBalance = GetResource(resource.ResourceType);
 			Assert.IsNotNull(resourceBalance);

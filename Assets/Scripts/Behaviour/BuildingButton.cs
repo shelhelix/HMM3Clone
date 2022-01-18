@@ -51,6 +51,9 @@ namespace Hmm3Clone.Behaviour {
 
         void ErectBuilding() {
             var activeBuildingInfo = GetActiveBuildingInfo();
+            foreach (var res in activeBuildingInfo.BuildingCost) {
+                _resourceController.SubResources(res);
+            }
             _state.ErectedBuildings.Add(activeBuildingInfo.Name);
             InitView();
         }
