@@ -7,6 +7,7 @@ using UnityEngine;
 namespace Hmm3Clone.Behaviour {
     public class CityIncomeView : MonoBehaviour {
         [NotNull] public TMP_Text IncomeText;
+        [NotNull] public TMP_Text CityName;
 
         CityController _cityController;
         CityState _activeCityState;
@@ -15,7 +16,8 @@ namespace Hmm3Clone.Behaviour {
         void Start() {
             _cityController = GameController.Instance.GetController<CityController>();
             _activeCityState = ActiveData.Instance.GetData<CityState>();
-            
+
+            CityName.text = _activeCityState.CityName;
         }
 
         void Update() {
