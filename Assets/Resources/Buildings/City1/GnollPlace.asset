@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a41aea2a0464140a18a0d21077ad8cc, type: 3}
-  m_Name: City Hall
+  m_Name: GnollPlace
   m_EditorClassIdentifier: 
-  Name: 1
+  Name: 2
   BuildingCost:
   - ResourceType: 0
-    Amount: 0
-  Dependencies:
-  - {fileID: 11400000, guid: d9404931de1594b4aace5ea22f1c01f2, type: 2}
-  BuildingSprite: {fileID: 21300000, guid: 1887af557258b68449586ce33ebb26c6, type: 3}
+    Amount: 250
+  Dependencies: []
+  BuildingSprite: {fileID: 21300000, guid: 5cb22dcf08544e242a88040666470b36, type: 3}

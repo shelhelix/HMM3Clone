@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BuildingsProductionConfig
   m_EditorClassIdentifier: 
   ProductionInfos:
-  - BuildingName: TownHall
+  - BuildingType: 0
     ResourcesProduction:
     - ResourceType: 0
       Amount: 500
-  - BuildingName: CityHall
+  - BuildingType: 1
     ResourcesProduction:
     - ResourceType: 0
-      Amount: 1000
+      Amount: 500
