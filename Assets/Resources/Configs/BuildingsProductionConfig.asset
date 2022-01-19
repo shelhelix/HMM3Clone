@@ -21,3 +21,7 @@ MonoBehaviour:
     ResourcesProduction:
     - ResourceType: 0
       Amount: 500
+  UnitProductionInfos:
+  - BuildingType: 2
+    UnitType: 0
+    Amount: 10

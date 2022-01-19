@@ -7,7 +7,7 @@ namespace Hmm3Clone.Controller {
 
 		public int Turn => _state.Turn;
 
-		public event Action OnTurnChanged;
+		public event Action<int> OnTurnChanged;
 		
 		public TurnController(TurnState state) {
 			_state = state;
@@ -16,7 +16,7 @@ namespace Hmm3Clone.Controller {
 
 		public void EndTurn() {
 			_state.Turn++;
-			OnTurnChanged?.Invoke();
+			OnTurnChanged?.Invoke(_state.Turn);
 		}
 	}
 }

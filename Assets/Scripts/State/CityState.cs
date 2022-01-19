@@ -7,8 +7,7 @@ namespace Hmm3Clone.State {
 	public class CityState {
 		public string CityName;
 		public List<BuildingType> ErectedBuildings = new List<BuildingType>();
-		public List<UnitStack> Garrison = new List<UnitStack>(7);
-		public List<UnitStack> ReadyToBuyUnits = new List<UnitStack>();
+		public Dictionary<UnitType, int> ReadyToBuyUnits = new Dictionary<UnitType, int>();
 
 		public CityState() {
 			CityName = "NoName";
