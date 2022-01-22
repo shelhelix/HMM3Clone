@@ -1,43 +1,34 @@
 using Hmm3Clone.State;
+using Hmm3Clone.Utils;
 using UnityEngine.Assertions;
 
 namespace Hmm3Clone.Controller {
 	public class ResourceController : IController {
-		ResourcesState _state;
+		readonly ResourcesState _state;
 
 		public ResourceController(ResourcesState state) {
 			_state = state;
 		} 
 		
-		public bool IsEnoughResource(Resource amount) {
-			var resourceBalance = GetResource(amount.ResourceType);
-			Assert.IsNotNull(resourceBalance);
-			return resourceBalance.Amount >= amount.Amount;
+		public bool IsEnoughResource(Resource resource) {
+			Assert.AreNotEqual(resource.ResourceType, ResourceType.Invalid);
+			return GetResourceAmount(resource.ResourceType) >= resource.Amount;
 		}
 
-		public int GetResourceAmount(ResourceType resourceType) {
-			return GetResource(resourceType).Amount;
+		public int GetResourceAmount(ResourceType type) {
+			return _state.Resources.GetOrDefault(type);
 		}
 
 		public void SubResources(Resource resource) {
-			var resourceBalance = GetResource(resource.ResourceType);
-			Assert.IsTrue(resourceBalance.Amount >= resource.Amount);
-			resourceBalance.Amount -= resource.Amount;
+			Assert.AreNotEqual(resource.ResourceType, ResourceType.Invalid);
+			var currentAmount = GetResourceAmount(resource.ResourceType);
+			Assert.IsTrue(currentAmount >= resource.Amount);
+			_state.Resources.IncrementAmount(resource.ResourceType, -resource.Amount);
 		}
 		
 		public void AddResource(Resource resource) {
-			var resourceBalance = GetResource(resource.ResourceType);
-			Assert.IsNotNull(resourceBalance);
-			resourceBalance.Amount += resource.Amount;
-		}
-
-		Resource GetResource(ResourceType resourceType) {
-			var resourceState = _state.Resources.Find(x => x.ResourceType == resourceType);
-			if (resourceState == null) {
-				resourceState = new Resource(resourceType, 0);
-				_state.Resources.Add(resourceState);
-			}
-			return resourceState;
+			Assert.AreNotEqual(resource.ResourceType, ResourceType.Invalid);
+			_state.Resources.IncrementAmount(resource.ResourceType, resource.Amount);
 		}
 	}
 }

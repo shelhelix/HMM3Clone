@@ -15,6 +15,7 @@ namespace Hmm3Clone {
 			_controllers.Add(new ResourceController(ActiveState.ResourcesState));
 			_controllers.Add(new TurnController(ActiveState.TurnState));
 			_controllers.Add(new CityController(GetController<ResourceController>(), GetController<TurnController>(), ActiveState.MapState));
+			_controllers.Add(new SpriteSetupController());
 		}
 
 		public T GetController<T>() where T : class, IController {

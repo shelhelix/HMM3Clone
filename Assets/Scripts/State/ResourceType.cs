@@ -1,5 +1,6 @@
-namespace Hmm3Clone {
+namespace Hmm3Clone.State {
 	public enum ResourceType {
-		Gold
+		Gold = 0,
+		Invalid = -1
 	}
 }

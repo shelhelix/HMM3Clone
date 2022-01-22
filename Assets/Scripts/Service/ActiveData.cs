@@ -10,8 +10,12 @@ namespace Hmm3Clone {
 			_objects.Add(obj);
 		}
 
-		public T GetData<T>() where T : class{
+		public T GetData<T>() where T : class {
 			return _objects.Find(x => x is T) as T;
+		}
+
+		public void RemoveData<T>() where T : class {
+			_objects.RemoveAll(x => x is T);
 		}
 	}
 }

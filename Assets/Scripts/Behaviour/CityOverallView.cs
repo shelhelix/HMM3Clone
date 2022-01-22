@@ -16,7 +16,6 @@ namespace Hmm3Clone.Behaviour {
         CityController _cityController;
         CityState _activeCityState;
         
-        
         void Start() {
             _cityController = GameController.Instance.GetController<CityController>();
             _activeCityState = ActiveData.Instance.GetData<CityState>();
@@ -39,8 +38,7 @@ namespace Hmm3Clone.Behaviour {
                     return;
                 }
                 var view = UnitStacks[index];
-                view.SetActiveInternalObjects(true);
-                view.AmountText.text = unitAmount.Value.ToString();
+                view.Init(unitAmount.Key, unitAmount.Value);
                 index++;
             }
             for (; index < UnitStacks.Count; index++) {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Hmm3Clone.Behaviour {
 	public class CitySceneStarter : GameComponent {
-		[NotNull] public GameObject BuildingsScreen;
+		[NotNull] public GameObject ScreenRoot;
 
 		protected override void Awake() {
 			base.Awake();
@@ -14,7 +14,9 @@ namespace Hmm3Clone.Behaviour {
 		}
 		
 		public void Start() {
-			BuildingsScreen.gameObject.SetActive(false);
+			foreach (Transform child in ScreenRoot.transform) {
+				child.gameObject.SetActive(false);
+			}
 		}
 	}
 }
