@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a41aea2a0464140a18a0d21077ad8cc, type: 3}
-  m_Name: AdvancedGnollPlace
+  m_Script: {fileID: 11500000, guid: f39e534c68864436a8be2fa4ce92b014, type: 3}
+  m_Name: BuildingConfig
   m_EditorClassIdentifier: 
-  Name: 3
-  BuildingCost:
-  - ResourceType: 0
-    Amount: 500
-  Dependencies:
+  Buildings:
+  - {fileID: 11400000, guid: 23578d984367e5f4f9735a9e3dfa9290, type: 2}
   - {fileID: 11400000, guid: 0d65dc8ba1c71a44ca4d7149ed8a043d, type: 2}
-  ResourcesProduction: []
-  UnitProductionInfo: []
-  BuildingSprite: {fileID: 21300000, guid: 572e9d6969544224091f1da54496a3d4, type: 3}
+  - {fileID: 11400000, guid: 646c801cdaf23714d919d9ca566c3697, type: 2}
+  - {fileID: 11400000, guid: d9404931de1594b4aace5ea22f1c01f2, type: 2}

@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a41aea2a0464140a18a0d21077ad8cc, type: 3}
   m_Name: Town Hall
   m_EditorClassIdentifier: 
-  Name: TownHall
+  Name: 0
   BuildingCost:
   - ResourceType: 0
     Amount: 0
   Dependencies: []
+  ResourcesProduction:
+  - ResourceType: 0
+    Amount: 500
+  UnitProductionInfo: []
   BuildingSprite: {fileID: 21300000, guid: 106db9fdacc2717408e4c5ce8188fb2a, type: 3}

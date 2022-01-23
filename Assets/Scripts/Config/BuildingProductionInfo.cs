@@ -7,6 +7,5 @@ namespace Hmm3Clone.Config {
 	[Serializable]
 	public class BuildingProductionInfo {
 		public BuildingType   BuildingType;
-		public List<Resource> ResourcesProduction;
 	}
 }

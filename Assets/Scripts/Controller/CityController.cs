@@ -12,9 +12,8 @@ namespace Hmm3Clone.Controller {
 
 		readonly MapState _mapState;
 
-		readonly BuildingsProductionConfig _productionConfig;
-		readonly UnitInfoConfig            _unitInfoConfig;
-		
+		readonly UnitInfoConfig _unitInfoConfig;
+		readonly BuildingConfig _buildingConfig;
 		
 		readonly ResourceController _resourceController;
 
@@ -31,7 +30,7 @@ namespace Hmm3Clone.Controller {
 			}
 
 			_resourceController = resourceController;
-			_productionConfig   = ConfigLoader.LoadConfig<BuildingsProductionConfig>();
+			_buildingConfig     = ConfigLoader.LoadConfig<BuildingConfig>();
 			_unitInfoConfig     = ConfigLoader.LoadConfig<UnitInfoConfig>();
 
 			turnController.OnTurnChanged += OnTurnChanged;
@@ -106,10 +105,8 @@ namespace Hmm3Clone.Controller {
 			var state = GetCityState(cityName);
 			var res = new Dictionary<UnitType, int>();
 			foreach (var buildingName in state.ErectedBuildings) {
-				var productionInfo = _productionConfig.GetUnitProductionInfo(buildingName);
-				if (productionInfo != null) {
-					res.IncrementAmount(productionInfo.UnitType, productionInfo.Amount);
-				}
+				var productionInfo = _buildingConfig.GetUnitProductionInfo(buildingName);
+				productionInfo?.ForEach(x => res.IncrementAmount(x.UnitType, x.Amount));
 			}
 			return res;
 		}
@@ -152,10 +149,8 @@ namespace Hmm3Clone.Controller {
 			Assert.IsNotNull(state);
 			var accumulatedCityProduction = new Dictionary<ResourceType, int>();
 			foreach (var buildingName in state.ErectedBuildings) {
-				var productionInfo = _productionConfig.GetProductionInfo(buildingName);
-				productionInfo?.ResourcesProduction.ForEach(x => {
-					accumulatedCityProduction.IncrementAmount(x.ResourceType, x.Amount);
-				});
+				var resourcesInfo = _buildingConfig.GetResourcesProductionInfo(buildingName);
+				resourcesInfo?.ForEach(x => accumulatedCityProduction.IncrementAmount(x.ResourceType, x.Amount));
 			}
 			return accumulatedCityProduction;
 		}
