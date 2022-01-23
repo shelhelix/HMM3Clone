@@ -1,5 +1,6 @@
 using GameComponentAttributes.Attributes;
 using Hmm3Clone.Controller;
+using Hmm3Clone.SpriteSetups;
 using Hmm3Clone.State;
 using TMPro;
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace Hmm3Clone.Behaviour {
 
         void Start() {
             _resourceController = GameController.Instance.GetController<ResourceController>();
-            ResourceImage.sprite = GameController.Instance.GetController<SpriteSetupController>().ResourcesSpriteSetup
+            ResourceImage.sprite = GameController.Instance.GetController<SpriteSetupController>().GetSpriteSetup<ResourcesSpriteSetup>()
                                                  .GetResourceSprite(ResourceType);
         }
 

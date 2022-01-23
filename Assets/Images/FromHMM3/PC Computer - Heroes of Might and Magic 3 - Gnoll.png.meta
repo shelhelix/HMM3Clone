@@ -1,0 +1,3684 @@
+fileFormatVersion: 2
+guid: 9c147dfe8d5a5e24ea2b23f59cf2700e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2058767053864619411
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_0
+  - first:
+      213: -7377094368962659592
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_1
+  - first:
+      213: -3196837121289822278
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_2
+  - first:
+      213: 7512108697732452551
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_3
+  - first:
+      213: -1428970241241995243
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_4
+  - first:
+      213: 7774699838610341695
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_5
+  - first:
+      213: -309967888648831427
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_6
+  - first:
+      213: -8068290980151061827
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_7
+  - first:
+      213: -2854291909638093606
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_8
+  - first:
+      213: 244260557793212083
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_9
+  - first:
+      213: 445878123412086077
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_10
+  - first:
+      213: -6000423318899261913
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_11
+  - first:
+      213: -5784553919333206381
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_12
+  - first:
+      213: -4352028652722026129
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_13
+  - first:
+      213: 4746896410107360998
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_14
+  - first:
+      213: -5673200259614547016
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_15
+  - first:
+      213: 3634519674918230068
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_16
+  - first:
+      213: 3802696595166921927
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_17
+  - first:
+      213: 3144578899187285622
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_18
+  - first:
+      213: 1208527289289648784
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_19
+  - first:
+      213: -6495381754957313224
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_20
+  - first:
+      213: -1952283006795230779
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_21
+  - first:
+      213: -7712561525271529151
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_22
+  - first:
+      213: 5581618915692251363
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_23
+  - first:
+      213: -6327606486072298156
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_24
+  - first:
+      213: 5339776180141800751
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_25
+  - first:
+      213: -459299849433541585
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_26
+  - first:
+      213: 3190900326412291856
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_27
+  - first:
+      213: 5347889064645061388
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_28
+  - first:
+      213: -2247411390369404835
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_29
+  - first:
+      213: 842965744146353651
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_30
+  - first:
+      213: -2304338848027633514
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_31
+  - first:
+      213: -6540243418948593906
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_32
+  - first:
+      213: -5128188620894500064
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_33
+  - first:
+      213: -8888844399539647927
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_34
+  - first:
+      213: 6612103267023066698
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_35
+  - first:
+      213: -1242584552978591813
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_36
+  - first:
+      213: 7259715239445957105
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_37
+  - first:
+      213: -4185851051766723667
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_38
+  - first:
+      213: -3595935859593515749
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_39
+  - first:
+      213: 3254154198411639559
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_40
+  - first:
+      213: -5621305029989392744
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_41
+  - first:
+      213: -5831195446316827920
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_42
+  - first:
+      213: 6105665976481692118
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_43
+  - first:
+      213: -6529943160795389953
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_44
+  - first:
+      213: -5979935812409964169
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_45
+  - first:
+      213: 3926116340436261001
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_46
+  - first:
+      213: -8398793856403738596
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_47
+  - first:
+      213: -7119758948833092137
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_48
+  - first:
+      213: 3296126252557770139
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_49
+  - first:
+      213: -3635050575793659049
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_50
+  - first:
+      213: 693279307163598354
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_51
+  - first:
+      213: -1999129825468744481
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_52
+  - first:
+      213: -1108551780937195325
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_53
+  - first:
+      213: 3346663853949734604
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_54
+  - first:
+      213: -3600001570202912248
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_55
+  - first:
+      213: -1827787723487942231
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_56
+  - first:
+      213: 1223417386628286205
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_57
+  - first:
+      213: 146292838115992745
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_58
+  - first:
+      213: -4625941648477769212
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_59
+  - first:
+      213: -8945344339674460393
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_60
+  - first:
+      213: 1252316650978357680
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_61
+  - first:
+      213: -4943914908666545100
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_62
+  - first:
+      213: -5795256678087960776
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_63
+  - first:
+      213: -4702175815708198929
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_64
+  - first:
+      213: 7166188813740306185
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_65
+  - first:
+      213: -6909289994503547388
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_66
+  - first:
+      213: 3266735302082717746
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_67
+  - first:
+      213: 5940374893438691065
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_68
+  - first:
+      213: 1029268373749758379
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_69
+  - first:
+      213: -610706166471400902
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_70
+  - first:
+      213: -6479531316508454947
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_71
+  - first:
+      213: 3800429160634666265
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_72
+  - first:
+      213: -488994839081495396
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_73
+  - first:
+      213: 6015554799810903337
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_74
+  - first:
+      213: -228988191618588622
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_75
+  - first:
+      213: 7793188437527376335
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_76
+  - first:
+      213: -3834628568455306995
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_77
+  - first:
+      213: 402817323632138397
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_78
+  - first:
+      213: -3831755810969676032
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_79
+  - first:
+      213: -3725239835425403215
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_80
+  - first:
+      213: -1364968114879762390
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_81
+  - first:
+      213: 4649010214642613987
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_82
+  - first:
+      213: -7604856541116573834
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_83
+  - first:
+      213: -2965509284723666895
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_84
+  - first:
+      213: -1063799337705406564
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_85
+  - first:
+      213: -7831969290533713389
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_86
+  - first:
+      213: 5130830720768708578
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_87
+  - first:
+      213: -9039257898624836628
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_88
+  - first:
+      213: -7769638064527657379
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_89
+  - first:
+      213: 412919020453917869
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_90
+  - first:
+      213: 1972911934437416945
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_91
+  - first:
+      213: -181933624840697979
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_92
+  - first:
+      213: -2559852809590212156
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_93
+  - first:
+      213: -2352049779486725237
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_94
+  - first:
+      213: 996308151058654957
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_95
+  - first:
+      213: 7462227542814014734
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_96
+  - first:
+      213: -2048652152254527372
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_97
+  - first:
+      213: 1497721806363718518
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_98
+  - first:
+      213: 1210346925753372218
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_99
+  - first:
+      213: -6643639070376329615
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_100
+  - first:
+      213: -104741155212175700
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_101
+  - first:
+      213: -3473853225734458138
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_102
+  - first:
+      213: 7224066072453755755
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_103
+  - first:
+      213: -9018201502554008245
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_104
+  - first:
+      213: -7336506583639121623
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_105
+  - first:
+      213: -1613451783211747087
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_106
+  - first:
+      213: 7557786863024307255
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_107
+  - first:
+      213: -3791810606142763711
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_108
+  - first:
+      213: -2895605124692431800
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_109
+  - first:
+      213: 3924968461667166731
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_110
+  - first:
+      213: 3036722818636761235
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_111
+  - first:
+      213: 2422014676534863197
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_112
+  - first:
+      213: -372953347814822927
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_113
+  - first:
+      213: 257323461927707964
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_114
+  - first:
+      213: -8891124720628316856
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_115
+  - first:
+      213: 3020544010066234048
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_116
+  - first:
+      213: 4282170037670476951
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_117
+  - first:
+      213: -7692412258512890511
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_118
+  - first:
+      213: -8195048615781483961
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_119
+  - first:
+      213: -8601107783949735445
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_120
+  - first:
+      213: 5772495286326491670
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_121
+  - first:
+      213: -2779566107018161525
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_122
+  - first:
+      213: -3714683360539472720
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_123
+  - first:
+      213: 2740717836432899466
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_124
+  - first:
+      213: 8354323113670388134
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_125
+  - first:
+      213: -4047524715627699560
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_126
+  - first:
+      213: 4574974797748920744
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_127
+  - first:
+      213: -4622935733568262327
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_128
+  - first:
+      213: 8263775313088173104
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_129
+  - first:
+      213: 7512581319270662427
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_130
+  - first:
+      213: -9037201496390197237
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_131
+  - first:
+      213: 3550759441757700688
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_132
+  - first:
+      213: -5452887701669653585
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_133
+  - first:
+      213: -5090327935604994400
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_134
+  - first:
+      213: 3840296820218487584
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_135
+  - first:
+      213: -7355200412078846592
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_136
+  - first:
+      213: 8135670134053624596
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_137
+  - first:
+      213: 7893309276750700085
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_138
+  - first:
+      213: 6264296623254106165
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_139
+  - first:
+      213: -8576139790342019713
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_140
+  - first:
+      213: 8374399026946078834
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_141
+  - first:
+      213: -1420694594285634320
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_142
+  - first:
+      213: 1419224748522821115
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_143
+  - first:
+      213: -2920475922138377744
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_144
+  - first:
+      213: -5190001857187155944
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_145
+  - first:
+      213: -2074481314967523118
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_146
+  - first:
+      213: -6700489029738697316
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_147
+  - first:
+      213: 8994195100631201683
+    second: PC Computer - Heroes of Might and Magic 3 - Gnoll_148
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 823
+        width: 43
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d623f17b54acd63e0800000000000000
+      internalID: -2058767053864619411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 823
+        width: 44
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa3277c1cb4f9990800000000000000
+      internalID: -7377094368962659592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 823
+        width: 43
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfdcb4639d82a3d0800000000000000
+      internalID: -3196837121289822278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 823
+        width: 42
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0177a4f0f504860800000000000000
+      internalID: 7512108697732452551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 823
+        width: 42
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518aa28f2274b2ce0800000000000000
+      internalID: -1428970241241995243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_5
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 823
+        width: 41
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ff7a3af4845eb60800000000000000
+      internalID: 7774699838610341695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_6
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 823
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3efe49f8d5c2bbf0800000000000000
+      internalID: -309967888648831427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_7
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 823
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db29b97e91ca70090800000000000000
+      internalID: -8068290980151061827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_8
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 823
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad400c081a48368d0800000000000000
+      internalID: -2854291909638093606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_9
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 823
+        width: 41
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b637e3eea9c36300800000000000000
+      internalID: 244260557793212083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 734
+        width: 41
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d58177ac3103600800000000000000
+      internalID: 445878123412086077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_11
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 747
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ef90778c63abca0800000000000000
+      internalID: -6000423318899261913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_12
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 735
+        width: 43
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396fc06bbd229bfa0800000000000000
+      internalID: -5784553919333206381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_13
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 733
+        width: 49
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f698e269ffc7a93c0800000000000000
+      internalID: -4352028652722026129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_14
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 734
+        width: 47
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6b606822d50e140800000000000000
+      internalID: 4746896410107360998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_15
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 735
+        width: 42
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3650afb6eb441b0800000000000000
+      internalID: -5673200259614547016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_16
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 732
+        width: 47
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4385ba84368607230800000000000000
+      internalID: 3634519674918230068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_17
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 731
+        width: 49
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4038fd764e5c430800000000000000
+      internalID: 3802696595166921927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_18
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 731
+        width: 55
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e3f3e19d9c3ab20800000000000000
+      internalID: 3144578899187285622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_19
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 637
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09aa973aa2d85c010800000000000000
+      internalID: 1208527289289648784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_20
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 639
+        width: 41
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b473735b4cbd5a0800000000000000
+      internalID: -6495381754957313224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_21
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 638
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c150fee2f818e4e0800000000000000
+      internalID: -1952283006795230779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_22
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 639
+        width: 40
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14978d9d72a77f490800000000000000
+      internalID: -7712561525271529151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_23
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 643
+        width: 41
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e80075c4d4e57d40800000000000000
+      internalID: 5581618915692251363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_24
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 644
+        width: 45
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455f33f0d63df28a0800000000000000
+      internalID: -6327606486072298156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_25
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 643
+        width: 49
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2db17df422ba1a40800000000000000
+      internalID: 5339776180141800751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_26
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 644
+        width: 48
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f249f1d683d30a9f0800000000000000
+      internalID: -459299849433541585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_27
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 539
+        width: 33
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f8b75d0fa584c20800000000000000
+      internalID: 3190900326412291856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_28
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 537
+        width: 50
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b6d5c15c4873a40800000000000000
+      internalID: 5347889064645061388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_29
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 534
+        width: 36
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d586ddc6f379fc0e0800000000000000
+      internalID: -2247411390369404835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_30
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 534
+        width: 54
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd8aa9c0e0d2bb00800000000000000
+      internalID: 842965744146353651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_31
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 538
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6981e21d6085500e0800000000000000
+      internalID: -2304338848027633514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_32
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 440
+        width: 42
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e079bfc13436c35a0800000000000000
+      internalID: -6540243418948593906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_33
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 440
+        width: 36
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b026e9e9305d8b0800000000000000
+      internalID: -5128188620894500064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_34
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 440
+        width: 33
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a08bd1d1b74a480800000000000000
+      internalID: -8888844399539647927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_35
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 438
+        width: 41
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a461c1193e8e2cb50800000000000000
+      internalID: 6612103267023066698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_36
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 435
+        width: 77
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfc25cbee371cee0800000000000000
+      internalID: -1242584552978591813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_37
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 435
+        width: 84
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f98aa1fb80bfb460800000000000000
+      internalID: 7259715239445957105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_38
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 439
+        width: 60
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabcfb065aed8e5c0800000000000000
+      internalID: -4185851051766723667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_39
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 440
+        width: 63
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1de6d5436ba81ec0800000000000000
+      internalID: -3595935859593515749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_40
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 338
+        width: 32
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bfba09004192d20800000000000000
+      internalID: 3254154198411639559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_41
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 333
+        width: 49
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e9d51bbdc1df1b0800000000000000
+      internalID: -5621305029989392744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_42
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 331
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0faf866f2ae631fa0800000000000000
+      internalID: -5831195446316827920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_43
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 334
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9316d3bdeabb450800000000000000
+      internalID: 6105665976481692118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_44
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 325
+        width: 43
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff9c49da4bf065a0800000000000000
+      internalID: -6529943160795389953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_45
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 335
+        width: 57
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779caa9cf00030da0800000000000000
+      internalID: -5979935812409964169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_46
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 281
+        width: 49
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9885f8a920e5c7630800000000000000
+      internalID: 3926116340436261001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_47
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 218
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10725f7c7d717b80800000000000000
+      internalID: -8398793856403738596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_48
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 218
+        width: 60
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd156845f8813d90800000000000000
+      internalID: -7119758948833092137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_49
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 218
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d9b82fc513ebd20800000000000000
+      internalID: 3296126252557770139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_50
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 218
+        width: 61
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7536d39b2c4bd8dc0800000000000000
+      internalID: -3635050575793659049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_51
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 218
+        width: 56
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e7d915bd50f9900800000000000000
+      internalID: 693279307163598354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_52
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 218
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdcfb0df30aa144e0800000000000000
+      internalID: -1999129825468744481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_53
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 259
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0ac125702ad90f0800000000000000
+      internalID: -1108551780937195325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_54
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 256
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce40553b0db17e20800000000000000
+      internalID: 3346663853949734604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_55
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 256
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80af43145a93a0ec0800000000000000
+      internalID: -3600001570202912248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_56
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 259
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a96ea0efb462a6e0800000000000000
+      internalID: -1827787723487942231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_57
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 259
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6040691a37af010800000000000000
+      internalID: 1223417386628286205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_58
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 259
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a46619af8cb70200800000000000000
+      internalID: 146292838115992745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_59
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 256
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4023cca749a5dcfb0800000000000000
+      internalID: -4625941648477769212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_60
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 238
+        width: 124
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f0720b7b0cbd380800000000000000
+      internalID: -8945344339674460393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_61
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 241
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b13fd7eb5f116110800000000000000
+      internalID: 1252316650978357680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_62
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 241
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c3c25a59fa36bb0800000000000000
+      internalID: -4943914908666545100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_63
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 241
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8375b5081cc139fa0800000000000000
+      internalID: -5795256678087960776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_64
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 241
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7b74142048ebeb0800000000000000
+      internalID: -4702175815708198929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_65
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 225
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f6e5c02ca637360800000000000000
+      internalID: 7166188813740306185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_66
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 225
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40694736b554d10a0800000000000000
+      internalID: -6909289994503547388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_67
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 225
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2386ed70376c55d20800000000000000
+      internalID: 3266735302082717746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_68
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 225
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6ef0cfd73707250800000000000000
+      internalID: 5940374893438691065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_69
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 222
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9f5e3f122b84e00800000000000000
+      internalID: 1029268373749758379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_70
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 225
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32e45d2af55687f0800000000000000
+      internalID: -610706166471400902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_71
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 225
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf8e7009941416a0800000000000000
+      internalID: -6479531316508454947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_72
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 225
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d4aa1af26ddb430800000000000000
+      internalID: 3800429160634666265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_73
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 223
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c945c8fd8cdb639f0800000000000000
+      internalID: -488994839081495396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_74
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 222
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92dff99f73b8b7350800000000000000
+      internalID: 6015554799810903337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_75
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 225
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230a0d4f37872dcf0800000000000000
+      internalID: -228988191618588622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_76
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 225
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc130860897f62c60800000000000000
+      internalID: 7793188437527376335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_77
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 225
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0128ab32a9a8cac0800000000000000
+      internalID: -3834628568455306995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_78
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 225
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98977cb838179500800000000000000
+      internalID: 402817323632138397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_79
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 225
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0071d15346ed2dac0800000000000000
+      internalID: -3831755810969676032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_80
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 206
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be855a5b1a4d4cc0800000000000000
+      internalID: -3725239835425403215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_81
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 209
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a207bde3bb8ae0de0800000000000000
+      internalID: -1364968114879762390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_82
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 209
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee7fe0a82a948040800000000000000
+      internalID: 4649010214642613987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_83
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 209
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677d0f2a44f167690800000000000000
+      internalID: -7604856541116573834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_84
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 209
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1305ce9740568d6d0800000000000000
+      internalID: -2965509284723666895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_85
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 206
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ff5cb7320ac31f0800000000000000
+      internalID: -1063799337705406564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_86
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 209
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a48f10d614f4390800000000000000
+      internalID: -7831969290533713389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_87
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 209
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef84123b5f543740800000000000000
+      internalID: 5130830720768708578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_88
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 209
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb925f45da1e8280800000000000000
+      internalID: -9039257898624836628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_89
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 209
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56b97a7853bc2490800000000000000
+      internalID: -7769638064527657379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_90
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 209
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4782f49abfab500800000000000000
+      internalID: 412919020453917869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_91
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 209
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff554193f0316b10800000000000000
+      internalID: 1972911934437416945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_92
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 209
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587cba60554a97df0800000000000000
+      internalID: -181933624840697979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_93
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 82
+        width: 43
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9f61fae63997cd0800000000000000
+      internalID: -2559852809590212156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_94
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 82
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b68afef27db5fd0800000000000000
+      internalID: -2352049779486725237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_95
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 81
+        width: 69
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de66da61cf893dd00800000000000000
+      internalID: 996308151058654957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_96
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 83
+        width: 69
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0db092e9682f8760800000000000000
+      internalID: 7462227542814014734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_97
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 114
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4788784c8b9b193e0800000000000000
+      internalID: -2048652152254527372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_98
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 85
+        width: 58
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6737aa03c0af8c410800000000000000
+      internalID: 1497721806363718518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_99
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 86
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e0484cd140cc010800000000000000
+      internalID: 1210346925753372218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_100
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 79
+        width: 37
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17eff4a077d0dc3a0800000000000000
+      internalID: -6643639070376329615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_101
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 78
+        width: 32
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6d63a6972eb8ef0800000000000000
+      internalID: -104741155212175700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_102
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 97
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4b04e75e46acfc0800000000000000
+      internalID: -3473853225734458138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_103
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 89
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63be8271d9014460800000000000000
+      internalID: 7224066072453755755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_104
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 10
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45df5f8389e8d280800000000000000
+      internalID: -9018201502554008245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_105
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 40
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92120e5f12e7f2a90800000000000000
+      internalID: -7336506583639121623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_106
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8717fc62edb99e0800000000000000
+      internalID: -1613451783211747087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_107
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 46
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c7daaeb17a2e860800000000000000
+      internalID: 7557786863024307255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_108
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 46
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d4d45f758c06bc0800000000000000
+      internalID: -3791810606142763711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_109
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 8
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c28ec0b7eb0d7d0800000000000000
+      internalID: -2895605124692431800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_110
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 8
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a6840450a487630800000000000000
+      internalID: 3924968461667166731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_111
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 8
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398ca26705b942a20800000000000000
+      internalID: 3036722818636761235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_112
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 8
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55a4a31489bc9120800000000000000
+      internalID: 2422014676534863197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_113
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 8
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb64b9f7e003daf0800000000000000
+      internalID: -372953347814822927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_114
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 8
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3523944352329300800000000000000
+      internalID: 257323461927707964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_115
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 24
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845414d7c216c9480800000000000000
+      internalID: -8891124720628316856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_116
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca8e6c06c02be920800000000000000
+      internalID: 3020544010066234048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_117
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 24
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c7b2b16f25d6b30800000000000000
+      internalID: 4282170037670476951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_118
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1759a799ecf0f3590800000000000000
+      internalID: -7692412258512890511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_119
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ab94304b6554e80800000000000000
+      internalID: -8195048615781483961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_120
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 24
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be924d68a0ab2a880800000000000000
+      internalID: -8601107783949735445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_121
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a7b1101e50c1050800000000000000
+      internalID: 5772495286326491670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_122
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 24
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8297793a5ffc69d0800000000000000
+      internalID: -2779566107018161525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_123
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 24
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc8df13a2bc27cc0800000000000000
+      internalID: -3714683360539472720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_124
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 21
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8df82ee95cf80620800000000000000
+      internalID: 2740717836432899466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_125
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 24
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9a829db9480f370800000000000000
+      internalID: 8354323113670388134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_126
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 24
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892a56147bd44d7c0800000000000000
+      internalID: -4047524715627699560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_127
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1603cd6539d7f30800000000000000
+      internalID: 4574974797748920744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_128
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f2435917808dfb0800000000000000
+      internalID: -4622935733568262327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_129
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 24
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03453482dd3dea270800000000000000
+      internalID: 8263775313088173104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_130
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 24
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b110d5118ec024860800000000000000
+      internalID: 7512581319270662427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_131
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00a804ce19659280800000000000000
+      internalID: -9037201496390197237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_132
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 21
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05205d846e4d64130800000000000000
+      internalID: 3550759441757700688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_133
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 24
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa352e5a6837354b0800000000000000
+      internalID: -5452887701669653585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_134
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 8
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae440856b58b59b0800000000000000
+      internalID: -5090327935604994400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_135
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 8
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0236f297c997b4530800000000000000
+      internalID: 3840296820218487584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_136
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 6
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08dcb3ad1341de990800000000000000
+      internalID: -7355200412078846592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_137
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 8
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b550ed1e4b7e070800000000000000
+      internalID: 8135670134053624596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_138
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 8
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e550777faaa8d60800000000000000
+      internalID: 7893309276750700085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_139
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 8
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5307db4d6904fe650800000000000000
+      internalID: 6264296623254106165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_140
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 5
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75229c8c4e6bf880800000000000000
+      internalID: -8576139790342019713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_141
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 8
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2787f78ab87d73470800000000000000
+      internalID: 8374399026946078834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_142
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 8
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc794d2bcda84ce0800000000000000
+      internalID: -1420694594285634320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_143
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 8
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf55520b36912b310800000000000000
+      internalID: 1419224748522821115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_144
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 8
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f15cd54f926877d0800000000000000
+      internalID: -2920475922138377744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_145
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 8
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810fdb60fc869f7b0800000000000000
+      internalID: -5190001857187155944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_146
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 8
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0fc203c36f533e0800000000000000
+      internalID: -2074481314967523118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_147
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 8
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9de5096ab41303a0800000000000000
+      internalID: -6700489029738697316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Heroes of Might and Magic 3 - Gnoll_148
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 8
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3977ead6accc1dc70800000000000000
+      internalID: 8994195100631201683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

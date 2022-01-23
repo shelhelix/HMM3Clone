@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
 using Hmm3Clone.Controller;
+using Hmm3Clone.SpriteSetups;
 using Hmm3Clone.State;
 using TMPro;
 using UnityEngine;
@@ -10,9 +11,9 @@ using UnityEngine.UI;
 
 namespace Hmm3Clone.Behaviour {
 	public class HiringWindow : GameComponent {
-		[NotNull] public Button HireButton;
-		[NotNull] public Slider UnitsAmount;
-
+		[NotNull] public Button   HireButton;
+		[NotNull] public Slider   UnitsAmount;
+		[NotNull] public Image    UnitImage;		
 		[NotNull] public TMP_Text HeaderText;
 		[NotNull] public TMP_Text UnitsToRecruitText;
 
@@ -22,13 +23,16 @@ namespace Hmm3Clone.Behaviour {
 
 		UnitType _unitToHire;
 
-		CityController _cityController;
+		CityController   _cityController;
+		UnitsSpriteSetup _unitsSpriteSetup;
 
 		CityState _cityState;
 		
 		void Start() {
 			_cityState      = ActiveData.Instance.GetData<CityState>();
 			_cityController = GameController.Instance.GetController<CityController>();
+			_unitsSpriteSetup = GameController.Instance.GetController<SpriteSetupController>()
+											  .GetSpriteSetup<UnitsSpriteSetup>();
 		}
 
 		public void Init(UnitType unitType) {
@@ -42,8 +46,8 @@ namespace Hmm3Clone.Behaviour {
 			UnitsAmount.onValueChanged.AddListener(OnSliderValueChanged);
 			OnSliderValueChanged(UnitsAmount.value);
 
-			HeaderText.text = $"Recruit {_unitToHire}";
-			
+			HeaderText.text  = $"Recruit {_unitToHire}";
+			UnitImage.sprite = _unitsSpriteSetup.GetHireSprite(_unitToHire);
 			HireButton.onClick.RemoveAllListeners();
 			HireButton.onClick.AddListener(OnHireClick);
 			CantBuyScreen.SetActive(false);

@@ -15,10 +15,13 @@ namespace Hmm3Clone.Behaviour {
 		ResourcesSpriteSetup _resourcesSpriteSetup;
 		
 		void Start() {
-			_resourcesSpriteSetup = GameController.Instance.GetController<SpriteSetupController>().ResourcesSpriteSetup;
+			_resourcesSpriteSetup = GameController.Instance.GetController<SpriteSetupController>().GetSpriteSetup<ResourcesSpriteSetup>();
 		}
 
 		public void SetPrice(Resource resource) {
+			if (!_resourcesSpriteSetup) {
+				Start();
+			}
 			ResourceIcon.sprite = _resourcesSpriteSetup.GetResourceSprite(resource);
 			AmountText.text     = resource.Amount.ToString();
 		}
