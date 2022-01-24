@@ -1597,6 +1597,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119793579}
     m_Modifications:
+    - target: {fileID: 3232191420324999757, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4605674865255824089, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
       propertyPath: m_Name
       value: UnitStack (7)
@@ -1940,6 +1944,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119793579}
     m_Modifications:
+    - target: {fileID: 3232191420324999757, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4605674865255824089, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
       propertyPath: m_Name
       value: UnitStack (5)
@@ -2228,6 +2236,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119793579}
     m_Modifications:
+    - target: {fileID: 3232191420324999757, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4605674865255824089, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
       propertyPath: m_Name
       value: UnitStack (6)
@@ -3529,6 +3541,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119793579}
     m_Modifications:
+    - target: {fileID: 3232191420324999757, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4605674865255824089, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
       propertyPath: m_Name
       value: UnitStack (3)
@@ -5718,6 +5734,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119793579}
     m_Modifications:
+    - target: {fileID: 3232191420324999757, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4605674865255824089, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
       propertyPath: m_Name
       value: UnitStack (2)
@@ -6384,6 +6404,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119793579}
     m_Modifications:
+    - target: {fileID: 3232191420324999757, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4605674865255824089, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
       propertyPath: m_Name
       value: UnitStack (4)
@@ -7468,6 +7492,7 @@ GameObject:
   - component: {fileID: 1574049387}
   - component: {fileID: 1574049386}
   - component: {fileID: 1574049390}
+  - component: {fileID: 1574049391}
   m_Layer: 5
   m_Name: Garrison
   m_TagString: Untagged
@@ -7595,6 +7620,18 @@ MonoBehaviour:
   - {fileID: 1846911044}
   - {fileID: 1544301204}
   - {fileID: 896258469}
+--- !u!114 &1574049391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574049384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1533c0e23448441fbba2dc84de5a1bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1638085206
 GameObject:
   m_ObjectHideFlags: 0
@@ -10356,6 +10393,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 119793579}
     m_Modifications:
+    - target: {fileID: 3232191420324999757, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4605674865255824089, guid: c4c8a4543ed4aff4980f2928989f756b, type: 3}
       propertyPath: m_Name
       value: UnitStack (1)
