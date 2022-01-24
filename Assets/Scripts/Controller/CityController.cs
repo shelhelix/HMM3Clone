@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Hmm3Clone.Config;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
@@ -9,6 +10,8 @@ using UnityEngine.Assertions;
 namespace Hmm3Clone.Controller {
 	public class CityController : IController {
 		public const string TestCityName = "TestCity";
+
+		const int InvalidIndex = -1;
 
 		readonly MapState _mapState;
 
@@ -36,7 +39,7 @@ namespace Hmm3Clone.Controller {
 			turnController.OnTurnChanged += OnTurnChanged;
 		}
 
-		public List<UnitStack> GetCityGarrison(string cityName) {
+		public UnitStack[] GetCityGarrison(string cityName) {
 			return GetCityState(cityName).Garrison;
 		}
 
@@ -60,11 +63,6 @@ namespace Hmm3Clone.Controller {
 		public Dictionary<UnitType, int> GetNotBoughtCityUnits(string cityName) {
 			return GetCityState(cityName).ReadyToBuyUnits;
 		}
-		
-		public UnitStack GetOrCreateGarrisonUnitStack(string cityName, UnitType unitType) {
-			var state = GetCityState(cityName);
-			return state.GetOrCreateUnitStack(unitType);
-		}
 
 		public int GetMaxAvailableToBuyUnitsAmount(string cityName, UnitType unitType) {
 			var unitsInCity = GetReadyToBuyUnitsAmount(cityName, unitType);
@@ -80,21 +78,70 @@ namespace Hmm3Clone.Controller {
 			return Mathf.Min(unitsInCity, unitsMinAmountByResources);
 		}
 
-		public bool HasStackForUnits(string cityName, UnitType unitType) {
+		public bool HasAvailableStackForUnits(string cityName, UnitType unitType) {
 			var state     = GetCityState(cityName);
-			var unitStack = state.GetUnitStack(unitType);
-			return unitStack != null || state.Garrison.Count < CityState.MaxUnitStacksCount;
-		}  
+			return FindStackInGarrison(state, unitType) != null || (GetFreeStackInGarrison(state) != InvalidIndex);
+		}
 
+		int GetFreeStackInGarrison(CityState state) {
+			for (var i = 0; i < state.Garrison.Length; i++) {
+				if (state.Garrison[i] == null) {
+					return i;
+				}
+			}
+			return -1;
+		}
+		
+		int GetUnitStackInGarrisonIndex(CityState state, UnitStack unitStack) {
+			for (var i = 0; i < state.Garrison.Length; i++) {
+				if (state.Garrison[i] == unitStack) {
+					return i;
+				}
+			}
+			return -1;
+		}
+
+		UnitStack FindStackInGarrison(CityState city, UnitType type) {
+			foreach (var unitStack in city.Garrison) {
+				if (unitStack != null && unitStack.Type == type) {
+					return unitStack;
+				}
+			}
+			return null;
+		}
+
+		bool HasStackInGarrison(CityState state, UnitStack stack) {
+			foreach (var unitStack in state.Garrison) {
+				if (unitStack == stack) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		UnitStack GetOrCreateUnitStack(CityState state, UnitType unitType) {
+			var unitStack = FindStackInGarrison(state, unitType);
+			if (unitStack != null) {
+				return unitStack;
+			}
+			var freeStackIndex = GetFreeStackInGarrison(state);
+			if (freeStackIndex == InvalidIndex) {
+				return null;
+			}
+			unitStack                      = new UnitStack {Type = unitType};
+			state.Garrison[freeStackIndex] = unitStack;
+			return unitStack;
+		}
+		
 		public void HireUnits(string cityName, UnitType unitType, int count) {
-			Assert.IsTrue(HasStackForUnits(cityName, unitType));
+			Assert.IsTrue(HasAvailableStackForUnits(cityName, unitType));
 			var cityState = GetCityState(cityName);
 			Assert.IsTrue(cityState.ReadyToBuyUnits.GetOrDefault(unitType) >= count);
 			var price = GetUnitHiringPrice(unitType, count);
 			Assert.IsTrue(price.TrueForAll(_resourceController.IsEnoughResource));
 			price.ForEach(_resourceController.SubResources);
 			// hire units
-			var unitStack = cityState.GetOrCreateUnitStack(unitType);
+			var unitStack = GetOrCreateUnitStack(cityState, unitType);
 			Assert.IsNotNull(unitStack);
 			cityState.ReadyToBuyUnits.IncrementAmount(unitType, -count);
 			unitStack.Amount += count;
@@ -159,6 +206,38 @@ namespace Hmm3Clone.Controller {
 		int GetReadyToBuyUnitsAmount(string cityName, UnitType unitType) {
 			var cityState = GetCityState(cityName);
 			return cityState.ReadyToBuyUnits.GetOrDefault(unitType);
+		}
+
+		public void TransformStacks(string cityName, int movingStackIndex, int stableStackIndex) {
+			if (movingStackIndex == stableStackIndex) {
+				return;
+			}
+			Assert.IsTrue(movingStackIndex >= 0 && stableStackIndex >= 0);
+			var state       = GetCityState(cityName);
+			var movingStack = state.Garrison[movingStackIndex];
+			var stableStack = state.Garrison[stableStackIndex];
+			if (stableStack == null || movingStack.Type != stableStack.Type ) {
+				SwapStacks(cityName, movingStackIndex, stableStackIndex);
+			}
+			else {
+				MergeStacks(cityName, movingStackIndex, stableStackIndex);
+			}
+		}
+
+		void SwapStacks(string cityName, int movingStackIndex, int stableStackIndex) {
+			var state = GetCityState(cityName);
+			(state.Garrison[movingStackIndex], state.Garrison[stableStackIndex]) = (state.Garrison[stableStackIndex], state.Garrison[movingStackIndex]);
+			OnGarrisonChanged?.Invoke();
+		}
+		
+
+		void MergeStacks(string cityName, int movingStackIndex, int stableStackIndex) {
+			var state       = GetCityState(cityName);
+			var stableStack = state.Garrison[stableStackIndex];
+			var movingStack = state.Garrison[movingStackIndex];
+			stableStack.Amount                  += movingStack.Amount;
+			state.Garrison[movingStackIndex] =  null;
+			OnGarrisonChanged?.Invoke();
 		}
 	}
 }

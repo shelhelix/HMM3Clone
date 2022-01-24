@@ -1,6 +1,6 @@
 namespace Hmm3Clone.State {
 	public enum UnitType {
-		Gnoll,
-		AdvancedGnoll,
+		Gnoll = 0,
+		AdvancedGnoll = 1,
 	}
 }

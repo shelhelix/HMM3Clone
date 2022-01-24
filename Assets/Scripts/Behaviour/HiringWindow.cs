@@ -56,7 +56,7 @@ namespace Hmm3Clone.Behaviour {
 
 		void OnHireClick() {
 			gameObject.SetActive(false);
-			if (_cityController.HasStackForUnits(_cityState.CityName, _unitToHire)) {
+			if (_cityController.HasAvailableStackForUnits(_cityState.CityName, _unitToHire)) {
 				_cityController.HireUnits(_cityState.CityName, _unitToHire, (int) UnitsAmount.value);
 			} else {
 				CantBuyScreen.SetActive(true);
