@@ -15,7 +15,8 @@ namespace Hmm3Clone.Controller {
 
 		readonly MapState _mapState;
 
-		readonly UnitInfoConfig _unitInfoConfig;
+		readonly UnitsController _unitsController;
+		
 		readonly BuildingConfig _buildingConfig;
 		
 		readonly ResourceController _resourceController;
@@ -23,7 +24,7 @@ namespace Hmm3Clone.Controller {
 		public event Action OnGarrisonChanged;
 		
 
-		public CityController(ResourceController resourceController, TurnController turnController, MapState mapState) {
+		public CityController(ResourceController resourceController, UnitsController unitsController, TurnController turnController, MapState mapState) {
 			_mapState = mapState;
 
 			// only for testing
@@ -34,7 +35,7 @@ namespace Hmm3Clone.Controller {
 
 			_resourceController = resourceController;
 			_buildingConfig     = ConfigLoader.LoadConfig<BuildingConfig>();
-			_unitInfoConfig     = ConfigLoader.LoadConfig<UnitInfoConfig>();
+			_unitsController    = unitsController;
 
 			turnController.OnTurnChanged += OnTurnChanged;
 		}
@@ -50,7 +51,7 @@ namespace Hmm3Clone.Controller {
 		}
 
 		public List<Resource> GetUnitHiringPrice(UnitType unitType, int amount = 1) {
-			var oneUnitPrice = _unitInfoConfig.GetUnitInfo(unitType).HirePrice;
+			var oneUnitPrice = _unitsController.GetUnitInfo(unitType).HirePrice;
 			var res          = new List<Resource>();
 			oneUnitPrice.ForEach(x => res.Add(new Resource(x.ResourceType, x.Amount * amount)));
 			return res;
@@ -132,18 +133,34 @@ namespace Hmm3Clone.Controller {
 			state.Garrison[freeStackIndex] = unitStack;
 			return unitStack;
 		}
+
+		public bool CanHireUnit(string cityName, UnitType unitType) {
+			var state = GetCityState(cityName);
+			foreach (var building in state.ErectedBuildings) {
+				var unitUpgradeInfo    = _buildingConfig.GetUnitsUpgradeInfo(building);
+				if (unitUpgradeInfo.Contains(unitType)) {
+					return true;
+				}
+				var unitProductionInfo = _buildingConfig.GetUnitProductionInfo(building);
+				if (unitProductionInfo.Exists(x => x.UnitType == unitType)) {
+					return true;
+				}
+			}
+			return false;
+		}
 		
 		public void HireUnits(string cityName, UnitType unitType, int count) {
 			Assert.IsTrue(HasAvailableStackForUnits(cityName, unitType));
-			var cityState = GetCityState(cityName);
-			Assert.IsTrue(cityState.ReadyToBuyUnits.GetOrDefault(unitType) >= count);
+			var cityState    = GetCityState(cityName);
+			var baseUnitForm = _unitsController.GetBaseUnitType(unitType);
+			Assert.IsTrue(cityState.ReadyToBuyUnits.GetOrDefault(baseUnitForm) >= count);
 			var price = GetUnitHiringPrice(unitType, count);
 			Assert.IsTrue(price.TrueForAll(_resourceController.IsEnoughResource));
 			price.ForEach(_resourceController.SubResources);
 			// hire units
 			var unitStack = GetOrCreateUnitStack(cityState, unitType);
 			Assert.IsNotNull(unitStack);
-			cityState.ReadyToBuyUnits.IncrementAmount(unitType, -count);
+			cityState.ReadyToBuyUnits.IncrementAmount(baseUnitForm, -count);
 			unitStack.Amount += count;
 			OnGarrisonChanged?.Invoke();
 		}
@@ -204,8 +221,10 @@ namespace Hmm3Clone.Controller {
 
 
 		int GetReadyToBuyUnitsAmount(string cityName, UnitType unitType) {
-			var cityState = GetCityState(cityName);
-			return cityState.ReadyToBuyUnits.GetOrDefault(unitType);
+			var cityState    = GetCityState(cityName);
+			// "ready to buy" is common amount for base and advanced form of units
+			var baseUnitForm = _unitsController.GetBaseUnitType(unitType);
+			return cityState.ReadyToBuyUnits.GetOrDefault(baseUnitForm);
 		}
 
 		public void TransformStacks(string cityName, int movingStackIndex, int stableStackIndex) {

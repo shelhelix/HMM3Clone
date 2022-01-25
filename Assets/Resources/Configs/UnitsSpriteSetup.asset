@@ -17,3 +17,7 @@ MonoBehaviour:
     GarrisonSprite: {fileID: -9018201502554008245, guid: 9c147dfe8d5a5e24ea2b23f59cf2700e, type: 3}
     CityOverviewSprite: {fileID: -7336506583639121623, guid: 9c147dfe8d5a5e24ea2b23f59cf2700e, type: 3}
     HireSprite: {fileID: -2058767053864619411, guid: 9c147dfe8d5a5e24ea2b23f59cf2700e, type: 3}
+  - UnitType: 1
+    GarrisonSprite: {fileID: -1444743157468721059, guid: 2a40ae59806110c49b4e6637b018ce91, type: 3}
+    CityOverviewSprite: {fileID: -6559686708292690519, guid: 2a40ae59806110c49b4e6637b018ce91, type: 3}
+    HireSprite: {fileID: 7809742094782523772, guid: 2a40ae59806110c49b4e6637b018ce91, type: 3}

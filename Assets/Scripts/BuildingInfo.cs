@@ -10,10 +10,11 @@ namespace Hmm3Clone {
 	public class BuildingInfo : ScriptableObject {
 		[Header("INGAME INFO")]
 		public BuildingType               Name;
-		public List<Resource>             BuildingCost;
-		public List<BuildingInfo>         Dependencies;
-		public List<Resource>             ResourcesProduction;
+		public List<Resource>                   BuildingCost;
+		public List<BuildingInfo>               Dependencies;
+		public List<Resource>                   ResourcesProduction;
 		public List<BuildingUnitProductionInfo> UnitProductionInfo;
+		public List<UnitType>                   CanUpgradeUnits;
 		[Header("SPRITES")]
 		public Sprite                 BuildingSprite;
 	}

@@ -23,6 +23,10 @@ namespace Hmm3Clone.Config {
 			return GetBuildingInfo(buildingType).UnitProductionInfo;
 		}
 
+		public List<UnitType> GetUnitsUpgradeInfo(BuildingType buildingType) {
+			return GetBuildingInfo(buildingType).CanUpgradeUnits;
+		}
+
 		public List<Resource> GetResourcesProductionInfo(BuildingType buildingType) {
 			return GetBuildingInfo(buildingType).ResourcesProduction;
 		}

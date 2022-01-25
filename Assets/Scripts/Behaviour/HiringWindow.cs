@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
@@ -11,33 +12,69 @@ using UnityEngine.UI;
 
 namespace Hmm3Clone.Behaviour {
 	public class HiringWindow : GameComponent {
-		[NotNull] public Button   HireButton;
-		[NotNull] public Slider   UnitsAmount;
-		[NotNull] public Image    UnitImage;		
-		[NotNull] public TMP_Text HeaderText;
-		[NotNull] public TMP_Text UnitsToRecruitText;
+		[NotNull] public Button           HireButton;
+		[NotNull] public Slider           UnitsAmount;
+		[NotNull] public HiringUnitAvatar DefaultUnitAvatar;
+		[NotNull] public HiringUnitAvatar AdvancedUnitAvatar;
+		[NotNull] public TMP_Text         HeaderText;
+		[NotNull] public TMP_Text         UnitsToRecruitText;
 
 		[NotNullOrEmpty] public List<ResourcePriceView> ResourcePriceViews;
 
 		[NotNull] public GameObject CantBuyScreen;
 
-		UnitType _unitToHire;
+		UnitType _defaultUnit;
+		UnitType _advancedUnit;
+
+		UnitType _selectedUnitToHire;
 
 		CityController   _cityController;
+		UnitsController  _unitsController;
 		UnitsSpriteSetup _unitsSpriteSetup;
 
 		CityState _cityState;
 		
 		void Start() {
-			_cityState      = ActiveData.Instance.GetData<CityState>();
-			_cityController = GameController.Instance.GetController<CityController>();
+			_cityState       = ActiveData.Instance.GetData<CityState>();
+			_cityController  = GameController.Instance.GetController<CityController>();
+			_unitsController = GameController.Instance.GetController<UnitsController>();
 			_unitsSpriteSetup = GameController.Instance.GetController<SpriteSetupController>()
 											  .GetSpriteSetup<UnitsSpriteSetup>();
 		}
 
+		void OnDisable() {
+			AdvancedUnitAvatar.gameObject.SetActive(true);
+			AdvancedUnitAvatar.SelectUnitButton.onClick.RemoveAllListeners();
+			DefaultUnitAvatar.SelectUnitButton.onClick.RemoveAllListeners();
+		}
+
 		public void Init(UnitType unitType) {
-			_unitToHire = unitType;
-			var maxAvailableUnits  = _cityController.GetMaxAvailableToBuyUnitsAmount(_cityState.CityName, _unitToHire);
+			_defaultUnit = unitType;
+
+			var unitAdvancedForm = _unitsController.GetAdvancedUnitType(_defaultUnit);
+			var canHireAdvanced  = _cityController.CanHireUnit(_cityState.CityName, unitAdvancedForm);
+			AdvancedUnitAvatar.gameObject.SetActive(canHireAdvanced);
+			if (canHireAdvanced) {
+				AdvancedUnitAvatar.gameObject.SetActive(true);
+				InitUnitAvatar(AdvancedUnitAvatar, unitAdvancedForm);
+			}
+			InitUnitAvatar(DefaultUnitAvatar, _defaultUnit);
+			
+			SwitchToUnit(canHireAdvanced ? _advancedUnit : _defaultUnit);
+
+			HeaderText.text = $"Recruit {_defaultUnit}";
+		
+			RefreshHiringUi();
+			
+			HireButton.onClick.RemoveAllListeners();
+			HireButton.onClick.AddListener(OnHireClick);
+			
+			CantBuyScreen.SetActive(false);
+			gameObject.SetActive(true);
+		}
+
+		void RefreshHiringUi() {	
+			var maxAvailableUnits = _cityController.GetMaxAvailableToBuyUnitsAmount(_cityState.CityName, _selectedUnitToHire);
 
 			UnitsAmount.minValue     = Mathf.Min(1, maxAvailableUnits);
 			UnitsAmount.maxValue     = maxAvailableUnits;
@@ -45,19 +82,22 @@ namespace Hmm3Clone.Behaviour {
 			UnitsAmount.wholeNumbers = true;
 			UnitsAmount.onValueChanged.AddListener(OnSliderValueChanged);
 			OnSliderValueChanged(UnitsAmount.value);
+		}
 
-			HeaderText.text  = $"Recruit {_unitToHire}";
-			UnitImage.sprite = _unitsSpriteSetup.GetHireSprite(_unitToHire);
-			HireButton.onClick.RemoveAllListeners();
-			HireButton.onClick.AddListener(OnHireClick);
-			CantBuyScreen.SetActive(false);
-			gameObject.SetActive(true);
+		void InitUnitAvatar(HiringUnitAvatar unitAvatar, UnitType unitType) {
+			unitAvatar.Avatar.sprite = _unitsSpriteSetup.GetHireSprite(unitType);
+			unitAvatar.SelectUnitButton.onClick.AddListener(() => SwitchToUnit(unitType));
+		}
+		
+		void SwitchToUnit(UnitType unitType) {
+			_selectedUnitToHire = unitType;
+			RefreshHiringUi();
 		}
 
 		void OnHireClick() {
 			gameObject.SetActive(false);
-			if (_cityController.HasAvailableStackForUnits(_cityState.CityName, _unitToHire)) {
-				_cityController.HireUnits(_cityState.CityName, _unitToHire, (int) UnitsAmount.value);
+			if (_cityController.HasAvailableStackForUnits(_cityState.CityName, _selectedUnitToHire)) {
+				_cityController.HireUnits(_cityState.CityName, _selectedUnitToHire, (int) UnitsAmount.value);
 			} else {
 				CantBuyScreen.SetActive(true);
 			}
@@ -65,7 +105,7 @@ namespace Hmm3Clone.Behaviour {
 
 		void OnSliderValueChanged(float value) {
 			var unitsAmount = (int) value;
-			var resultPrice = _cityController.GetUnitHiringPrice(_unitToHire, unitsAmount);
+			var resultPrice = _cityController.GetUnitHiringPrice(_selectedUnitToHire, unitsAmount);
 			Assert.IsTrue(ResourcePriceViews.Count >= resultPrice.Count);
 			for (var index = 0; index < ResourcePriceViews.Count; index++) {
 				var view = ResourcePriceViews[index];

@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c6665cb40f043fc9506e3a7ec51a1a1, type: 3}
-  m_Name: UnitInfoConfig
+  m_Script: {fileID: 11500000, guid: 17ce6f195369490ebb63123273d72bd6, type: 3}
+  m_Name: Gnoll
   m_EditorClassIdentifier: 
-  Units:
-  - {fileID: 11400000, guid: e4145061d40a0654883f9875e39ef594, type: 2}
-  - {fileID: 11400000, guid: 32bd45ab834eeba40a5868916c68f487, type: 2}
+  UnitType: 0
+  HirePrice:
+  - ResourceType: 0
+    Amount: 50
+  UnitAdvancedForm: {fileID: 11400000, guid: 32bd45ab834eeba40a5868916c68f487, type: 2}

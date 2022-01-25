@@ -16,17 +16,24 @@ namespace Hmm3Clone.Behaviour {
 		[NotNull(false)] public HiringWindow HiringWindow;
 
 		UnitsSpriteSetup _spriteSetup;
+		UnitsController  _unitsController;
+		CityController   _cityController;
+		CityState        _state;
 		
 		void Start() {
 			_spriteSetup = GameController.Instance.GetController<SpriteSetupController>()
 										 .GetSpriteSetup<UnitsSpriteSetup>();
+			_unitsController = GameController.Instance.GetController<UnitsController>();
+			_cityController  = GameController.Instance.GetController<CityController>();
+			_state           = ActiveData.Instance.GetData<CityState>();
 		}
 
 		public void Init(UnitType unitType, int unitCount) {
 			AmountText.text = unitCount.ToString();
 			Button.onClick.RemoveAllListeners();
 			Button.onClick.AddListener(() => HiringWindow.Init(unitType));
-			UnitImage.sprite = _spriteSetup.GetCityOverviewSprite(unitType);
+			var advancedForm = _unitsController.GetAdvancedUnitType(unitType);
+			UnitImage.sprite = _spriteSetup.GetCityOverviewSprite(_cityController.CanHireUnit(_state.CityName, advancedForm) ? advancedForm : unitType);
 			SetActiveInternalObjects(true);
 		}
 
