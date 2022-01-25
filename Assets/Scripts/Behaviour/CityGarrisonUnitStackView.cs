@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Hmm3Clone.Behaviour {
-	public class CityGarrisonUnitStackView : GameComponent, IBeginDragHandler, IDragHandler, IEndDragHandler {
+	public class CityGarrisonUnitStackView : GameComponent, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler {
 		[NotNull] public Image    Image;
 		[NotNull] public TMP_Text AmountText;
 
@@ -62,6 +62,10 @@ namespace Hmm3Clone.Behaviour {
 			GarrisonUnitDragger.Instance.OnGarrisonUnitEndDrag(eventData);
 			MovableRoot.position = _startPosition;
 			Canvas.sortingOrder  = _startSortingOrder;
+		}
+
+		public void OnPointerClick(PointerEventData eventData) {
+			GarrisonUnitSplitter.Instance.OnUnitStackSelected(this);
 		}
 	}
 }

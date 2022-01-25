@@ -30,6 +30,8 @@ namespace Hmm3Clone.Behaviour {
 
 		int _draggingStackIndex;
 
+		public bool CanDrag;
+		
 		public void OnGarrisonUnitBeginDrag(int stackIndex) {
 			_draggingStackIndex = stackIndex;
 		}

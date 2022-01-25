@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Hmm3Clone.Config;
+using Hmm3Clone.Gameplay;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
 using UnityEngine;
@@ -40,8 +41,8 @@ namespace Hmm3Clone.Controller {
 			turnController.OnTurnChanged += OnTurnChanged;
 		}
 
-		public UnitStack[] GetCityGarrison(string cityName) {
-			return GetCityState(cityName).Garrison;
+		public Army GetCityGarrison(string cityName) {
+			return new Army(GetCityState(cityName).Garrison);
 		}
 
 		public CityState GetCityState(string cityName) {
@@ -55,6 +56,12 @@ namespace Hmm3Clone.Controller {
 			var res          = new List<Resource>();
 			oneUnitPrice.ForEach(x => res.Add(new Resource(x.ResourceType, x.Amount * amount)));
 			return res;
+		}
+
+		public void SplitStacks(string cityName, int sourceStackIndex, int dstStackIndex) {
+			var army = GetCityGarrison(cityName);
+			army.SplitStack(sourceStackIndex, dstStackIndex);
+			OnGarrisonChanged?.Invoke();
 		}
 		
 		public Dictionary<ResourceType, int> GetCityIncome(string cityName) {
@@ -232,30 +239,12 @@ namespace Hmm3Clone.Controller {
 				return;
 			}
 			Assert.IsTrue(movingStackIndex >= 0 && stableStackIndex >= 0);
-			var state       = GetCityState(cityName);
-			var movingStack = state.Garrison[movingStackIndex];
-			var stableStack = state.Garrison[stableStackIndex];
-			if (stableStack == null || movingStack.Type != stableStack.Type ) {
-				SwapStacks(cityName, movingStackIndex, stableStackIndex);
+			var garrison    = GetCityGarrison(cityName);
+			if (garrison.AreMergeableStacks(movingStackIndex, stableStackIndex)) {
+				garrison.MergeStack(movingStackIndex, stableStackIndex);
+			} else {
+				garrison.SwapStack(movingStackIndex, stableStackIndex);	
 			}
-			else {
-				MergeStacks(cityName, movingStackIndex, stableStackIndex);
-			}
-		}
-
-		void SwapStacks(string cityName, int movingStackIndex, int stableStackIndex) {
-			var state = GetCityState(cityName);
-			(state.Garrison[movingStackIndex], state.Garrison[stableStackIndex]) = (state.Garrison[stableStackIndex], state.Garrison[movingStackIndex]);
-			OnGarrisonChanged?.Invoke();
-		}
-		
-
-		void MergeStacks(string cityName, int movingStackIndex, int stableStackIndex) {
-			var state       = GetCityState(cityName);
-			var stableStack = state.Garrison[stableStackIndex];
-			var movingStack = state.Garrison[movingStackIndex];
-			stableStack.Amount                  += movingStack.Amount;
-			state.Garrison[movingStackIndex] =  null;
 			OnGarrisonChanged?.Invoke();
 		}
 	}

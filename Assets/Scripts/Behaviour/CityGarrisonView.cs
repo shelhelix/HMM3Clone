@@ -26,16 +26,16 @@ namespace Hmm3Clone.Behaviour {
 		
 		public void Refresh() {
 			var garrisonUnits = _cityController.GetCityGarrison(_cityState.CityName); 
-			Assert.IsTrue(CityUnitStacks.Count >= garrisonUnits.Length);
+			Assert.IsTrue(CityUnitStacks.Count >= garrisonUnits.ArmyLenght);
 			for (var viewIndex = 0; viewIndex < CityUnitStacks.Count; viewIndex++) {
-				if (viewIndex < garrisonUnits.Length) {
-					var unit = garrisonUnits[viewIndex];
+				if (viewIndex < garrisonUnits.ArmyLenght) {
+					var unit = garrisonUnits.GetStack(viewIndex);
 					if (unit != null) {
 						CityUnitStacks[viewIndex].InitView(unit);
 					}
 				}
 				CityUnitStacks[viewIndex].InitStackIndex(viewIndex);
-				CityUnitStacks[viewIndex].SetActive(viewIndex < garrisonUnits.Length && garrisonUnits[viewIndex] != null);
+				CityUnitStacks[viewIndex].SetActive(viewIndex < garrisonUnits.ArmyLenght && !garrisonUnits.IsStackEmpty(viewIndex));
 			}
 		}
 	}
