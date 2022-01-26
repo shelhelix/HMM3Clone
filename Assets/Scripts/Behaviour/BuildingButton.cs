@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
@@ -15,52 +16,74 @@ namespace Hmm3Clone.Behaviour {
         [NotNull] public Button Button;
         [NotNull] public Image FrameBackground;
         [NotNull] public Image BuildingPreview;
-        
-        ResourceController _resourceController;
+
+        CityController _cityController;
+        TurnController _turnController;
 
         CityState _state;
+
+        BuildingInfo _activeBuildingInfo;
+
+        bool _isInit;
         
-        public void Start() {
-            _state = ActiveData.Instance.GetData<CityState>();
-            _resourceController = GameController.Instance.GetController<ResourceController>();
+        void Start() {
+            if (_isInit) {
+                return;
+            }
             
-            InitView();
+            _state          = ActiveData.Instance.GetData<CityState>();
+            _cityController = GameController.Instance.GetController<CityController>();
+            _turnController = GameController.Instance.GetController<TurnController>();
             Button.onClick.AddListener(ErectBuilding);
+            _cityController.OnBuildingsChanged += Refresh;
+            _turnController.OnTurnChanged      += OnTurnChanged;
+
+            _isInit = true;
         }
 
-        public void OnDestroy() {
+        void OnDestroy() {
             Button.onClick.RemoveAllListeners();
+            _cityController.OnBuildingsChanged -= Refresh;
+            _turnController.OnTurnChanged      -= OnTurnChanged;
+        }
+
+        void OnTurnChanged(int turn) {
+            Init();
+        }
+
+        void Refresh() {
+            Init();
+        }
+
+        void OnEnable() {
+            if (!_isInit) {
+                Start();
+            }
+            Init();
+        }
+
+        void Init() {
+            _activeBuildingInfo = GetActiveBuildingInfo();
+            InitView();
         }
 
         void InitView() {
-            var activeBuildingInfo = GetActiveBuildingInfo();
-            BuildingName.text = activeBuildingInfo.Name.ToString();
-            FrameBackground.color = _state.IsErected(activeBuildingInfo.Name)
+            BuildingName.text = _activeBuildingInfo.Name.ToString();
+            FrameBackground.color = _cityController.IsErected(_state.CityName, _activeBuildingInfo.Name)
                 ? Color.yellow
-                : CanErect(activeBuildingInfo, _state)
+                : _cityController.CanErectBuilding(_state.CityName, _activeBuildingInfo.Name)
                     ? Color.green
                     : Color.red;
-            BuildingPreview.sprite = activeBuildingInfo.BuildingSprite;
-        }
-        
-        bool CanErect(BuildingInfo buildingInfo, CityState state) {
-            return 
-                buildingInfo.BuildingCost.TrueForAll(_resourceController.IsEnoughResource)
-                && buildingInfo.Dependencies.TrueForAll(x => state.IsErected(x.Name));
+            BuildingPreview.sprite = _activeBuildingInfo.BuildingSprite;
         }
 
         void ErectBuilding() {
-            var activeBuildingInfo = GetActiveBuildingInfo();
-            foreach (var res in activeBuildingInfo.BuildingCost) {
-                _resourceController.SubResources(res);
-            }
-            _state.ErectedBuildings.Add(activeBuildingInfo.Name);
-            InitView();
+            _cityController.ErectBuilding(_state.CityName, _activeBuildingInfo.Name);
         }
         
         BuildingInfo GetActiveBuildingInfo() {
             foreach (var building in Buildings) {
-                if (!_state.IsErected(building.Name)) {
+                if (!_cityController.IsErected(_state.CityName, building.Name)) {
                     return building;
                 }
             }

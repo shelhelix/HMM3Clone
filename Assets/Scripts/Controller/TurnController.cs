@@ -13,7 +13,6 @@ namespace Hmm3Clone.Controller {
 			_state = state;
 		}
 
-
 		public void EndTurn() {
 			_state.Turn++;
 			OnTurnChanged?.Invoke(_state.Turn);

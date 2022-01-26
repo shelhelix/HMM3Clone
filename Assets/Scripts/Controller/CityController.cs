@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Hmm3Clone.Config;
 using Hmm3Clone.Gameplay;
 using Hmm3Clone.State;
@@ -23,6 +22,8 @@ namespace Hmm3Clone.Controller {
 		readonly ResourceController _resourceController;
 
 		public event Action OnGarrisonChanged;
+
+		public event Action OnBuildingsChanged;
 		
 
 		public CityController(ResourceController resourceController, UnitsController unitsController, TurnController turnController, MapState mapState) {
@@ -89,6 +90,39 @@ namespace Hmm3Clone.Controller {
 		public bool HasAvailableStackForUnits(string cityName, UnitType unitType) {
 			var state     = GetCityState(cityName);
 			return FindStackInGarrison(state, unitType) != null || (GetFreeStackInGarrison(state) != InvalidIndex);
+		}
+
+		public bool IsErected(string cityName, BuildingType buildingType) {
+			var cityState = GetCityState(cityName);
+			return cityState.IsErected(buildingType);
+		}
+		
+		public bool CanErectBuilding(string cityName, BuildingType buildingType) {
+			var cityState    = GetCityState(cityName);
+			var buildingInfo = GetBuildingInfo(buildingType);
+			return buildingInfo.BuildingCost.TrueForAll(_resourceController.IsEnoughResource)
+				   && buildingInfo.Dependencies.TrueForAll(x => cityState.IsErected(x.Name))
+				   && cityState.CanErectBuilding;
+		}
+		
+		public void ErectBuilding(string cityName, BuildingType buildingType) {
+			var cityState = GetCityState(cityName);
+			if (!CanErectBuilding(cityName, buildingType)) {
+				return;
+			}
+
+			var buildingInfo = GetBuildingInfo(buildingType);
+			foreach (var res in buildingInfo.BuildingCost) {
+				_resourceController.SubResources(res);
+			}
+			
+			cityState.ErectBuilding(buildingType);
+			cityState.CanErectBuilding = false;
+			OnBuildingsChanged?.Invoke();
+		}
+
+		BuildingInfo GetBuildingInfo(BuildingType buildingType) {
+			return _buildingConfig.Buildings.Find(x => x.Name == buildingType);
 		}
 
 		int GetFreeStackInGarrison(CityState state) {
@@ -187,6 +221,7 @@ namespace Hmm3Clone.Controller {
 			if (IsFirstDayOfTheWeek(currentTurn)) {
 				ProduceUnits();
 			}
+			_mapState.Cities.ForEach(x => x.CanErectBuilding = true);	
  		}
 
 		bool IsFirstDayOfTheWeek(int turnCount) {
@@ -225,7 +260,6 @@ namespace Hmm3Clone.Controller {
 			}
 			return accumulatedCityProduction;
 		}
-
 
 		int GetReadyToBuyUnitsAmount(string cityName, UnitType unitType) {
 			var cityState    = GetCityState(cityName);
