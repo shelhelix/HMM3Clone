@@ -28,12 +28,12 @@ namespace Hmm3Clone.Behaviour {
 			}
 		}
 
-		int _draggingStackIndex;
+		CityGarrisonUnitStackView _sourceStack;
 
 		public bool CanDrag;
 		
-		public void OnGarrisonUnitBeginDrag(int stackIndex) {
-			_draggingStackIndex = stackIndex;
+		public void OnGarrisonUnitBeginDrag(CityGarrisonUnitStackView source) {
+			_sourceStack = source;
 		}
 
 		public void OnGarrisonUnitEndDrag(PointerEventData data) {
@@ -42,9 +42,10 @@ namespace Hmm3Clone.Behaviour {
 			var garrisonUnitsViews = res.Select(x => x.gameObject.GetComponent<CityGarrisonUnitStackView>()).Where(x => x).ToList();
 			if (garrisonUnitsViews.Count > 0) {
 				var otherUnitStackView = garrisonUnitsViews[0];
-				_cityController.TransformStacks(_activeCity.CityName, _draggingStackIndex, otherUnitStackView.StackIndex);
+				_cityController.TransformStacks(_activeCity.CityName, _sourceStack.Index, otherUnitStackView.Index);
 			}
-			_draggingStackIndex = -1;
+
+			_sourceStack = null;
 		}
 	}
 }

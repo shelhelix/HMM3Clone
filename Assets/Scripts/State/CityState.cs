@@ -11,7 +11,11 @@ namespace Hmm3Clone.State {
 		public List<BuildingType>        ErectedBuildings = new List<BuildingType>();
 		public Dictionary<UnitType, int> ReadyToBuyUnits  = new Dictionary<UnitType, int>();
 		public UnitStack[]               Garrison         = new UnitStack[MaxUnitStacksCount];
-		public bool                      CanErectBuilding;
+
+		public string HeroInGarrison;
+		public string GuestHero;
+
+		public bool CanErectBuilding;
 
 		public CityState() {
 			CityName = "NoName";

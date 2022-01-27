@@ -1,8 +1,11 @@
+using System;
 using Hmm3Clone.State;
 using UnityEngine.Assertions;
 
 namespace Hmm3Clone.Gameplay {
 	public class Army {
+		public const int InvalidStackIndex = -1;
+		
 		UnitStack[] _stacks;
 		
 		public int ArmyLenght => _stacks.Length;
@@ -21,40 +24,88 @@ namespace Hmm3Clone.Gameplay {
 			return _stacks[stackIndex];
 		}
 
-		public bool AreMergeableStacks(int stackStartIndex, int stackEndIndex) {
-			Assert.IsTrue(stackStartIndex >= 0);
-			Assert.IsTrue(stackEndIndex   >= 0);
-			var sourceStack = GetStack(stackStartIndex);
-			var dstStack    = GetStack(stackEndIndex);
-			return (sourceStack != null) && (dstStack != null) && sourceStack.Type == dstStack.Type;
+		public bool AreMergeableStacks(int sourceStackIndex, Army otherArmy, int destStackIndex) {
+			Assert.IsNotNull(otherArmy);
+			var sourceStack = GetStack(sourceStackIndex);
+			var destStack   = otherArmy.GetStack(destStackIndex);
+			return AreMergeableStacks(sourceStack, destStack);
+		}
+
+		public void SwapStacks(int sourceStackIndex, Army otherArmy, int destStackIndex) {
+			Assert.IsNotNull(otherArmy);
+			(_stacks[sourceStackIndex], otherArmy._stacks[destStackIndex]) = (otherArmy._stacks[destStackIndex], _stacks[sourceStackIndex]);
+		}
+
+		public UnitStack FindStackWithUnits(UnitType unitType) {
+			foreach (var unitStack in _stacks) {
+				if (unitStack != null && unitStack.Type == unitType) {
+					return unitStack;
+				}
+			}
+			return null;
 		}
 		
-		public void SwapStack(int stackStartIndex, int stackEndIndex) {
-			(_stacks[stackEndIndex], _stacks[stackStartIndex]) = (_stacks[stackStartIndex], _stacks[stackEndIndex]);
+		public int GetFreeStackIndex() {
+			for (var i = 0; i < _stacks.Length; i++) {
+				if (_stacks[i] == null) {
+					return i;
+				}
+			}
+			return InvalidStackIndex;
 		}
-		
-		public void MergeStack(int stackFromSplitIndex, int stackToSplitIndex) {
-			if (!AreMergeableStacks(stackFromSplitIndex, stackToSplitIndex)) {
+
+		public UnitStack GetOrCreateUnitStack(UnitType unitType) {
+			var existedStack = FindStackWithUnits(unitType);
+			if (existedStack != null) {
+				return existedStack;
+			}
+
+			var freeStackIndex = GetFreeStackIndex();
+			if (freeStackIndex == InvalidStackIndex) {
+				return null;
+			}
+			var res = new UnitStack { Type = unitType};
+			_stacks[freeStackIndex] = res;
+			return res;
+		}
+
+		public void MergeStack(int sourceStackIndex, Army otherArmy, int destStackIndex) {
+			Assert.IsNotNull(otherArmy);
+			var sourceStack = GetStack(sourceStackIndex);
+			var destStack   = otherArmy.GetStack(destStackIndex);
+			Assert.IsNotNull(sourceStack);
+			Assert.IsNotNull(destStack);
+			if (!AreMergeableStacks(sourceStack, destStack)) {
 				return;
 			}
-			Assert.IsNotNull(_stacks[stackToSplitIndex]);
-			Assert.IsNotNull(_stacks[stackFromSplitIndex]);
-			var sourceStack = _stacks[stackFromSplitIndex];
-			var dstStack    = _stacks[stackToSplitIndex];
-			dstStack.Amount              += sourceStack.Amount;
-			_stacks[stackFromSplitIndex] =  null;
+			destStack.Amount += sourceStack.Amount;
+			RemoveStack(sourceStackIndex);
 		}
 		
 		public void SplitStack(int stackFromSplitIndex, int stackToSplitIndex) {
-			Assert.IsNull(_stacks[stackToSplitIndex]);
-			Assert.IsNotNull(_stacks[stackFromSplitIndex]);
-			var sourceStack         = _stacks[stackFromSplitIndex];
+			SplitStack(stackFromSplitIndex, this, stackToSplitIndex);
+		}
+
+		public void SplitStack(int sourceStackIndex, Army otherArmy, int destStackIndex) {
+			Assert.IsNotNull(otherArmy);
+			var sourceStack = GetStack(sourceStackIndex);
+			var destStack   = otherArmy.GetStack(destStackIndex);
+			Assert.IsNotNull(sourceStack);
+			Assert.IsNull(destStack);
 			var splittedStackAmount = sourceStack.Amount / 2;
 			if (splittedStackAmount == 0) {
 				return;
 			}
-			_stacks[stackToSplitIndex] =  new UnitStack(sourceStack.Type, splittedStackAmount);
-			sourceStack.Amount         -= _stacks[stackToSplitIndex].Amount;
+			otherArmy._stacks[destStackIndex] =  new UnitStack(sourceStack.Type, splittedStackAmount);
+			sourceStack.Amount                -= otherArmy._stacks[destStackIndex].Amount;
+		}
+
+		void RemoveStack(int stackIndex) {
+			_stacks[stackIndex] = null;
+		} 
+
+		bool AreMergeableStacks(UnitStack source, UnitStack dest) {
+			return source != null && dest != null && source.Type == dest.Type;
 		}
 	}
 }

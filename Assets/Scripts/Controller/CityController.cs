@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Hmm3Clone.Behaviour;
 using Hmm3Clone.Config;
 using Hmm3Clone.Gameplay;
 using Hmm3Clone.State;
@@ -11,30 +12,31 @@ namespace Hmm3Clone.Controller {
 	public class CityController : IController {
 		public const string TestCityName = "TestCity";
 
-		const int InvalidIndex = -1;
 
 		readonly MapState _mapState;
 
-		readonly UnitsController _unitsController;
+		readonly UnitsController    _unitsController;
+		readonly ResourceController _resourceController;
+		readonly HeroController     _heroController;
 		
 		readonly BuildingConfig _buildingConfig;
 		
-		readonly ResourceController _resourceController;
 
-		public event Action OnGarrisonChanged;
-
+		public event Action OnArmyChanged;
 		public event Action OnBuildingsChanged;
 		
 
-		public CityController(ResourceController resourceController, UnitsController unitsController, TurnController turnController, MapState mapState) {
+		public CityController(ResourceController resourceController, UnitsController unitsController, HeroController heroController, TurnController turnController, MapState mapState) {
 			_mapState = mapState;
 
-			// only for testing
+			// TODO: remove after testing. This code is only for testing 
 			if (!_mapState.Cities.Exists(x => x.CityName == TestCityName)) {
 				var city = CreateCityState(TestCityName);
+				city.GuestHero = HeroController.TestHeroName;
 				_mapState.Cities.Add(city);
 			}
 
+			_heroController     = heroController;
 			_resourceController = resourceController;
 			_buildingConfig     = ConfigLoader.LoadConfig<BuildingConfig>();
 			_unitsController    = unitsController;
@@ -43,7 +45,13 @@ namespace Hmm3Clone.Controller {
 		}
 
 		public Army GetCityGarrison(string cityName) {
-			return new Army(GetCityState(cityName).Garrison);
+			var state = GetCityState(cityName);
+			if (string.IsNullOrEmpty(state.HeroInGarrison)) {
+				return new Army(GetCityState(cityName).Garrison);
+			}
+			var hero = _heroController.GetHero(state.HeroInGarrison);
+			Assert.IsNotNull(hero, $"Can't find hero with name {state.HeroInGarrison}");
+			return hero.Army;
 		}
 
 		public CityState GetCityState(string cityName) {
@@ -59,10 +67,15 @@ namespace Hmm3Clone.Controller {
 			return res;
 		}
 
-		public void SplitStacks(string cityName, int sourceStackIndex, int dstStackIndex) {
-			var army = GetCityGarrison(cityName);
-			army.SplitStack(sourceStackIndex, dstStackIndex);
-			OnGarrisonChanged?.Invoke();
+		public bool TrySplitStacks(string cityName, CityUnitStackIndex sourceIndex, CityUnitStackIndex destIndex) {
+			var sourceArmy = GetArmy(cityName, sourceIndex.ArmySource);
+			var destArmy   = GetArmy(cityName, destIndex.ArmySource);
+			if (!destArmy.IsStackEmpty(destIndex.StackIndex)) {
+				return false;
+			}
+			sourceArmy.SplitStack(sourceIndex.StackIndex, destArmy, destIndex.StackIndex);
+			OnArmyChanged?.Invoke();
+			return true;
 		}
 		
 		public Dictionary<ResourceType, int> GetCityIncome(string cityName) {
@@ -88,8 +101,8 @@ namespace Hmm3Clone.Controller {
 		}
 
 		public bool HasAvailableStackForUnits(string cityName, UnitType unitType) {
-			var state     = GetCityState(cityName);
-			return FindStackInGarrison(state, unitType) != null || (GetFreeStackInGarrison(state) != InvalidIndex);
+			var garrison = GetCityGarrison(cityName);
+			return garrison.FindStackWithUnits(unitType) != null || garrison.GetFreeStackIndex() != Army.InvalidStackIndex;
 		}
 
 		public bool IsErected(string cityName, BuildingType buildingType) {
@@ -125,56 +138,6 @@ namespace Hmm3Clone.Controller {
 			return _buildingConfig.Buildings.Find(x => x.Name == buildingType);
 		}
 
-		int GetFreeStackInGarrison(CityState state) {
-			for (var i = 0; i < state.Garrison.Length; i++) {
-				if (state.Garrison[i] == null) {
-					return i;
-				}
-			}
-			return -1;
-		}
-		
-		int GetUnitStackInGarrisonIndex(CityState state, UnitStack unitStack) {
-			for (var i = 0; i < state.Garrison.Length; i++) {
-				if (state.Garrison[i] == unitStack) {
-					return i;
-				}
-			}
-			return -1;
-		}
-
-		UnitStack FindStackInGarrison(CityState city, UnitType type) {
-			foreach (var unitStack in city.Garrison) {
-				if (unitStack != null && unitStack.Type == type) {
-					return unitStack;
-				}
-			}
-			return null;
-		}
-
-		bool HasStackInGarrison(CityState state, UnitStack stack) {
-			foreach (var unitStack in state.Garrison) {
-				if (unitStack == stack) {
-					return true;
-				}
-			}
-			return false;
-		}
-
-		UnitStack GetOrCreateUnitStack(CityState state, UnitType unitType) {
-			var unitStack = FindStackInGarrison(state, unitType);
-			if (unitStack != null) {
-				return unitStack;
-			}
-			var freeStackIndex = GetFreeStackInGarrison(state);
-			if (freeStackIndex == InvalidIndex) {
-				return null;
-			}
-			unitStack                      = new UnitStack {Type = unitType};
-			state.Garrison[freeStackIndex] = unitStack;
-			return unitStack;
-		}
-
 		public bool CanHireUnit(string cityName, UnitType unitType) {
 			var state = GetCityState(cityName);
 			foreach (var building in state.ErectedBuildings) {
@@ -199,11 +162,12 @@ namespace Hmm3Clone.Controller {
 			Assert.IsTrue(price.TrueForAll(_resourceController.IsEnoughResource));
 			price.ForEach(_resourceController.SubResources);
 			// hire units
-			var unitStack = GetOrCreateUnitStack(cityState, unitType);
+			var garrison  = GetCityGarrison(cityName);
+			var unitStack = garrison.GetOrCreateUnitStack(unitType);
 			Assert.IsNotNull(unitStack);
 			cityState.ReadyToBuyUnits.IncrementAmount(baseUnitForm, -count);
 			unitStack.Amount += count;
-			OnGarrisonChanged?.Invoke();
+			OnArmyChanged?.Invoke();
 		}
 		
 		Dictionary<UnitType, int> GetUnitProductionAmount(string cityName) {
@@ -268,18 +232,36 @@ namespace Hmm3Clone.Controller {
 			return cityState.ReadyToBuyUnits.GetOrDefault(baseUnitForm);
 		}
 
-		public void TransformStacks(string cityName, int movingStackIndex, int stableStackIndex) {
-			if (movingStackIndex == stableStackIndex) {
+		public void TransformStacks(string cityName, CityUnitStackIndex sourceStackIndex, CityUnitStackIndex destStackIndex) {
+			if (sourceStackIndex.Equals(destStackIndex)) {
 				return;
 			}
-			Assert.IsTrue(movingStackIndex >= 0 && stableStackIndex >= 0);
-			var garrison    = GetCityGarrison(cityName);
-			if (garrison.AreMergeableStacks(movingStackIndex, stableStackIndex)) {
-				garrison.MergeStack(movingStackIndex, stableStackIndex);
+
+			var oneArmy   = GetArmy(cityName, sourceStackIndex.ArmySource);
+			var otherArmy = GetArmy(cityName, destStackIndex.ArmySource);
+			
+			if (oneArmy.AreMergeableStacks(sourceStackIndex.StackIndex, otherArmy, destStackIndex.StackIndex)) {
+				oneArmy.MergeStack(sourceStackIndex.StackIndex, otherArmy, destStackIndex.StackIndex);
 			} else {
-				garrison.SwapStack(movingStackIndex, stableStackIndex);	
+				oneArmy.SwapStacks(sourceStackIndex.StackIndex, otherArmy, destStackIndex.StackIndex);	
 			}
-			OnGarrisonChanged?.Invoke();
+			OnArmyChanged?.Invoke();
 		}
+
+		public string GetGuestHeroName(string cityName) {
+			var cityState = GetCityState(cityName);
+			return cityState.GuestHero;
+		}
+
+		Army GetArmy(string cityName, ArmySource source) {
+			return (source == ArmySource.Garrison)
+					   ? GetCityGarrison(cityName)
+					   : GetGuestHeroArmy(cityName);
+		}
+
+		Army GetGuestHeroArmy(string cityName) {
+			var guestHeroName = GetCityState(cityName).GuestHero;
+			return string.IsNullOrEmpty(guestHeroName) ? null : _heroController.GetHero(guestHeroName).Army;
+		} 
 	}
 }

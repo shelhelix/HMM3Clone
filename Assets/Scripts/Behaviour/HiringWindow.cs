@@ -33,13 +33,20 @@ namespace Hmm3Clone.Behaviour {
 		UnitsSpriteSetup _unitsSpriteSetup;
 
 		CityState _cityState;
+
+		bool _inited;
 		
 		void Start() {
+			if (_inited) {
+				return;
+			}
+			
 			_cityState       = ActiveData.Instance.GetData<CityState>();
 			_cityController  = GameController.Instance.GetController<CityController>();
 			_unitsController = GameController.Instance.GetController<UnitsController>();
 			_unitsSpriteSetup = GameController.Instance.GetController<SpriteSetupController>()
 											  .GetSpriteSetup<UnitsSpriteSetup>();
+			_inited = true;
 		}
 
 		void OnDisable() {
@@ -49,6 +56,7 @@ namespace Hmm3Clone.Behaviour {
 		}
 
 		public void Init(UnitType unitType) {
+			Start();
 			_defaultUnit = unitType;
 
 			var unitAdvancedForm = _unitsController.GetAdvancedUnitType(_defaultUnit);
