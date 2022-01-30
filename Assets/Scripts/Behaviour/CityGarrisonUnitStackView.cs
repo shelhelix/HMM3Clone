@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Hmm3Clone.Behaviour {
-	public class CityGarrisonUnitStackView : BaseDraggableUiItem<CityGarrisonUnitStackView, GarrisonUnitDragger>, IPointerClickHandler {
+	public class CityGarrisonUnitStackView : BaseDraggableUiItem<CityGarrisonUnitStackView, GarrisonUnitDragger> {
 		[NotNull] public Image    Image;
 		[NotNull] public TMP_Text AmountText;
 
@@ -41,10 +41,6 @@ namespace Hmm3Clone.Behaviour {
 
 		public void SetActive(bool isActive) {
 			MovableRoot.gameObject.SetActive(isActive);
-		}
-
-		public void OnPointerClick(PointerEventData eventData) {
-			GarrisonUnitSplitter.Instance.OnUnitStackSelected(this);
 		}
 	}
 }

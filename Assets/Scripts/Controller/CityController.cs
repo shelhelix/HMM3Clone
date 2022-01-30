@@ -68,6 +68,10 @@ namespace Hmm3Clone.Controller {
 		}
 
 		public bool TrySplitStacks(string cityName, CityUnitStackIndex sourceIndex, CityUnitStackIndex destIndex) {
+			if (sourceIndex.Equals(destIndex)) {
+				return true;
+			}
+			
 			var sourceArmy = GetArmy(cityName, sourceIndex.ArmySource);
 			var destArmy   = GetArmy(cityName, destIndex.ArmySource);
 			Assert.IsNotNull(sourceArmy, $"Source army from {sourceIndex.ArmySource} {sourceIndex.StackIndex} is null");
@@ -75,6 +79,7 @@ namespace Hmm3Clone.Controller {
 				return false;
 			}
 			if (!destArmy.IsStackEmpty(destIndex.StackIndex)) {
+				Debug.LogWarning("Can't split units between two used stacks yet");
 				return false;
 			}
 			sourceArmy.SplitStack(sourceIndex.StackIndex, destArmy, destIndex.StackIndex);
