@@ -8,8 +8,6 @@ namespace Hmm3Clone.Behaviour {
 		
 		[HideInInspector]
 		public ArmySource Source;
-
-		public bool IsActive => MovableRoot.gameObject.activeSelf;
 		
 		public void InitAvatar(Sprite avatar, ArmySource armySource) {
 			Avatar.sprite = avatar;

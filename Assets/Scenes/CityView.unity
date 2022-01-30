@@ -8068,7 +8068,6 @@ GameObject:
   - component: {fileID: 1574049386}
   - component: {fileID: 1574049390}
   - component: {fileID: 1574049391}
-  - component: {fileID: 1574049392}
   - component: {fileID: 1574049393}
   m_Layer: 5
   m_Name: Garrison
@@ -8217,18 +8216,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1533c0e23448441fbba2dc84de5a1bbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1574049392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574049384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c940c9bb90049f391b2f836e654068e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SplitToggle: {fileID: 1243974226}

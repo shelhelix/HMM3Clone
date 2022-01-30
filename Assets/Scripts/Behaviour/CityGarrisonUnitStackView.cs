@@ -14,9 +14,7 @@ namespace Hmm3Clone.Behaviour {
 		public CityUnitStackIndex Index;
 		
 		UnitsSpriteSetup _spriteSetup;
-		
-		public bool IsActive => MovableRoot.gameObject.activeSelf;
-		
+
 		bool _inited;
 		
 		void Start() {

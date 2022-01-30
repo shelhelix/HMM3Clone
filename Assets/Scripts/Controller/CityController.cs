@@ -280,7 +280,7 @@ namespace Hmm3Clone.Controller {
 		public void TrySwapHeroesInCity(string cityName, ArmySource source, ArmySource dest) {
 			var state = GetCityState(cityName);
 			if (source == ArmySource.GuestHero && dest == ArmySource.Garrison && string.IsNullOrEmpty(state.HeroInGarrison)) {
-				MergeGuestHeroAndGarrisonArmies(cityName);
+				MoveHeroToGarrison(cityName);
 			} else {
 				SwapHeroesInCity(cityName);
 			}
@@ -293,12 +293,13 @@ namespace Hmm3Clone.Controller {
 			OnArmyChanged?.Invoke();
 		}
 
-		void MergeGuestHeroAndGarrisonArmies(string cityName) {
+		void MoveHeroToGarrison(string cityName) {
+			var state         = GetCityState(cityName);
 			var guestHeroArmy = GetArmy(cityName, ArmySource.GuestHero);
 			var garrisonArmy  = GetArmy(cityName, ArmySource.Garrison);
 			Assert.IsNotNull(guestHeroArmy);
 			Assert.IsNotNull(garrisonArmy);
-			if (!garrisonArmy.TryMergeWithOtherArmy(garrisonArmy)) {
+			if (string.IsNullOrEmpty(state.HeroInGarrison) && !guestHeroArmy.TryMergeWithOtherArmy(garrisonArmy)) {
 				return;
 			}
 			SwapHeroesInCity(cityName);
