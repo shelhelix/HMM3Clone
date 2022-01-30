@@ -70,6 +70,10 @@ namespace Hmm3Clone.Controller {
 		public bool TrySplitStacks(string cityName, CityUnitStackIndex sourceIndex, CityUnitStackIndex destIndex) {
 			var sourceArmy = GetArmy(cityName, sourceIndex.ArmySource);
 			var destArmy   = GetArmy(cityName, destIndex.ArmySource);
+			Assert.IsNotNull(sourceArmy, $"Source army from {sourceIndex.ArmySource} {sourceIndex.StackIndex} is null");
+			if (destArmy == null) {
+				return false;
+			}
 			if (!destArmy.IsStackEmpty(destIndex.StackIndex)) {
 				return false;
 			}
@@ -239,6 +243,10 @@ namespace Hmm3Clone.Controller {
 
 			var oneArmy   = GetArmy(cityName, sourceStackIndex.ArmySource);
 			var otherArmy = GetArmy(cityName, destStackIndex.ArmySource);
+
+			if (otherArmy == null) {
+				return;
+			}
 			
 			if (oneArmy.AreMergeableStacks(sourceStackIndex.StackIndex, otherArmy, destStackIndex.StackIndex)) {
 				oneArmy.MergeStack(sourceStackIndex.StackIndex, otherArmy, destStackIndex.StackIndex);
