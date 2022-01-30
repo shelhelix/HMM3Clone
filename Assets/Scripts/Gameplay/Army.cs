@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Hmm3Clone.State;
 using UnityEngine.Assertions;
 
@@ -85,6 +86,22 @@ namespace Hmm3Clone.Gameplay {
 		public void SplitStack(int stackFromSplitIndex, int stackToSplitIndex) {
 			SplitStack(stackFromSplitIndex, this, stackToSplitIndex);
 		}
+		
+		public bool TryMergeWithOtherArmy(Army otherArmy) {
+			if (!CanMergeWithOtherArmy(otherArmy)) {
+				return false;
+			}
+			foreach (var stack in otherArmy._stacks) {
+				if (stack == null) {
+					continue;
+				}
+				var ourStack = GetOrCreateUnitStack(stack.Type);
+				Assert.IsNotNull(ourStack);
+				ourStack.Amount += stack.Amount;
+			}
+			otherArmy.FreeAllStacks();
+			return true;
+		}
 
 		public void SplitStack(int sourceStackIndex, Army otherArmy, int destStackIndex) {
 			Assert.IsNotNull(otherArmy);
@@ -100,6 +117,31 @@ namespace Hmm3Clone.Gameplay {
 			sourceStack.Amount                -= otherArmy._stacks[destStackIndex].Amount;
 		}
 
+		bool CanMergeWithOtherArmy(Army otherArmy) {
+			Assert.IsNotNull(otherArmy);
+			var allTypes = new HashSet<UnitType>();
+			foreach (var stack in _stacks) {
+				if (stack == null) {
+					continue;
+				}
+				allTypes.Add(stack.Type);
+			}
+			foreach (var stack in otherArmy._stacks) {
+				if (stack == null) {
+					continue;
+				}
+				allTypes.Add(stack.Type);
+			}
+
+			return allTypes.Count <= ArmyLenght;
+		}
+
+		void FreeAllStacks() {
+			for (var stackIndex = 0; stackIndex < _stacks.Length; stackIndex++) {
+				_stacks[stackIndex] = null;
+			}
+		}
+		
 		void RemoveStack(int stackIndex) {
 			_stacks[stackIndex] = null;
 		} 
@@ -107,5 +149,6 @@ namespace Hmm3Clone.Gameplay {
 		bool AreMergeableStacks(UnitStack source, UnitStack dest) {
 			return source != null && dest != null && source.Type == dest.Type;
 		}
+
 	}
 }

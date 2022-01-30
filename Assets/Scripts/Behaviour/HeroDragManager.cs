@@ -3,7 +3,7 @@ using Hmm3Clone.State;
 using UnityEngine.EventSystems;
 
 namespace Hmm3Clone.Behaviour {
-	public class GarrisonUnitDragger : BaseDragger<GarrisonUnitDragger, CityGarrisonUnitStackView> {
+	public class HeroDragManager : BaseDragger<HeroDragManager, HeroAvatarView> {
 		CityController _cityController;
 
 		CityState _activeCity;
@@ -15,10 +15,13 @@ namespace Hmm3Clone.Behaviour {
 		}
 
 		public override void OnEndDrag(PointerEventData data) {
-			var overlappedViews = DoRaycast(data);
-			if (overlappedViews.Count > 0) {
-				var otherUnitStackView = overlappedViews[0];
-				_cityController.TransformStacks(_activeCity.CityName, StartItem.Index, otherUnitStackView.Index);
+			var overlappedObjects = DoRaycast(data);
+			if (overlappedObjects.Count > 0) {
+				var obj = overlappedObjects[0];
+				if (obj == StartItem) {
+					return;
+				}
+				_cityController.TrySwapHeroesInCity(_activeCity.CityName, StartItem.Source, obj.Source);
 			}
 			StartItem = null;
 		}

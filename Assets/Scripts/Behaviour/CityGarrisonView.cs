@@ -14,12 +14,17 @@ namespace Hmm3Clone.Behaviour {
 	}
 	
 	public class CityGarrisonView : GameComponent {
+		[NotNull] public HeroAvatarView GarrisonHeroAvatarView;
 		[NotNull] public List<CityGarrisonUnitStackView> CityUnitStacks;
-		[NotNull] public List<CityGarrisonUnitStackView> GuestHeroUnitStacks;
 		
+		[NotNull] public HeroAvatarView GuestHeroAvatarView;
+		[NotNull] public List<CityGarrisonUnitStackView> GuestHeroUnitStacks;
+
 		CityState      _cityState;
 		CityController _cityController;
 		HeroController _heroController;
+
+		Army _emptyArmy = new Army(new UnitStack[7]);
 
 		void OnDestroy() {
 			_cityController.OnArmyChanged -= Refresh;
@@ -34,11 +39,26 @@ namespace Hmm3Clone.Behaviour {
 		}
 
 		void Refresh() {
+			var garrisonHeroName = _cityController.GetGarrisonHeroName(_cityState.CityName);
+			InitHeroAvatar(ArmySource.Garrison, garrisonHeroName, GarrisonHeroAvatarView);
 			var garrisonUnits = _cityController.GetCityGarrison(_cityState.CityName);
-			var guestHeroName = _cityController.GetGuestHeroName(_cityState.CityName);
-			var guestHeroArmy = _heroController.GetHero(guestHeroName).Army;
 			InitViews(ArmySource.Garrison, garrisonUnits, CityUnitStacks);
+
+			var guestHeroName = _cityController.GetGuestHeroName(_cityState.CityName);
+			InitHeroAvatar(ArmySource.GuestHero, guestHeroName, GuestHeroAvatarView);
+			var guestHeroArmy = string.IsNullOrEmpty(guestHeroName)
+									? _emptyArmy
+									: _heroController.GetHero(guestHeroName).Army;
 			InitViews(ArmySource.GuestHero, guestHeroArmy, GuestHeroUnitStacks);
+		}
+
+		void InitHeroAvatar(ArmySource source, string heroName, HeroAvatarView avatarView) {
+			avatarView.SetActive(!string.IsNullOrEmpty(heroName));
+			if (!avatarView.IsActive) {
+				return;
+			}
+			var heroInfo = _heroController.GetHeroInfo(heroName);
+			avatarView.InitAvatar(heroInfo.HeroAvatar, source);
 		}
 		
 		void InitViews(ArmySource armySource, Army army, List<CityGarrisonUnitStackView> armyViewRow ) { 

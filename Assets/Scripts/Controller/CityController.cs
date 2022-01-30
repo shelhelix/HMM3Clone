@@ -262,6 +262,37 @@ namespace Hmm3Clone.Controller {
 		Army GetGuestHeroArmy(string cityName) {
 			var guestHeroName = GetCityState(cityName).GuestHero;
 			return string.IsNullOrEmpty(guestHeroName) ? null : _heroController.GetHero(guestHeroName).Army;
-		} 
+		}
+
+		public void TrySwapHeroesInCity(string cityName, ArmySource source, ArmySource dest) {
+			var state = GetCityState(cityName);
+			if (source == ArmySource.GuestHero && dest == ArmySource.Garrison && string.IsNullOrEmpty(state.HeroInGarrison)) {
+				MergeGuestHeroAndGarrisonArmies(cityName);
+			} else {
+				SwapHeroesInCity(cityName);
+			}
+			OnArmyChanged?.Invoke();
+		}
+
+		void SwapHeroesInCity(string cityName) {
+			var state = GetCityState(cityName);
+			(state.GuestHero, state.HeroInGarrison) = (state.HeroInGarrison, state.GuestHero);
+			OnArmyChanged?.Invoke();
+		}
+
+		void MergeGuestHeroAndGarrisonArmies(string cityName) {
+			var guestHeroArmy = GetArmy(cityName, ArmySource.GuestHero);
+			var garrisonArmy  = GetArmy(cityName, ArmySource.Garrison);
+			Assert.IsNotNull(guestHeroArmy);
+			Assert.IsNotNull(garrisonArmy);
+			if (!garrisonArmy.TryMergeWithOtherArmy(garrisonArmy)) {
+				return;
+			}
+			SwapHeroesInCity(cityName);
+		}
+
+		public string GetGarrisonHeroName(string cityName) {
+			return GetCityState(cityName)?.HeroInGarrison;
+		}
 	}
 }
