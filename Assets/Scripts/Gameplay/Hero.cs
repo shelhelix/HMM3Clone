@@ -6,6 +6,11 @@ namespace Hmm3Clone.Gameplay {
 		HeroState _state;
 
 		public readonly Army Army;
+		
+		public string Name {
+			get => _state.HeroName;
+			set => _state.HeroName = value;
+		}
 
 		public Vector3Int Position {
 			get => _state.MapPosition;

@@ -30,10 +30,10 @@ namespace Hmm3Clone.Controller {
 			_mapState = mapState;
 
 			// TODO: remove after testing. This code is only for testing 
-			if (!_mapState.Cities.Exists(x => x.CityName == TestCityName)) {
+			if (!_mapState.CityStates.Exists(x => x.CityName == TestCityName)) {
 				var city = CreateCityState(TestCityName);
 				city.GuestHero = HeroController.TestHeroName;
-				_mapState.Cities.Add(city);
+				_mapState.CityStates.Add(city);
 			}
 
 			_heroController     = heroController;
@@ -43,7 +43,7 @@ namespace Hmm3Clone.Controller {
 
 			turnController.OnTurnChanged += OnTurnChanged;
 		}
-
+		
 		public Army GetCityGarrison(string cityName) {
 			var state = GetCityState(cityName);
 			if (string.IsNullOrEmpty(state.HeroInGarrison)) {
@@ -55,7 +55,7 @@ namespace Hmm3Clone.Controller {
 		}
 
 		public CityState GetCityState(string cityName) {
-			var state = _mapState.Cities.Find(x => x.CityName == cityName);
+			var state = _mapState.CityStates.Find(x => x.CityName == cityName);
 			Assert.IsNotNull(state);
 			return state;
 		}
@@ -194,7 +194,7 @@ namespace Hmm3Clone.Controller {
 			if (IsFirstDayOfTheWeek(currentTurn)) {
 				ProduceUnits();
 			}
-			_mapState.Cities.ForEach(x => x.CanErectBuilding = true);	
+			_mapState.CityStates.ForEach(x => x.CanErectBuilding = true);	
  		}
 
 		bool IsFirstDayOfTheWeek(int turnCount) {
@@ -202,7 +202,7 @@ namespace Hmm3Clone.Controller {
 		}
 		
 		void ProduceUnits() {
-			foreach (var cityState in _mapState.Cities) {
+			foreach (var cityState in _mapState.CityStates) {
 				var unitProduction = GetUnitProductionAmount(cityState.CityName);
 				foreach (var production in unitProduction) {
 					cityState.ReadyToBuyUnits.IncrementAmount(production.Key, production.Value);
@@ -211,7 +211,7 @@ namespace Hmm3Clone.Controller {
 		}
 
 		void ProduceResources() {
-			foreach (var cityState in _mapState.Cities) {
+			foreach (var cityState in _mapState.CityStates) {
 				foreach (var income in GetCityIncome(cityState.CityName)) {
 					_resourceController.AddResource(new Resource(income.Key, income.Value));
 				}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Hmm3Clone.Controller;
+using UnityEngine;
 
 namespace Hmm3Clone.State {
 	[Serializable]
@@ -11,7 +12,7 @@ namespace Hmm3Clone.State {
 		public List<BuildingType>        ErectedBuildings = new List<BuildingType>();
 		public Dictionary<UnitType, int> ReadyToBuyUnits  = new Dictionary<UnitType, int>();
 		public UnitStack[]               Garrison         = new UnitStack[MaxUnitStacksCount];
-
+		
 		public string HeroInGarrison;
 		public string GuestHero;
 

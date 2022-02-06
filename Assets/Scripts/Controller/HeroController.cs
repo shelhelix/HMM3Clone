@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Hmm3Clone.Config;
 using Hmm3Clone.Gameplay;
 using Hmm3Clone.State;
@@ -30,6 +31,10 @@ namespace Hmm3Clone.Controller {
 			var heroState = _state.GetHeroState(heroName);
 			Assert.IsNotNull(heroState, $"Can't find state for hero {heroName}");
 			return new Hero(heroState);
+		}
+
+		public List<HeroState> GetAllHeroes() {
+			return _state.Heroes;
 		}
 
 		void CreateHero(string heroName) {
