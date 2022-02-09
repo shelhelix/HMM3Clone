@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2109977ac454b1a919aa98948874f86, type: 3}
+  m_Name: CustomPathTile
+  m_EditorClassIdentifier: 
+  DefaultTile: {fileID: 21300000, guid: 6d8c55def8d0f1a43a6c7aa3c95368bc, type: 3}
+  Rules:
+  - Name: StraightToUp(R)(End)
+    IsEnabled: 1
+    HasStartPointNeighbour: 0
+    StartPointOffset: {x: 0, y: 0, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 0, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 6d8c55def8d0f1a43a6c7aa3c95368bc, type: 3}
+  - Name: StraightToUp(R)(Start+End)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: 0, y: -1, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 0, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 6d8c55def8d0f1a43a6c7aa3c95368bc, type: 3}
+  - Name: Diagonal(R)(Start+End)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: -1, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 1, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 680b26a88d0c4324c9a26aacfbb1be8e, type: 3}
+  - Name: Diagonal(R)(End)
+    IsEnabled: 1
+    HasStartPointNeighbour: 0
+    StartPointOffset: {x: -1, y: -1, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 1, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 680b26a88d0c4324c9a26aacfbb1be8e, type: 3}
+  - Name: Left to UpperRight (R) (Start+End)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: 0, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 1, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 680b26a88d0c4324c9a26aacfbb1be8e, type: 3}
+  - Name: Left to BottomRight(R) (Start+End)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: 0, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 1, y: -1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 5ec3e98dfc35889489fcee10c5fcdc1a, type: 3}
+  - Name: EndPoint(R)(FromStraight)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: 0, y: -1, z: 0}
+    HasEndPointNeighbour: 0
+    EndPointOffset: {x: 1, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: -7995846982363831464, guid: a9bb682cba9a17443a8ee1a8850eb771, type: 3}
+  - Name: EndPoint(R)(FromDiagonal)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: -1, z: 0}
+    HasEndPointNeighbour: 0
+    EndPointOffset: {x: 0, y: -1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: -7995846982363831464, guid: a9bb682cba9a17443a8ee1a8850eb771, type: 3}
+  - Name: EndPoint(R)(OnePointWay)
+    IsEnabled: 1
+    HasStartPointNeighbour: 0
+    StartPointOffset: {x: -1, y: -1, z: 0}
+    HasEndPointNeighbour: 0
+    EndPointOffset: {x: 0, y: -1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: -7995846982363831464, guid: a9bb682cba9a17443a8ee1a8850eb771, type: 3}
+  - Name: BottomLeft To Right (R)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: -1, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 1, y: 0, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 680b26a88d0c4324c9a26aacfbb1be8e, type: 3}
+  - Name: BottomLeft To BottomRight (R)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: -1, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 1, y: -1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 680b26a88d0c4324c9a26aacfbb1be8e, type: 3}
+  - Name: UpperLeft To UpperLeft (R)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: 1, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 1, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 680b26a88d0c4324c9a26aacfbb1be8e, type: 3}
+  - Name: BottomLeft To Up (R)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: -1, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 0, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 6d8c55def8d0f1a43a6c7aa3c95368bc, type: 3}
+  - Name: Right To Up (R)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: 1, y: 0, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 0, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 6d8c55def8d0f1a43a6c7aa3c95368bc, type: 3}
+  - Name: Left To Up (R)
+    IsEnabled: 1
+    HasStartPointNeighbour: 1
+    StartPointOffset: {x: -1, y: 0, z: 0}
+    HasEndPointNeighbour: 1
+    EndPointOffset: {x: 0, y: 1, z: 0}
+    TryRotateRule: 1
+    Sprite: {fileID: 21300000, guid: 6d8c55def8d0f1a43a6c7aa3c95368bc, type: 3}
+  FullPath:
+  - {x: -3, y: 0, z: 0}
+  - {x: -4, y: 0, z: 0}
+  - {x: -5, y: 0, z: 0}
