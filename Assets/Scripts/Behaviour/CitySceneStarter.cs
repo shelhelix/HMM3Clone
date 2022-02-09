@@ -11,8 +11,6 @@ namespace Hmm3Clone.Behaviour {
 		[NotNull] public GameObject ScreenRoot;
 
 		[NotNull] public Button ReturnToMapButtom;
-		[NotNull] public Button EndTurnButton;
- 
 		protected override void Awake() {
 			base.Awake();
 			var initData = ActiveData.Instance.GetData<CityViewInitData>();
@@ -29,8 +27,6 @@ namespace Hmm3Clone.Behaviour {
 		}
 
 		void InitButtons() {
-			var turnController = GameController.Instance.GetController<TurnController>();
-			EndTurnButton.onClick.AddListener(turnController.EndTurn);
 			ReturnToMapButtom.onClick.AddListener(ReturnToMap);
 		}
 
