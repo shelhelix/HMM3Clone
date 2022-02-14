@@ -13,7 +13,7 @@ namespace Hmm3Clone.Controller {
 
 		HeroConfig _config;
 		
-		public HeroController(HeroControllerState state) {
+		public HeroController(TurnController turnController, HeroControllerState state) {
 			_state  = state;
 			_config = ConfigLoader.LoadConfig<HeroConfig>();
 
@@ -21,6 +21,8 @@ namespace Hmm3Clone.Controller {
 			if (_state.GetHeroState(TestHeroName) == null) {
 				CreateHero(TestHeroName);
 			}
+			
+			turnController.OnTurnChanged += OnTurnChanged;
 		}
 
 		public HeroInfo GetHeroInfo(string heroName) {
@@ -36,7 +38,11 @@ namespace Hmm3Clone.Controller {
 		public List<HeroState> GetAllHeroes() {
 			return _state.Heroes;
 		}
-
+		
+		void OnTurnChanged(int turn) {
+			_state.Heroes.ForEach(x => x.LeftMovementPoints = GetHeroInfo(x.HeroName).BaseMovementPoints);
+		}
+ 		
 		void CreateHero(string heroName) {
 			Assert.IsNotNull(heroName);
 			Assert.IsNull(_state.GetHeroState(heroName));

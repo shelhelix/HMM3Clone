@@ -6,6 +6,7 @@ using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
 using Hmm3Clone.Config.Map;
 using Hmm3Clone.Controller;
+using Hmm3Clone.Gameplay;
 using Hmm3Clone.Manager;
 using Hmm3Clone.State;
 using UnityEngine;
@@ -50,16 +51,22 @@ namespace Hmm3Clone.Behaviour.Map {
 			_mapManager.MapChanged -= OnMapChanged;
 		}
 
-		public void DrawPath(List<Vector3Int> path) {
+		public void DrawPath(string heroName, List<PathCell> path) {
+			var hero = _heroController.GetHero(heroName);
 			SelectedPathLayer.ClearAllTiles();
 			if (path == null || path.Count == 0) {
 				return;
 			}
-			PathTile.FullPath = path;
-			foreach (var cell in path) {
-				SelectedPathLayer.SetTile(cell, PathTile);
-			}
+			PathTile.FullPath = path.Select(x => x.Coords).ToList();
+			path.ForEach(x => DrawPathTile(hero, x));
+			
 			DrawCostView();
+		}
+
+		void DrawPathTile(Hero hero, PathCell cell) {
+			SelectedPathLayer.SetTile(cell.Coords, PathTile);
+			var canTravelInThisTurnColor = (hero.MovementPoints >= cell.CostFromStart) ? Color.white : new Color(1f, 0.3f, 0.3f, 1f);
+			SelectedPathLayer.SetColor(cell.Coords, canTravelInThisTurnColor);
 		}
 
 		void DrawCostView() {

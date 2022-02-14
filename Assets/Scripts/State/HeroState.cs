@@ -6,8 +6,11 @@ namespace Hmm3Clone.State {
 	public class HeroState {
 		public string      HeroName;
 		public UnitStack[] Stacks = new UnitStack[CityState.MaxUnitStacksCount];
-		public Vector3Int  MapPosition;
 		
+		// Data for map only
+		public Vector3Int MapPosition;
+		public int        LeftMovementPoints;
+
 		public HeroState() {}
 
 		public HeroState(string heroName) {

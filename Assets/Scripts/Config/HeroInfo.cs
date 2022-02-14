@@ -7,5 +7,7 @@ namespace Hmm3Clone.Config {
 		public string      HeroName;
 		public Sprite      HeroAvatar;
 		public UnitStack[] StartArmy;
+
+		public int BaseMovementPoints;
 	}
 }

@@ -38,7 +38,7 @@ namespace Hmm3Clone.Behaviour.Map {
 			var hero    = _heroController.GetHero(HeroController.TestHeroName);
 			var path    = _pathfinder.CreatePath(hero.Position, cellPos);
 
-			MapView.DrawPath(path);
+			MapView.DrawPath(hero.Name, path);
 			
 			if (Input.GetMouseButtonDown(0)) {
 				_mapManager.MoveHero(hero.Name, cellPos);

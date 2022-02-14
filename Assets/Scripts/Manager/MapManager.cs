@@ -4,7 +4,6 @@ using System.Linq;
 using Hmm3Clone.Behaviour.Map;
 using Hmm3Clone.Controller;
 using Hmm3Clone.DTO;
-using NesScripts.Controls.PathFind;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,25 +15,34 @@ namespace Hmm3Clone.Manager {
 		
 		public event Action MapChanged;
 
-		BoundsInt _mapSizesBounds;
-		
 		public MapManager(HeroController heroController, RuntimeMapInfo mapInfo) {
 			_heroController = heroController;
 			_mapInfo        = mapInfo;
 			_pathFinder     = new MapPathfinder(heroController, mapInfo);
 		}
 
+		public List<PathCell> CreatePath(string heroName, Vector3Int endPoint) {
+			var hero = _heroController.GetHero(heroName);
+			return _pathFinder.CreatePath(hero.Position, endPoint);
+		}
+
 		public void MoveHero(string heroName, Vector3Int endPoint) {
 			var hero = _heroController.GetHero(heroName);
 			var path = _pathFinder.CreatePath(hero.Position, endPoint);
-			if (path == null || path.Count == 0) {
+			if (path == null ) {
 				Debug.LogWarning($"Trying to move to the unreachable point {endPoint}");
 				return;
 			}
-			InteractWithNonEmptyCells(endPoint);
+			path.RemoveAll(x => x.CostFromStart > hero.MovementPoints);
+			if (path.Count == 0) {
+				return;
+			}
+			var realEndPoint = path.Last();
+			InteractWithNonEmptyCells(realEndPoint.Coords);
 			var oldPosition = hero.Position;
-			hero.Position = endPoint;
-			_pathFinder.OnHeroMoved(oldPosition, endPoint);
+			hero.Position       =  realEndPoint.Coords;
+			hero.MovementPoints -= Mathf.FloorToInt(realEndPoint.CostFromStart);
+			_pathFinder.OnHeroMoved(oldPosition, realEndPoint.Coords);
 			MapChanged?.Invoke();
 		}
 

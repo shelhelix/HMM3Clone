@@ -9,8 +9,20 @@ using UnityEngine;
 using PathGrid = NesScripts.Controls.PathFind.Grid;
 
 namespace Hmm3Clone.Manager {
+	public struct PathCell {
+		public Vector3Int Coords;
+		public float      CostFromStart;
+
+		public PathCell(Vector3Int coords, float cost) {
+			Coords        = coords;
+			CostFromStart = cost;
+		}
+	}
+
 	public sealed class MapPathfinder {
-		public const float MaxPrice = 1000f;
+		public const float MaxPrice         = 1000f;
+
+		const float DefaultTilePrice = 1f;
 		
 		RuntimeMapInfo _mapInfo;
 
@@ -27,13 +39,22 @@ namespace Hmm3Clone.Manager {
 			_grid           = CreatePathfindingGrid();
 		}
 
-		public List<Vector3Int> CreatePath(Vector3Int start, Vector3Int end) {
+		public List<PathCell> CreatePath(Vector3Int start, Vector3Int end) {
 			if (!MapBounds.Contains(start) || !MapBounds.Contains(end)) {	
 				return null;
 			}
 			var cellStart = ConvertTilemapToGridCoords(start);
 			var cellEnd   = ConvertTilemapToGridCoords(end);
-			return Pathfinding.FindPath(_grid, cellStart, cellEnd).Select(x => new Vector3Int(x.x, x.y, 0) + MapBounds.min).ToList();
+			
+			var res       = new List<PathCell>();
+			var totalCost = 0f;
+			foreach (var cell in Pathfinding.FindPath(_grid, cellStart, cellEnd)) {
+				var cellPrice = _grid.nodes[cell.x, cell.y].price;
+				totalCost += Mathf.Approximately(cellPrice, MaxPrice) ? DefaultTilePrice : cellPrice;
+				res.Add(new PathCell(ConvertGridToTilemapCoords(cell), totalCost));
+			}
+
+			return res;
 		}
 
 		public void OnHeroMoved(Vector3Int startPoint, Vector3Int endPoint) {
@@ -42,6 +63,17 @@ namespace Hmm3Clone.Manager {
 			
 			_grid.nodes[gridEndCoord.x, gridEndCoord.y].price     = MaxPrice;
 			_grid.nodes[gridStartCoord.x, gridStartCoord.y].price = CalcPathPriceForCell(startPoint);
+		}
+
+		public float[,] GetCostMap() {
+			var costMap = new float[_grid.nodes.GetLength(0), _grid.nodes.GetLength(1)];
+			for (var x = 0; x < costMap.GetLength(0); x++) {
+				for (var y = 0; y < costMap.GetLength(1); y++) {
+					costMap[x, y] = _grid.nodes[x, y].price;
+				}
+			}
+
+			return costMap;
 		}
 		
 		PathGrid CreatePathfindingGrid() {
@@ -59,6 +91,10 @@ namespace Hmm3Clone.Manager {
 			var point = tilemapCoord - MapBounds.min;
 			return new Point(point.x, point.y);
 		}
+
+		Vector3Int ConvertGridToTilemapCoords(Point point) {
+			return new Vector3Int(point.x, point.y, 0) + MapBounds.min;
+		}
 		
 		float CalcPathPriceForCell(Vector3Int position) {
 			var heroStates = _heroController.GetAllHeroes();
@@ -68,19 +104,8 @@ namespace Hmm3Clone.Manager {
 				return 0f;
 			}
 			return !cities.Exists(obj => obj.Position == position) && !heroStates.Exists(obj => obj.MapPosition == position)
-					   ? 1
+					   ? DefaultTilePrice
 					   : MaxPrice;
-		}
-
-		public float[,] GetCostMap() {
-			var costMap = new float[_grid.nodes.GetLength(0), _grid.nodes.GetLength(1)];
-			for (var x = 0; x < costMap.GetLength(0); x++) {
-				for (var y = 0; y < costMap.GetLength(1); y++) {
-					costMap[x, y] = _grid.nodes[x, y].price;
-				}
-			}
-
-			return costMap;
 		}
 	}
 }
