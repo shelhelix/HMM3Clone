@@ -19,3 +19,4 @@ MonoBehaviour:
     Amount: 10
   - Type: 1
     Amount: 100
+  BaseMovementPoints: 10
