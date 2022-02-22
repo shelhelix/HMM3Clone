@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Hmm3Clone.Behaviour.Common {
 	[RequireComponent(typeof(Button))]
-	public class NextTurnButton : GameComponent {
+	public class NextTurnButton : BaseInjectableComponent {
 		[NotNull] public Button Button;
 		
 		TurnController _turnController;

@@ -1,20 +1,19 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
+using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Config.Map;
 using Hmm3Clone.Controller;
 using Hmm3Clone.Gameplay;
 using Hmm3Clone.Manager;
 using Hmm3Clone.State;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.Tilemaps;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour.Map {
-	public class MapView : GameComponent {
+	public class MapView : BaseInjectableComponent {
 		// runtime used only tilemap
 		[NotNull] public Tilemap SelectedPathLayer;
 		[NotNull] public Tilemap CostMap;
@@ -22,8 +21,6 @@ namespace Hmm3Clone.Behaviour.Map {
 		Tilemap _objects;
 		Tilemap _heroes;
 
-		
-		
 		[NotNull] public TileBase HeroTile;
 		[NotNull] public PathTile PathTile;
 		[NotNull] public TileBase CityTile;
@@ -32,32 +29,50 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		MapManager     _mapManager;
 		HeroController _heroController;
+		TurnController _turnController;
 
 		BoundsInt _mapSize;
-		
-		public void Init(HeroController heroController, MapManager mapManager, RuntimeMapInfo mapInfo) {
+
+		[Inject]
+		void Init(RuntimeMapInfo mapInfo, MapManager manager) {
+			
 			_objects        = mapInfo.Objects;
 			_heroes         = mapInfo.Heroes;
-			_mapManager     = mapManager;
-			_heroController = heroController;
 			_mapSize        = mapInfo.MapBounds;
+			_mapManager     = manager;
 			
-			_mapManager.MapChanged += OnMapChanged;
+			_heroController = GameController.Instance.GetController<HeroController>();
+			_turnController = GameController.Instance.GetController<TurnController>();
+			
+			_mapManager.MapChanged        += OnMapChanged;
+			_mapManager.OnHeroDataChanged += OnHeroDataChanged;
+			_turnController.OnTurnChanged += OnTurnChanged;
+
 			PlaceStaticObjects(mapInfo.GameplayMapInfo);
 			OnMapChanged();
 		}
 
-		public void Deinit() {
-			_mapManager.MapChanged -= OnMapChanged;
+		void OnTurnChanged(int turn) {
+			var heroName = _mapManager.SelectedHeroName;
+			OnHeroDataChanged(heroName);
 		}
 
-		public void DrawPath(string heroName, List<PathCell> path) {
+		protected override void OnDestroy() {
+			base.OnDestroy();
+			_mapManager.MapChanged        -= OnMapChanged;
+			_mapManager.OnHeroDataChanged -= OnHeroDataChanged;
+			_turnController.OnTurnChanged -= OnTurnChanged;
+		}
+
+		void OnHeroDataChanged(string heroName) {
+			var hero = _heroController.GetHero(heroName);
+			DrawPath(heroName, _mapManager.CreatePath(heroName, hero.PathEndPoint));
+		}
+
+		void DrawPath(string heroName, List<PathCell> path) {
 			var hero = _heroController.GetHero(heroName);
 			SelectedPathLayer.ClearAllTiles();
-			if (path == null || path.Count == 0) {
-				return;
-			}
-			PathTile.FullPath = path.Select(x => x.Coords).ToList();
+			PathTile.FullPath      = path.Select(x => x.Coords).ToList();
 			path.ForEach(x => DrawPathTile(hero, x));
 			
 			DrawCostView();

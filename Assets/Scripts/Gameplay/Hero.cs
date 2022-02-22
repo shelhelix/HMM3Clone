@@ -17,6 +17,11 @@ namespace Hmm3Clone.Gameplay {
 			set => _state.MapPosition = value;
 		}
 
+		public Vector3Int PathEndPoint {
+			get => _state.PathEndPoint;
+			set => _state.PathEndPoint = value;
+		}
+		
 		public int MovementPoints {
 			get => _state.LeftMovementPoints;
 			set => _state.LeftMovementPoints = value;

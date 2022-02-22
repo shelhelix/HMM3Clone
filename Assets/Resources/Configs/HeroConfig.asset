@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Heroes:
   - {fileID: 11400000, guid: b819a9789ee486c46811f742a9a4f546, type: 2}
+  - {fileID: 11400000, guid: 62a4cc4be99386c49a686a7f8f2e6b40, type: 2}

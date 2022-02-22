@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4822e30e2c624cbf93d27e452819f0c0, type: 3}
+  m_Name: TestGuestHero2
+  m_EditorClassIdentifier: 
+  HeroName: TestGuestHero2
+  HeroAvatar: {fileID: 2827343154756427302, guid: 939d45beedf25cd4482d2e5b71df41b7, type: 3}
+  StartArmy:
+  - Type: 0
+    Amount: 10
+  - Type: 1
+    Amount: 100
+  BaseMovementPoints: 10

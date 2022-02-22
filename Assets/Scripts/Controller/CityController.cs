@@ -10,8 +10,6 @@ using UnityEngine.Assertions;
 
 namespace Hmm3Clone.Controller {
 	public class CityController : IController {
-		public const string TestCityName = "TestCity";
-
 
 		readonly MapState _mapState;
 
@@ -28,13 +26,6 @@ namespace Hmm3Clone.Controller {
 
 		public CityController(ResourceController resourceController, UnitsController unitsController, HeroController heroController, TurnController turnController, MapState mapState) {
 			_mapState = mapState;
-
-			// TODO: remove after testing. This code is only for testing 
-			if (!_mapState.CityStates.Exists(x => x.CityName == TestCityName)) {
-				var city = CreateCityState(TestCityName);
-				city.GuestHero = HeroController.TestHeroName;
-				_mapState.CityStates.Add(city);
-			}
 
 			_heroController     = heroController;
 			_resourceController = resourceController;

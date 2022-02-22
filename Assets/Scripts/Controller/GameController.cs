@@ -10,8 +10,8 @@ namespace Hmm3Clone {
 		
 		List<IController> _controllers = new List<IController>();
 
-		public GameController() {
-			ActiveState = SaveUtils.LoadState();
+		public void InitControllers(GameState state) {
+			ActiveState = state;
 			_controllers.Add(new ResourceController(ActiveState.ResourcesState));
 			_controllers.Add(new TurnController(ActiveState.TurnState));
 			_controllers.Add(new UnitsController());
