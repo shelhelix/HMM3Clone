@@ -4,21 +4,15 @@ using Hmm3Clone.State;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
 	public class GarrisonUnitDragger : BaseDragger<GarrisonUnitDragger, CityGarrisonUnitStackView> {
 		[NotNull] public Toggle SplitToggle;
 
-		CityController _cityController;
-
-		CityState _activeCity;
+		[Inject] CityController _cityController;
+		[Inject] CityState      _activeCity;
 		
-		protected override void Start() {
-			base.Start();
-			_cityController = GameController.Instance.GetController<CityController>();
-			_activeCity     = ActiveData.Instance.GetData<CityState>();
-		}
-
 		public override void OnEndDrag(PointerEventData data) {
 			var overlappedViews = DoRaycast(data);
 			if (overlappedViews.Count > 0) {

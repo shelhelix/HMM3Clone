@@ -1,18 +1,12 @@
 using Hmm3Clone.Controller;
 using Hmm3Clone.State;
 using UnityEngine.EventSystems;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
 	public class HeroDragManager : BaseDragger<HeroDragManager, HeroAvatarView> {
-		CityController _cityController;
-
-		CityState _activeCity;
-		
-		protected override void Start() {
-			base.Start();
-			_cityController = GameController.Instance.GetController<CityController>();
-			_activeCity     = ActiveData.Instance.GetData<CityState>();
-		}
+		[Inject] CityController _cityController;
+		[Inject] CityState      _cityState;
 
 		public override void OnEndDrag(PointerEventData data) {
 			var overlappedObjects = DoRaycast(data);
@@ -21,7 +15,7 @@ namespace Hmm3Clone.Behaviour {
 				if (obj == StartItem) {
 					return;
 				}
-				_cityController.TrySwapHeroesInCity(_activeCity.CityName, StartItem.Source, obj.Source);
+				_cityController.TrySwapHeroesInCity(_cityState.CityName, StartItem.Source, obj.Source);
 			}
 			StartItem = null;
 		}

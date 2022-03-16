@@ -7,6 +7,7 @@ using Hmm3Clone.State;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
     public class BuildingButton : GameComponent {
@@ -17,8 +18,8 @@ namespace Hmm3Clone.Behaviour {
         [NotNull] public Image FrameBackground;
         [NotNull] public Image BuildingPreview;
 
-        CityController _cityController;
-        TurnController _turnController;
+        [Inject] CityController _cityController;
+        [Inject] TurnController _turnController;
 
         CityState _state;
 
@@ -32,8 +33,6 @@ namespace Hmm3Clone.Behaviour {
             }
             
             _state          = ActiveData.Instance.GetData<CityState>();
-            _cityController = GameController.Instance.GetController<CityController>();
-            _turnController = GameController.Instance.GetController<TurnController>();
             Button.onClick.AddListener(ErectBuilding);
             _cityController.OnBuildingsChanged += Refresh;
             _turnController.OnTurnChanged      += OnTurnChanged;

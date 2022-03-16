@@ -1,24 +1,26 @@
 using GameComponentAttributes.Attributes;
+using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using Hmm3Clone.SpriteSetups;
 using Hmm3Clone.State;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
-    public class ResourceView : MonoBehaviour {
+    public class ResourceView : BaseInjectableComponent {
+        [Inject] ResourceController    _resourceController;
+        [Inject] SpriteSetupController _spriteSetupController;
+        
         public ResourceType ResourceType;
         
         [NotNull] public TMP_Text AmountText;
         [NotNull] public Image    ResourceImage;
-        
-        ResourceController _resourceController;
 
         void Start() {
-            _resourceController = GameController.Instance.GetController<ResourceController>();
-            ResourceImage.sprite = GameController.Instance.GetController<SpriteSetupController>().GetSpriteSetup<ResourcesSpriteSetup>()
-                                                 .GetResourceSprite(ResourceType);
+            ResourceImage.sprite = _spriteSetupController.GetSpriteSetup<ResourcesSpriteSetup>()
+                                                         .GetResourceSprite(ResourceType);
         }
 
         void Update() {

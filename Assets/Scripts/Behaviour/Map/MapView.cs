@@ -27,28 +27,26 @@ namespace Hmm3Clone.Behaviour.Map {
 		
 		[NotNull] public TileBase PlainTile;
 
-		MapManager     _mapManager;
-		HeroController _heroController;
-		TurnController _turnController;
+		[Inject] MapManager _mapManager;
+		
+		[Inject] HeroController _heroController;
+		[Inject] TurnController _turnController;
+		[Inject] RuntimeMapInfo _mapInfo;
 
 		BoundsInt _mapSize;
 
 		[Inject]
-		void Init(RuntimeMapInfo mapInfo, MapManager manager) {
+		void Init() {
 			
-			_objects        = mapInfo.Objects;
-			_heroes         = mapInfo.Heroes;
-			_mapSize        = mapInfo.MapBounds;
-			_mapManager     = manager;
-			
-			_heroController = GameController.Instance.GetController<HeroController>();
-			_turnController = GameController.Instance.GetController<TurnController>();
-			
+			_objects = _mapInfo.Objects;
+			_heroes  = _mapInfo.Heroes;
+			_mapSize = _mapInfo.MapBounds;
+
 			_mapManager.MapChanged        += OnMapChanged;
 			_mapManager.OnHeroDataChanged += OnHeroDataChanged;
 			_turnController.OnTurnChanged += OnTurnChanged;
 
-			PlaceStaticObjects(mapInfo.GameplayMapInfo);
+			PlaceStaticObjects(_mapInfo.GameplayMapInfo);
 			OnMapChanged();
 		}
 
@@ -70,9 +68,13 @@ namespace Hmm3Clone.Behaviour.Map {
 		}
 
 		void DrawPath(string heroName, List<PathCell> path) {
+			if (path == null) {
+				return;
+			}
 			var hero = _heroController.GetHero(heroName);
 			SelectedPathLayer.ClearAllTiles();
 			PathTile.FullPath      = path.Select(x => x.Coords).ToList();
+			
 			path.ForEach(x => DrawPathTile(hero, x));
 			
 			DrawCostView();

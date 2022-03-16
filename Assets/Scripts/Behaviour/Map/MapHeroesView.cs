@@ -11,10 +11,8 @@ namespace Hmm3Clone.Behaviour.Map {
 	public class MapHeroesView : BaseInjectableComponent {
 		[NotNullOrEmpty] public List<MapHeroView> HeroViews;
 
-
 		[Inject]
-		void Init(MapManager manager) {
-			var heroController = GameController.Instance.GetController<HeroController>();
+		void Init(MapManager manager, HeroController heroController) {
 			var allHeroesOnMap = heroController.GetAllHeroes();
 
 			foreach (var (view, state) in HeroViews.MyZip(allHeroesOnMap)) {

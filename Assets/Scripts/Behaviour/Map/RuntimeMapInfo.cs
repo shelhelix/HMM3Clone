@@ -16,7 +16,7 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		public BoundsInt MapBounds => Terrain.cellBounds;
 		
-		public void PrepareMap() {
+		public void CompressMap() {
 			Terrain.CompressBounds();
 			Objects.CompressBounds();
 			Heroes.CompressBounds();

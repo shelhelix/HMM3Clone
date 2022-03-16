@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using GameComponentAttributes;
+using Hmm3Clone.Behaviour.Common;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 
 namespace Hmm3Clone.Behaviour {
-	public abstract class BaseDragger<TDraggerType, TItemType> : GameComponent where TDraggerType : GameComponent where TItemType : GameComponent {
+	public abstract class BaseDragger<TDraggerType, TItemType> : BaseInjectableComponent where TDraggerType : GameComponent where TItemType : GameComponent {
 		public static TDraggerType Instance;
 
 		protected virtual void Start() {
@@ -14,7 +15,8 @@ namespace Hmm3Clone.Behaviour {
 			Instance = this as TDraggerType;
 		}
 
-		protected virtual void OnDestroy() {
+		protected override void OnDestroy() {
+			base.OnDestroy();
 			if (Instance == this) {
 				Instance = null;
 			}

@@ -9,6 +9,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
 	public class HiringWindow : GameComponent {
@@ -23,16 +24,18 @@ namespace Hmm3Clone.Behaviour {
 
 		[NotNull] public GameObject CantBuyScreen;
 
+		[Inject] CityState             _cityState;
+		[Inject] CityController        _cityController;
+		[Inject] UnitsController       _unitsController;
+		[Inject] SpriteSetupController _spriteSetupController;
+		
+
 		UnitType _defaultUnit;
 		UnitType _advancedUnit;
 
 		UnitType _selectedUnitToHire;
 
-		CityController   _cityController;
-		UnitsController  _unitsController;
 		UnitsSpriteSetup _unitsSpriteSetup;
-
-		CityState _cityState;
 
 		bool _inited;
 		
@@ -40,13 +43,8 @@ namespace Hmm3Clone.Behaviour {
 			if (_inited) {
 				return;
 			}
-			
-			_cityState       = ActiveData.Instance.GetData<CityState>();
-			_cityController  = GameController.Instance.GetController<CityController>();
-			_unitsController = GameController.Instance.GetController<UnitsController>();
-			_unitsSpriteSetup = GameController.Instance.GetController<SpriteSetupController>()
-											  .GetSpriteSetup<UnitsSpriteSetup>();
-			_inited = true;
+			_unitsSpriteSetup = _spriteSetupController.GetSpriteSetup<UnitsSpriteSetup>();
+			_inited           = true;
 		}
 
 		void OnDisable() {

@@ -6,6 +6,7 @@ using Hmm3Clone.Controller;
 using Hmm3Clone.Gameplay;
 using Hmm3Clone.State;
 using UnityEngine.Assertions;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
 	public enum ArmySource {
@@ -20,9 +21,9 @@ namespace Hmm3Clone.Behaviour {
 		[NotNull] public HeroAvatarView GuestHeroAvatarView;
 		[NotNull] public List<CityGarrisonUnitStackView> GuestHeroUnitStacks;
 
-		CityState      _cityState;
-		CityController _cityController;
-		HeroController _heroController;
+		[Inject] CityState      _cityState;
+		[Inject] CityController _cityController;
+		[Inject] HeroController _heroController;
 
 		Army _emptyArmy = new Army(new UnitStack[7]);
 
@@ -31,9 +32,6 @@ namespace Hmm3Clone.Behaviour {
 		}
 
 		void Start() {
-			_cityController                   =  GameController.Instance.GetController<CityController>();
-			_heroController                   =  GameController.Instance.GetController<HeroController>();
-			_cityState                        =  ActiveData.Instance.GetData<CityState>();
 			_cityController.OnArmyChanged += Refresh;
 			Refresh();
 		}

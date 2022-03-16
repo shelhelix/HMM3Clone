@@ -10,12 +10,14 @@ using Hmm3Clone.Utils;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
+using VContainer;
 
 namespace Hmm3Clone.Manager {
 	public class MapManager {
-		readonly HeroController _heroController;
-		readonly MapPathfinder  _pathFinder;
-		readonly RuntimeMapInfo _mapInfo;
+		[Inject] readonly HeroController _heroController;
+		[Inject] readonly RuntimeMapInfo _mapInfo;
+		
+		MapPathfinder  _pathFinder;
 		
 		public event Action     MapChanged;
 
@@ -24,11 +26,9 @@ namespace Hmm3Clone.Manager {
 		public ReactValue<string> SelectedHeroName = new ReactValue<string>();
 
 		public bool HasSelectedHero => !string.IsNullOrEmpty(SelectedHeroName.Value);
-		
-		public MapManager(HeroController heroController, RuntimeMapInfo mapInfo) {
-			_heroController = heroController;
-			_mapInfo        = mapInfo;
-			_pathFinder     = new MapPathfinder(heroController, mapInfo);
+
+		public void Init() {
+			_pathFinder = new MapPathfinder(_heroController, _mapInfo);
 		}
 
 		public void SelectHero(string heroName) {

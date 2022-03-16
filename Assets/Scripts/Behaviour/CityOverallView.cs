@@ -1,25 +1,25 @@
 using System.Collections.Generic;
 using GameComponentAttributes.Attributes;
+using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
 using TMPro;
 using UnityEngine;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
-    public class CityOverallView : MonoBehaviour {
+    public class CityOverallView : BaseInjectableComponent {
         [NotNull] public TMP_Text IncomeText;
         [NotNull] public TMP_Text CityName;
 
         [NotNullOrEmpty] public List<CityOverallViewUnitStack> UnitStacks;
+
+        [Inject] CityController _cityController;
+        [Inject] CityState      _activeCityState;
         
-        CityController _cityController;
-        CityState _activeCityState;
         
         void Start() {
-            _cityController = GameController.Instance.GetController<CityController>();
-            _activeCityState = ActiveData.Instance.GetData<CityState>();
-
             CityName.text = _activeCityState.CityName;
         }
 

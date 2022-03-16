@@ -6,5 +6,6 @@ namespace Hmm3Clone.Config.Map {
 	public class MapInfo : ScriptableObject {
 		[Header("static objects")]
 		public List<MapCityConstructionInfo> MapCities;
+		public List<MapNeutralArmyInfo> NeutralUnits;
 	}
 }

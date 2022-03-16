@@ -5,6 +5,7 @@ using Hmm3Clone.State;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using VContainer;
 
 namespace Hmm3Clone.Behaviour {
 	public class CityGarrisonUnitStackView : BaseDraggableUiItem<CityGarrisonUnitStackView, GarrisonUnitDragger> {
@@ -12,6 +13,8 @@ namespace Hmm3Clone.Behaviour {
 		[NotNull] public TMP_Text AmountText;
 
 		public CityUnitStackIndex Index;
+
+		[Inject] SpriteSetupController _spriteSetupController;
 		
 		UnitsSpriteSetup _spriteSetup;
 
@@ -21,9 +24,8 @@ namespace Hmm3Clone.Behaviour {
 			if (_inited) {
 				return;
 			}
-			_spriteSetup = GameController.Instance.GetController<SpriteSetupController>()
-										 .GetSpriteSetup<UnitsSpriteSetup>();
-			_inited = true;
+			_spriteSetup = _spriteSetupController.GetSpriteSetup<UnitsSpriteSetup>();
+			_inited      = true;
 		}
 
 		public void InitCommonView(CityUnitStackIndex index) {

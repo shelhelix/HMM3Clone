@@ -13,9 +13,12 @@ namespace Hmm3Clone.Behaviour.Map {
 		[Inject]
 		RuntimeMapInfo _mapInfo;
 
+		[Inject]
 		HeroController _heroController;
+		
 		[Inject]
 		MapManager     _mapManager;
+		
 		
 		Dictionary<Tilemap, Action> _clickProcessors;
 
@@ -29,7 +32,6 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		[Inject]
 		void Init() {
-			_heroController = GameController.Instance.GetController<HeroController>();
 			_clickProcessors = new Dictionary<Tilemap, Action> {
 				{_mapInfo.Heroes, ProcessHeroLayerClick},
 				{_mapInfo.Terrain, ProcessTerrainLayer}
