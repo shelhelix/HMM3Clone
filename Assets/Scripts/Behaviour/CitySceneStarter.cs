@@ -1,8 +1,9 @@
-using GameComponentAttributes;
+using System.Collections.Generic;
 using GameComponentAttributes.Attributes;
 using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
-using Hmm3Clone.DTO;
+using Hmm3Clone.Scopes;
+using Hmm3Clone.State;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,20 +15,18 @@ namespace Hmm3Clone.Behaviour {
 		[NotNull] public Button     ReturnToMapButtom;
 
 		[Inject] CityController _cityController;
-		
-		protected override void Awake() {
-			base.Awake();
-			var initData = ActiveData.Instance.GetData<CityViewInitData>();
-			ActiveData.Instance.RemoveData<CityViewInitData>();
-			var cityState = _cityController.GetCityState(initData.CityName);
-			ActiveData.Instance.SetData(cityState);
-		}
-		
-		public void Start() {
+		[Inject] CityScope      _scope;
+
+
+		[Inject]
+		void Init() {
 			foreach (Transform child in ScreenRoot.transform) {
 				child.gameObject.SetActive(false);
 			}
 			InitButtons();
+			var copy = new List<BaseInjectableComponent>(Components);
+			copy.ForEach(x => _scope.Container.Inject(x));
+			
 		}
 
 		void InitButtons() {

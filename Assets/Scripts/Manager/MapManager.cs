@@ -14,8 +14,9 @@ using VContainer;
 
 namespace Hmm3Clone.Manager {
 	public class MapManager {
-		[Inject] readonly HeroController _heroController;
-		[Inject] readonly RuntimeMapInfo _mapInfo;
+		[Inject] readonly HeroController        _heroController;
+		[Inject] readonly RuntimeMapInfo        _mapInfo;
+		[Inject] readonly SceneTransmissionData _transmissionData;
 		
 		MapPathfinder  _pathFinder;
 		
@@ -79,7 +80,7 @@ namespace Hmm3Clone.Manager {
 		}
 		
 		void ShowCity(string cityName) {
-			ActiveData.Instance.SetData(new CityViewInitData(cityName));
+			_transmissionData.ActiveCityName = cityName;
 			SceneManager.LoadScene("CityView");
 		}
 

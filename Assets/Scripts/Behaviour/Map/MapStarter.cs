@@ -19,6 +19,8 @@ namespace Hmm3Clone.Behaviour.Map {
 		[Inject] 
 		MapManager _mapManager;
 
+		[Inject] MapScope Scope;
+		
 		public void Start() {
 			_mapInfo.CompressMap();
 			if (!_state.FirstInitializationCompleted) {
@@ -29,7 +31,7 @@ namespace Hmm3Clone.Behaviour.Map {
 			_mapManager.Init();
 			
 			var copy = new List<BaseInjectableComponent>(BaseInjectableComponent.Components);
-			copy.ForEach(x => MapScope.Instance.Container.Inject(x));
+			copy.ForEach(x => Scope.Container.Inject(x));
 		}
 	}
 }

@@ -1,4 +1,3 @@
-using Hmm3Clone.Behaviour;
 using Hmm3Clone.Controller;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
@@ -22,6 +21,8 @@ namespace Hmm3Clone.Scopes {
 			builder.Register<HeroController>(Lifetime.Scoped);
 			builder.Register<CityController>(Lifetime.Scoped);
 			builder.Register<SpriteSetupController>(Lifetime.Scoped);
+
+			builder.Register<SceneTransmissionData>(Lifetime.Scoped);
 
 			// builder.RegisterEntryPoint<EntryPointStarter>();
 		}
