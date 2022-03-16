@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: TestMap
   m_EditorClassIdentifier: 
   MapCities:
-  - Position: {x: -2, y: -2}
+  - Position: {x: -2, y: -2, z: 0}
     CityName: TestCity
     PrebuildBuildings: 0000000001000000
+  NeutralUnits:
+  - Position: {x: 3, y: 3, z: 0}
+    UnitsStacks: []
