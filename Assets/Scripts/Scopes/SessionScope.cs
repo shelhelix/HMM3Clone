@@ -1,4 +1,5 @@
 using Hmm3Clone.Controller;
+using Hmm3Clone.Service;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
 using VContainer;
@@ -22,7 +23,12 @@ namespace Hmm3Clone.Scopes {
 			builder.Register<CityController>(Lifetime.Scoped);
 			builder.Register<SpriteSetupController>(Lifetime.Scoped);
 
-			builder.Register<SceneTransmissionData>(Lifetime.Scoped);
+			AutoSaver.Instance.State = state;
+
+			// builder.Register<SceneTransmissionData>(Lifetime.Scoped);
+
+			var data = new SceneTransmissionData {ActiveCityName = "TestCity"};
+			builder.RegisterInstance(data);
 
 			// builder.RegisterEntryPoint<EntryPointStarter>();
 		}

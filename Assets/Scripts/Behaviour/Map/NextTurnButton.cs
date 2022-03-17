@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Hmm3Clone.Behaviour.Common {
+namespace Hmm3Clone.Behaviour.Map {
 	[RequireComponent(typeof(Button))]
-	public class NextTurnButton : BaseInjectableComponent {
+	public class NextTurnButton : GameComponent {
 		[NotNull] public Button Button;
 		
 		[Inject] TurnController _turnController;

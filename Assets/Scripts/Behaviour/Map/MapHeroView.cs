@@ -1,6 +1,5 @@
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using Hmm3Clone.Gameplay;
 using Hmm3Clone.Manager;
@@ -8,7 +7,7 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 namespace Hmm3Clone.Behaviour.Map {
-	public class MapHeroView : BaseInjectableComponent {
+	public class MapHeroView : GameComponent {
 		const float MaxMovementPoints = 20f;
 		
 		[NotNull] public Image  Avatar;

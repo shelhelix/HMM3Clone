@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Hmm3Clone.Behaviour.Map;
 using Hmm3Clone.Controller;
-using Hmm3Clone.DTO;
-using Hmm3Clone.Gameplay;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
 using UnityEngine;
@@ -77,6 +75,7 @@ namespace Hmm3Clone.Manager {
 			if (_mapInfo.IsCityCell(endPosition)) {
 				ShowCity(_mapInfo.GetCityName(endPosition));	
 			}
+			
 		}
 		
 		void ShowCity(string cityName) {

@@ -1,12 +1,11 @@
+using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using TMPro;
-using UnityEngine;
 using VContainer;
 
 namespace Hmm3Clone.Behaviour {
-    public class TurnCounter : BaseInjectableComponent {
+    public class TurnCounter : GameComponent {
         [NotNull] public TMP_Text Text;
 
         [Inject] TurnController _turnController;

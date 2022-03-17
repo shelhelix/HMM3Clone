@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using GameComponentAttributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Manager;
 using Hmm3Clone.Scopes;
 using Hmm3Clone.State;
@@ -29,9 +27,6 @@ namespace Hmm3Clone.Behaviour.Map {
 			}
 			
 			_mapManager.Init();
-			
-			var copy = new List<BaseInjectableComponent>(BaseInjectableComponent.Components);
-			copy.ForEach(x => Scope.Container.Inject(x));
 		}
 	}
 }

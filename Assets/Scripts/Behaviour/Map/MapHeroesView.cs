@@ -1,14 +1,13 @@
 using System.Collections.Generic;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using Hmm3Clone.Manager;
 using Hmm3Clone.Utils;
 using VContainer;
 
 namespace Hmm3Clone.Behaviour.Map {
-	public class MapHeroesView : BaseInjectableComponent {
+	public class MapHeroesView : GameComponent {
 		[NotNullOrEmpty] public List<MapHeroView> HeroViews;
 
 		[Inject]

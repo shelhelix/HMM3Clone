@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Hmm3Clone.Behaviour.Common;
+using GameComponentAttributes;
 using Hmm3Clone.Controller;
 using Hmm3Clone.Manager;
 using UnityEngine;
@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 using VContainer;
 
 namespace Hmm3Clone.Behaviour.Map {
-	public class MapObjectSelector : BaseInjectableComponent {
+	public class MapObjectSelector : GameComponent {
 		[Inject]
 		RuntimeMapInfo _mapInfo;
 

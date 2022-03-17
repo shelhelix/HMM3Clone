@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Config.Map;
 using Hmm3Clone.Controller;
 using Hmm3Clone.Gameplay;
@@ -13,7 +12,7 @@ using UnityEngine.Tilemaps;
 using VContainer;
 
 namespace Hmm3Clone.Behaviour.Map {
-	public class MapView : BaseInjectableComponent {
+	public class MapView : GameComponent {
 		// runtime used only tilemap
 		[NotNull] public Tilemap SelectedPathLayer;
 		[NotNull] public Tilemap CostMap;
@@ -55,8 +54,7 @@ namespace Hmm3Clone.Behaviour.Map {
 			OnHeroDataChanged(heroName);
 		}
 
-		protected override void OnDestroy() {
-			base.OnDestroy();
+		protected void OnDestroy() {
 			_mapManager.MapChanged        -= OnMapChanged;
 			_mapManager.OnHeroDataChanged -= OnHeroDataChanged;
 			_turnController.OnTurnChanged -= OnTurnChanged;
@@ -73,7 +71,7 @@ namespace Hmm3Clone.Behaviour.Map {
 			}
 			var hero = _heroController.GetHero(heroName);
 			SelectedPathLayer.ClearAllTiles();
-			PathTile.FullPath      = path.Select(x => x.Coords).ToList();
+			PathTile.FullPath = path.Select(x => x.Coords).ToList();
 			
 			path.ForEach(x => DrawPathTile(hero, x));
 			

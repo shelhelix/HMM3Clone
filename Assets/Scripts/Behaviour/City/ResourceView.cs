@@ -1,15 +1,14 @@
+using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using Hmm3Clone.SpriteSetups;
 using Hmm3Clone.State;
 using TMPro;
-using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
 namespace Hmm3Clone.Behaviour {
-    public class ResourceView : BaseInjectableComponent {
+    public class ResourceView : GameComponent {
         [Inject] ResourceController    _resourceController;
         [Inject] SpriteSetupController _spriteSetupController;
         

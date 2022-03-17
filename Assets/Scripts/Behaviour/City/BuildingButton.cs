@@ -21,7 +21,7 @@ namespace Hmm3Clone.Behaviour {
         [Inject] CityController _cityController;
         [Inject] TurnController _turnController;
 
-        CityState _state;
+        [Inject] CityState _state;
 
         BuildingInfo _activeBuildingInfo;
 
@@ -31,8 +31,7 @@ namespace Hmm3Clone.Behaviour {
             if (_isInit) {
                 return;
             }
-            
-            _state          = ActiveData.Instance.GetData<CityState>();
+                
             Button.onClick.AddListener(ErectBuilding);
             _cityController.OnBuildingsChanged += Refresh;
             _turnController.OnTurnChanged      += OnTurnChanged;

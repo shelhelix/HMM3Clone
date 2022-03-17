@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
@@ -9,7 +9,7 @@ using UnityEngine;
 using VContainer;
 
 namespace Hmm3Clone.Behaviour {
-    public class CityOverallView : BaseInjectableComponent {
+    public class CityOverallView : GameComponent {
         [NotNull] public TMP_Text IncomeText;
         [NotNull] public TMP_Text CityName;
 

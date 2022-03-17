@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 309068778}
   - component: {fileID: 309068777}
   m_Layer: 0
-  m_Name: Scopes
+  m_Name: Scope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,6 +283,8 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects:
   - {fileID: 2014644203}
+  - {fileID: 798719557}
+  - {fileID: 1295551385}
   MapInfo:
     Terrain: {fileID: 1311196886}
     Objects: {fileID: 469685031}
@@ -866,7 +868,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732830989
 GameObject:
@@ -1099,7 +1101,7 @@ RectTransform:
   - {fileID: 1139805864}
   - {fileID: 59764210}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3281,7 +3283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2014644206
 MonoBehaviour:

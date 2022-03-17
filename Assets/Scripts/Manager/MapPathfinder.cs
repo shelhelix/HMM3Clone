@@ -99,13 +99,14 @@ namespace Hmm3Clone.Manager {
 		float CalcPathPriceForCell(Vector3Int position) {
 			var heroStates = _heroController.GetAllHeroes();
 			var cities     = _mapInfo.GameplayMapInfo.MapCities;
+			if (cities.Exists(obj => obj.Position == position) || heroStates.Exists(obj => obj.MapPosition == position)) {
+				return MaxPrice;
+			}
 			if (_mapInfo.HasObjectOnCell(position)) {
 				// 0 - is unwalkable cell
 				return 0f;
 			}
-			return !cities.Exists(obj => obj.Position == position) && !heroStates.Exists(obj => obj.MapPosition == position)
-					   ? DefaultTilePrice
-					   : MaxPrice;
+			return DefaultTilePrice;
 		}
 	}
 }

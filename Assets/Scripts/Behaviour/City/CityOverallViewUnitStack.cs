@@ -1,7 +1,5 @@
-using System;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
-using Hmm3Clone.Behaviour.Common;
 using Hmm3Clone.Controller;
 using Hmm3Clone.SpriteSetups;
 using Hmm3Clone.State;
@@ -10,7 +8,7 @@ using UnityEngine.UI;
 using VContainer;
 
 namespace Hmm3Clone.Behaviour {
-	public class CityOverallViewUnitStack : BaseInjectableComponent {
+	public class CityOverallViewUnitStack : GameComponent {
 		[NotNull] public Image    UnitImage;
 		[NotNull] public TMP_Text AmountText;
 		[NotNull] public Button   Button;

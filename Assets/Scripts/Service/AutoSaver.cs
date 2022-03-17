@@ -1,21 +1,31 @@
-using Hmm3Clone.Behaviour.Common;
+using GameComponentAttributes;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
 using UnityEngine;
-using VContainer;
 
 namespace Hmm3Clone.Service {
-	public class AutoSaver : BaseInjectableComponent {
-		[Inject] GameState _state;
-		
-		void OnApplicationQuit() {
-			SaveUtils.SaveState(_state);
+	public class AutoSaver : GameComponent {
+		public static AutoSaver Instance {
+			get {
+				if (!_instance) {
+					CreateAutoSaver();
+				}
+
+				return _instance;
+			}
 		}
 
-		[RuntimeInitializeOnLoadMethod]
+		static AutoSaver _instance;
+		
+		public GameState State;
+		
+		void OnApplicationQuit() {
+			SaveUtils.SaveState(State);
+		}
+
 		static void CreateAutoSaver() {
 			var go = new GameObject();
-			go.AddComponent<AutoSaver>();
+			_instance = go.AddComponent<AutoSaver>();
 			DontDestroyOnLoad(go);
 		}
 	}

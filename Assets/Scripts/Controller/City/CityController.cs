@@ -7,32 +7,29 @@ using Hmm3Clone.State;
 using Hmm3Clone.Utils;
 using UnityEngine;
 using UnityEngine.Assertions;
+using VContainer;
 
 namespace Hmm3Clone.Controller {
 	public class CityController : IController {
 
-		readonly MapState _mapState;
+		[Inject] readonly MapState _mapState;
 
-		readonly UnitsController    _unitsController;
-		readonly ResourceController _resourceController;
-		readonly HeroController     _heroController;
+		[Inject] readonly UnitsController    _unitsController;
+		[Inject] readonly ResourceController _resourceController;
+		[Inject] readonly HeroController     _heroController;
+		[Inject] readonly TurnController     _turnController;
 		
-		readonly BuildingConfig _buildingConfig;
+		
+		BuildingConfig _buildingConfig;
 		
 
 		public event Action OnArmyChanged;
 		public event Action OnBuildingsChanged;
 		
-
-		public CityController(ResourceController resourceController, UnitsController unitsController, HeroController heroController, TurnController turnController, MapState mapState) {
-			_mapState = mapState;
-
-			_heroController     = heroController;
-			_resourceController = resourceController;
-			_buildingConfig     = ConfigLoader.LoadConfig<BuildingConfig>();
-			_unitsController    = unitsController;
-
-			turnController.OnTurnChanged += OnTurnChanged;
+		[Inject]
+		public void Init() {
+			_buildingConfig               =  ConfigLoader.LoadConfig<BuildingConfig>();
+			_turnController.OnTurnChanged += OnTurnChanged;
 		}
 		
 		public Army GetCityGarrison(string cityName) {
