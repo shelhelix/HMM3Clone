@@ -23,12 +23,16 @@ namespace Hmm3Clone.Scopes {
 			builder.Register<CityController>(Lifetime.Scoped);
 			builder.Register<SpriteSetupController>(Lifetime.Scoped);
 
+			builder.Register<SpriteSetupController>(Lifetime.Scoped);
+
+			builder.Register<ResourceController>(Lifetime.Scoped);
+			builder.Register<HeroController>(Lifetime.Scoped);
+			
+			builder.Diagnostics.Clear();
+
 			AutoSaver.Instance.State = state;
 
-			// builder.Register<SceneTransmissionData>(Lifetime.Scoped);
-
-			var data = new SceneTransmissionData {ActiveCityName = "TestCity"};
-			builder.RegisterInstance(data);
+			builder.Register<SceneTransmissionData>(Lifetime.Singleton);
 
 			// builder.RegisterEntryPoint<EntryPointStarter>();
 		}

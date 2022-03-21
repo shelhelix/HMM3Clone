@@ -1,6 +1,7 @@
 using Hmm3Clone.Behaviour;
 using Hmm3Clone.Controller;
 using Hmm3Clone.State;
+using UnityEngine.Assertions;
 using VContainer;
 using VContainer.Unity;
 
@@ -12,10 +13,11 @@ namespace Hmm3Clone.Scopes {
 			builder.Register(resolver => {
 				var transmissionData = resolver.Resolve<SceneTransmissionData>();
 				var cityController   = resolver.Resolve<CityController>();
-				return cityController.GetCityState(transmissionData.ActiveCityName);
+				var res = cityController.GetCityState(transmissionData.ActiveCityName);
+				Assert.IsNotNull(res);
+				return res;
 			}, Lifetime.Scoped);
 			
 		}
-
 	}
 }
