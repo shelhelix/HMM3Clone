@@ -301,5 +301,16 @@ namespace Hmm3Clone.Controller {
 			Assert.IsNull(_mapState.CityStates.Find(x => x.CityName == cityName));
 			_mapState.CityStates.Add(new CityState(cityName));
 		}
+
+		public void SetGuestHero(string cityName, ReactValue<string> selectedHeroName) {
+			var state = GetCityState(cityName);
+			state.GuestHero = selectedHeroName;
+		}
+
+		public void RemoveGuestHero(string heroName) {
+			var cityState = _mapState.CityStates.Find(x => x.GuestHero == heroName);
+			Assert.IsNotNull(cityState);
+			cityState.GuestHero = null;
+		}
 	}
 }

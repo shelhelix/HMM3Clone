@@ -12,7 +12,9 @@ using VContainer;
 
 namespace Hmm3Clone.Manager {
 	public class MapManager {
-		[Inject] readonly HeroController        _heroController;
+		[Inject] readonly HeroController _heroController;
+		[Inject] readonly CityController _cityController;
+		
 		[Inject] readonly RuntimeMapInfo        _mapInfo;
 		[Inject] readonly SceneTransmissionData _transmissionData;
 		
@@ -62,24 +64,32 @@ namespace Hmm3Clone.Manager {
 				return;
 			}
 			var realEndPoint = path.Last();
-			InteractWithNonEmptyCells(realEndPoint.Coords);
+			InteractWithNonEmptyFirstCell(hero.Position, heroName);
+			InteractWithNonEmptyLastCell(realEndPoint.Coords);
 			var oldPosition = hero.Position;
 			hero.Position       =  realEndPoint.Coords;
 			hero.MovementPoints -= Mathf.FloorToInt(realEndPoint.CostFromStart);
 			_pathFinder.OnHeroMoved(oldPosition, realEndPoint.Coords);
 			MapChanged?.Invoke();
-			OnHeroDataChanged?.Invoke(SelectedHeroName);
+			OnHeroDataChanged?.Invoke(heroName);
 		}
 
-		void InteractWithNonEmptyCells(Vector3Int endPosition) {
+		void InteractWithNonEmptyLastCell(Vector3Int endPosition) {
 			if (_mapInfo.IsCityCell(endPosition)) {
 				ShowCity(_mapInfo.GetCityName(endPosition));	
 			}
-			
 		}
+
+		void InteractWithNonEmptyFirstCell(Vector3Int startPosition, string heroName) {
+			if (_mapInfo.IsCityCell(startPosition)) {
+				_cityController.RemoveGuestHero(heroName);
+			}
+		}
+		
 		
 		void ShowCity(string cityName) {
 			_transmissionData.ActiveCityName = cityName;
+			_cityController.SetGuestHero(cityName, SelectedHeroName);
 			SceneManager.LoadScene("CityView");
 		}
 
