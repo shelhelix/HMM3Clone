@@ -25,7 +25,7 @@ namespace Hmm3Clone.Controller {
 
 		public event Action OnArmyChanged;
 		public event Action OnBuildingsChanged;
-		
+
 		[Inject]
 		public void Init() {
 			_buildingConfig               =  ConfigLoader.LoadConfig<BuildingConfig>();
@@ -167,7 +167,7 @@ namespace Hmm3Clone.Controller {
 			OnArmyChanged?.Invoke();
 		}
 		
-		Dictionary<UnitType, int> GetUnitProductionAmount(string cityName) {
+		public Dictionary<UnitType, int> GetUnitProductionAmount(string cityName) {
 			var state = GetCityState(cityName);
 			var res = new Dictionary<UnitType, int>();
 			foreach (var buildingName in state.ErectedBuildings) {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
@@ -17,28 +18,35 @@ namespace Hmm3Clone.Behaviour {
 
         [Inject] CityController _cityController;
         [Inject] CityState      _activeCityState;
-        
-        
+
         void Start() {
-            CityName.text = _activeCityState.CityName;
+            _cityController.OnBuildingsChanged += RefreshView;
+            CityName.text                      =  _activeCityState.CityName;
+            RefreshView();
         }
 
-        void Update() {
+        void OnDestroy() {
+            _cityController.OnBuildingsChanged -= RefreshView;
+        }
+
+        void RefreshView() {
             var income = _cityController.GetCityIncome(_activeCityState.CityName);
             IncomeText.text = income.GetOrDefault(ResourceType.Gold).ToString();
             InitUnitsViews();
         }
 
         void InitUnitsViews() {
-            var unitsAmount = _cityController.GetNotBoughtCityUnits(_activeCityState.CityName);
-            var minCount = Mathf.Min(UnitStacks.Count, unitsAmount.Count);
-            var index = 0; 
-            foreach (var unitAmount in unitsAmount) {
+            var unitsAmount     = _cityController.GetNotBoughtCityUnits(_activeCityState.CityName);
+            var availableUnitTypes = _cityController.GetUnitProductionAmount(_activeCityState.CityName).Keys;
+            var minCount        = Mathf.Min(UnitStacks.Count, availableUnitTypes.Count);
+            var index           = 0;
+            foreach (var unit in availableUnitTypes) {
                 if (index >= minCount) {
                     return;
                 }
-                var view = UnitStacks[index];
-                view.Init(unitAmount.Key, unitAmount.Value);
+                var view   = UnitStacks[index];
+                var amount = unitsAmount.GetOrDefault(unit);
+                view.Init(unit, amount);
                 index++;
             }
             for (; index < UnitStacks.Count; index++) {

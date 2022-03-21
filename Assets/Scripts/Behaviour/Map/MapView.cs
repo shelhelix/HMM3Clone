@@ -51,6 +51,9 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		void OnTurnChanged(int turn) {
 			var heroName = _mapManager.SelectedHeroName;
+			if (string.IsNullOrEmpty(heroName)) {
+				return;
+			}
 			OnHeroDataChanged(heroName);
 		}
 
