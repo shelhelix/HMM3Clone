@@ -65,6 +65,9 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		void ProcessTerrainLayer() {
 			var cellPosition = _mapInfo.Heroes.WorldToCell(PressedScreenPoint);
+			if (string.IsNullOrEmpty(_mapManager.SelectedHeroName)) {
+				return;
+			}
 			var hero         = _heroController.GetHero(_mapManager.SelectedHeroName);
 			if (hero.PathEndPoint == cellPosition) {
 				_mapManager.MoveHero(_mapManager.SelectedHeroName, cellPosition);
