@@ -115,17 +115,17 @@ namespace Hmm3Clone.Controller {
 				   && cityState.CanErectBuilding;
 		}
 		
-		public void ErectBuilding(string cityName, BuildingType buildingType) {
+		public void ErectBuilding(string cityName, BuildingType buildingType, bool forceErect = false) {
 			var cityState = GetCityState(cityName);
-			if (!CanErectBuilding(cityName, buildingType)) {
+			if (!CanErectBuilding(cityName, buildingType) && !forceErect) {
 				return;
 			}
-
-			var buildingInfo = GetBuildingInfo(buildingType);
-			foreach (var res in buildingInfo.BuildingCost) {
-				_resourceController.SubResources(res);
+			if (!forceErect) {
+				var buildingInfo = GetBuildingInfo(buildingType);
+				foreach (var res in buildingInfo.BuildingCost) {
+					_resourceController.SubResources(res);
+				}
 			}
-			
 			cityState.ErectBuilding(buildingType);
 			cityState.CanErectBuilding = false;
 			OnBuildingsChanged?.Invoke();
@@ -295,6 +295,11 @@ namespace Hmm3Clone.Controller {
 
 		public string GetGarrisonHeroName(string cityName) {
 			return GetCityState(cityName)?.HeroInGarrison;
+		}
+
+		public void AddCity(string cityName) {
+			Assert.IsNull(_mapState.CityStates.Find(x => x.CityName == cityName));
+			_mapState.CityStates.Add(new CityState(cityName));
 		}
 	}
 }

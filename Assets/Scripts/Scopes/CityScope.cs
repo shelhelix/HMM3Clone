@@ -13,7 +13,9 @@ namespace Hmm3Clone.Scopes {
 			builder.Register(resolver => {
 				var transmissionData = resolver.Resolve<SceneTransmissionData>();
 				var cityController   = resolver.Resolve<CityController>();
-				var res = cityController.GetCityState(transmissionData.ActiveCityName);
+				var cityName         = transmissionData.ActiveCityName;
+				// var cityName = "TestCity";
+				var res      = cityController.GetCityState(cityName);
 				Assert.IsNotNull(res);
 				return res;
 			}, Lifetime.Scoped);

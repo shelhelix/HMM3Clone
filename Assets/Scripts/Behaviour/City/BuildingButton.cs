@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using GameComponentAttributes;
 using GameComponentAttributes.Attributes;
 using Hmm3Clone.Controller;
@@ -85,7 +85,7 @@ namespace Hmm3Clone.Behaviour {
                     return building;
                 }
             }
-            return Buildings[Buildings.Count-1];
+            return Buildings.Last();
         }
     }
 }
