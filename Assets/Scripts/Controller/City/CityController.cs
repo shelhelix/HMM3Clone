@@ -312,5 +312,9 @@ namespace Hmm3Clone.Controller {
 			Assert.IsNotNull(cityState);
 			cityState.GuestHero = null;
 		}
+
+		public bool IsHeroInGarrison(string heroName) {
+			return _mapState.CityStates.Exists(x => x.HeroInGarrison == heroName);
+		}
 	}
 }

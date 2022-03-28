@@ -31,6 +31,7 @@ namespace Hmm3Clone.Behaviour.Map {
 		[Inject] HeroController _heroController;
 		[Inject] TurnController _turnController;
 		[Inject] RuntimeMapInfo _mapInfo;
+		[Inject] CityController _cityController;
 
 		BoundsInt _mapSize;
 
@@ -108,7 +109,7 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		void RefreshHeroesTilemap() {
 			_heroes.ClearAllTiles();
-			_heroController.GetAllHeroes().ForEach(PlaceHero);
+			_heroController.GetAllHeroes().ForEach(TryPlaceHero);
 		}
 
 		void PlaceStaticObjects(MapInfo mapInfo) {
@@ -123,8 +124,10 @@ namespace Hmm3Clone.Behaviour.Map {
 			RefreshHeroesTilemap();
 		}
 
-		void PlaceHero(HeroState heroState) {
-			_heroes.SetTile(heroState.MapPosition, HeroTile);
+		void TryPlaceHero(HeroState heroState) {
+			if (!_cityController.IsHeroInGarrison(heroState.HeroName)) {
+				_heroes.SetTile(heroState.MapPosition, HeroTile);
+			}
 		}
 	}
 }
