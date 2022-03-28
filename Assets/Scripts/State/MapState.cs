@@ -7,6 +7,6 @@ namespace Hmm3Clone.State {
 	public class MapState {
 		public string             MapName;
 		public List<CityState>    CityStates            = new List<CityState>();
-		public List<Vector2Int>   RemovedObjectsFromMap = new List<Vector2Int>();
+		public List<Vector3Int>   RemovedObjectsFromMap = new List<Vector3Int>();
 	}
 }

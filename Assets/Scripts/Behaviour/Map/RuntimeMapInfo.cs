@@ -33,5 +33,9 @@ namespace Hmm3Clone.Behaviour.Map {
 		public string GetCityName(Vector3Int position) {
 			return !IsCityCell(position) ? string.Empty : GameplayMapInfo.MapCities.Find(x => x.Position == position).CityName;
 		}
+
+		public bool IsNeutralArmyCell(Vector3Int endPosition) {
+			return GameplayMapInfo.NeutralUnits.Exists(x => x.Position == endPosition);
+		}
 	}
 }

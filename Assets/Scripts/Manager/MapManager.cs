@@ -12,9 +12,10 @@ using VContainer;
 
 namespace Hmm3Clone.Manager {
 	public class MapManager {
-		[Inject] readonly HeroController _heroController;
-		[Inject] readonly CityController _cityController;
-		
+		[Inject] readonly HeroController        _heroController;
+		[Inject] readonly CityController        _cityController;
+		[Inject] readonly NeutralArmyController _neutralArmyController;
+
 		[Inject] readonly RuntimeMapInfo        _mapInfo;
 		[Inject] readonly SceneTransmissionData _transmissionData;
 		
@@ -29,7 +30,7 @@ namespace Hmm3Clone.Manager {
 		public bool HasSelectedHero => !string.IsNullOrEmpty(SelectedHeroName.Value);
 
 		public void Init() {
-			_pathFinder = new MapPathfinder(_heroController, _mapInfo);
+			_pathFinder = new MapPathfinder(_heroController, _neutralArmyController, _mapInfo);
 		}
 
 		public void SelectHero(string heroName) {
@@ -88,6 +89,9 @@ namespace Hmm3Clone.Manager {
 		void InteractWithNonEmptyLastCell(Vector3Int endPosition) {
 			if (_mapInfo.IsCityCell(endPosition)) {
 				TransferHeroToCity(_mapInfo.GetCityName(endPosition));	
+			}
+			if ( _neutralArmyController.IsNeutralArmyCell(endPosition) ) {
+				Debug.LogError("TODO: add fight with neutral army");
 			}
 		}
 

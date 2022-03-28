@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
 using Hmm3Clone.Behaviour.Map;
-using Hmm3Clone.Config;
 using Hmm3Clone.Controller;
 using NesScripts.Controls.PathFind;
 using UnityEngine;
@@ -28,15 +26,17 @@ namespace Hmm3Clone.Manager {
 
 		PathGrid _grid;
 
-		HeroController _heroController;
+		HeroController        _heroController;
+		NeutralArmyController _neutralArmyController;
 
 		BoundsInt  MapBounds => _mapInfo.MapBounds;
 		Vector3Int MapSize   => MapBounds.size; 
 
-		public MapPathfinder(HeroController heroController, RuntimeMapInfo mapInfo) {
-			_mapInfo        = mapInfo;
-			_heroController = heroController;
-			_grid           = CreatePathfindingGrid();
+		public MapPathfinder(HeroController heroController, NeutralArmyController neutralArmyController, RuntimeMapInfo mapInfo) {
+			_mapInfo               = mapInfo;
+			_heroController        = heroController;
+			_neutralArmyController = neutralArmyController;
+			_grid                  = CreatePathfindingGrid();
 		}
 
 		public List<PathCell> CreatePath(Vector3Int start, Vector3Int end) {
@@ -98,8 +98,7 @@ namespace Hmm3Clone.Manager {
 		
 		float CalcPathPriceForCell(Vector3Int position) {
 			var heroStates = _heroController.GetAllHeroes();
-			var cities     = _mapInfo.GameplayMapInfo.MapCities;
-			if (cities.Exists(obj => obj.Position == position) || heroStates.Exists(obj => obj.MapPosition == position) || _mapInfo.GameplayMapInfo.NeutralUnits.Exists(x => x.Position == position)) {
+			if (_mapInfo.IsCityCell(position) || heroStates.Exists(obj => obj.MapPosition == position) || _neutralArmyController.IsNeutralArmyCell(position)) {
 				return MaxPrice;
 			}
 			if (_mapInfo.HasObjectOnCell(position)) {

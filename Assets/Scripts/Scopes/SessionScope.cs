@@ -16,25 +16,20 @@ namespace Hmm3Clone.Scopes {
 			builder.RegisterInstance(state.ResourcesState);
 			builder.RegisterInstance(state.TurnState);
 			
-			builder.Register<ResourceController>(Lifetime.Scoped);
-			builder.Register<TurnController>(Lifetime.Scoped);
-			builder.Register<UnitsController>(Lifetime.Scoped);
-			builder.Register<HeroController>(Lifetime.Scoped);
-			builder.Register<CityController>(Lifetime.Scoped);
-			builder.Register<SpriteSetupController>(Lifetime.Scoped);
-
-			builder.Register<SpriteSetupController>(Lifetime.Scoped);
-
-			builder.Register<ResourceController>(Lifetime.Scoped);
-			builder.Register<HeroController>(Lifetime.Scoped);
-			
-			builder.Diagnostics.Clear();
+			AddController<ResourceController>(builder);
+			AddController<TurnController>(builder);
+			AddController<UnitsController>(builder);
+			AddController<HeroController>(builder);
+			AddController<CityController>(builder);
+			AddController<SpriteSetupController>(builder);
 
 			AutoSaver.Instance.State = state;
 
 			builder.Register<SceneTransmissionData>(Lifetime.Singleton);
+		}
 
-			// builder.RegisterEntryPoint<EntryPointStarter>();
+		void AddController<T>(IContainerBuilder builder) {
+			builder.Register<T>(Lifetime.Scoped);
 		}
 	}
 }
