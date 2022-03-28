@@ -23,6 +23,7 @@ namespace Hmm3Clone.Behaviour.Map {
 		[NotNull] public TileBase HeroTile;
 		[NotNull] public PathTile PathTile;
 		[NotNull] public TileBase CityTile;
+		[NotNull] public TileBase NeutralEnemyTile;
 		
 		[NotNull] public TileBase PlainTile;
 
@@ -114,10 +115,15 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		void PlaceStaticObjects(MapInfo mapInfo) {
 			mapInfo.MapCities.ForEach(PlaceCity);
+			mapInfo.NeutralUnits.ForEach(PlaceNeutralArmy);
 		}
 
 		void PlaceCity(MapCityConstructionInfo cityInfo) {
 			_objects.SetTile(cityInfo.Position, CityTile);
+		}
+		
+		void PlaceNeutralArmy(MapNeutralArmyInfo neutralArmyInfo) {
+			_objects.SetTile(neutralArmyInfo.Position, NeutralEnemyTile);
 		}
 		
 		void OnMapChanged() {

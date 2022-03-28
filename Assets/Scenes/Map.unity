@@ -1926,6 +1926,7 @@ MonoBehaviour:
   HeroTile: {fileID: 11400000, guid: a642208b6024c9c4685a9a568a1b0750, type: 2}
   PathTile: {fileID: 11400000, guid: 099215541386dd740a7a295cea434410, type: 2}
   CityTile: {fileID: 11400000, guid: 05f23e4df52acf04ca8c561115754639, type: 2}
+  NeutralEnemyTile: {fileID: 11400000, guid: ba73f16bba947bb4a85cc579aaaac457, type: 2}
   PlainTile: {fileID: 11400000, guid: e3365a8f61ff10243b1327c1a7f8960e, type: 2}
 --- !u!1 &1311196883
 GameObject:
