@@ -18,4 +18,6 @@ MonoBehaviour:
     PrebuildBuildings: 0000000001000000
   NeutralUnits:
   - Position: {x: 3, y: 3, z: 0}
-    UnitsStacks: []
+    UnitsStacks:
+    - Type: 0
+      Amount: 10

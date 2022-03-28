@@ -316,5 +316,9 @@ namespace Hmm3Clone.Controller {
 		public bool IsHeroInGarrison(string heroName) {
 			return _mapState.CityStates.Exists(x => x.HeroInGarrison == heroName);
 		}
+
+		public List<CityState> GetAllCities() {
+			return _mapState.CityStates;
+		}
 	}
 }

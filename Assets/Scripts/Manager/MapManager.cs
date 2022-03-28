@@ -73,10 +73,21 @@ namespace Hmm3Clone.Manager {
 			MapChanged?.Invoke();
 			OnHeroDataChanged?.Invoke(heroName);
 		}
+		
+		
+		public void ShowCity(string cityName) {
+			_transmissionData.ActiveCityName = cityName;
+			SceneManager.LoadScene("CityView");
+		}
+
+		void TransferHeroToCity(string cityName) {
+			_cityController.SetGuestHero(cityName, SelectedHeroName);
+			ShowCity(cityName);
+		}
 
 		void InteractWithNonEmptyLastCell(Vector3Int endPosition) {
 			if (_mapInfo.IsCityCell(endPosition)) {
-				ShowCity(_mapInfo.GetCityName(endPosition));	
+				TransferHeroToCity(_mapInfo.GetCityName(endPosition));	
 			}
 		}
 
@@ -84,13 +95,6 @@ namespace Hmm3Clone.Manager {
 			if (_mapInfo.IsCityCell(startPosition)) {
 				_cityController.RemoveGuestHero(heroName);
 			}
-		}
-		
-		
-		void ShowCity(string cityName) {
-			_transmissionData.ActiveCityName = cityName;
-			_cityController.SetGuestHero(cityName, SelectedHeroName);
-			SceneManager.LoadScene("CityView");
 		}
 
 
