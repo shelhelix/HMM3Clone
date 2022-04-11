@@ -60,5 +60,9 @@ namespace Hmm3Clone.Controller {
 			hero.MapPosition = position;
 			_state.Heroes.Add(hero);
 		}
+
+		public void RemoveHero(string name) {
+			_state.Heroes.RemoveAll(x => x.HeroName == name);
+		}
 	}
 }

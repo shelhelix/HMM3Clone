@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Hmm3Clone.Behaviour.Map;
 using Hmm3Clone.Controller;
+using Hmm3Clone.Gameplay;
+using Hmm3Clone.Scopes.Mediators;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
 using UnityEngine;
@@ -17,7 +19,11 @@ namespace Hmm3Clone.Manager {
 		[Inject] readonly NeutralArmyController _neutralArmyController;
 
 		[Inject] readonly RuntimeMapInfo        _mapInfo;
-		[Inject] readonly SceneTransmissionData _transmissionData;
+		
+		[Inject] readonly MapToCitySceneData   _sceneData;
+		[Inject] readonly MapToBattleSceneData _mapToBattleSceneData;
+		
+		[Inject] BattleToMapData _battleToMapData;
 		
 		MapPathfinder  _pathFinder;
 		
@@ -25,11 +31,13 @@ namespace Hmm3Clone.Manager {
 
 		public event Action<string> OnHeroDataChanged;
 		
+		
 		public ReactValue<string> SelectedHeroName = new ReactValue<string>();
 
 		public bool HasSelectedHero => !string.IsNullOrEmpty(SelectedHeroName.Value);
 
 		public void Init() {
+			TryProcessObjectsAfterBattle();
 			_pathFinder = new MapPathfinder(_heroController, _neutralArmyController, _mapInfo);
 		}
 
@@ -66,7 +74,7 @@ namespace Hmm3Clone.Manager {
 			}
 			var realEndPoint = path.Last();
 			InteractWithNonEmptyFirstCell(hero.Position, heroName);
-			InteractWithNonEmptyLastCell(realEndPoint.Coords);
+			InteractWithNonEmptyLastCell(hero, realEndPoint.Coords);
 			var oldPosition = hero.Position;
 			hero.Position       =  realEndPoint.Coords;
 			hero.MovementPoints -= Mathf.FloorToInt(realEndPoint.CostFromStart);
@@ -77,8 +85,31 @@ namespace Hmm3Clone.Manager {
 		
 		
 		public void ShowCity(string cityName) {
-			_transmissionData.ActiveCityName = cityName;
+			_sceneData.ActiveCityName = cityName;
 			SceneManager.LoadScene("CityView");
+		}
+
+		void TryProcessObjectsAfterBattle() {
+			var objectToRemove = _battleToMapData.Loser;
+			if (!objectToRemove.IsValid) {
+				return;
+			}
+			switch (objectToRemove.Type) {
+				case SideType.City: {
+					_cityController.RemoveGarrison(objectToRemove.Name);
+					break;
+				}
+				case SideType.Hero: {
+					_heroController.RemoveHero(objectToRemove.Name);
+					break;
+				}
+				case SideType.Neutral: {
+					_neutralArmyController.RemoveNeutralArmy(VectorUtils.StringToVector3(objectToRemove.Name));
+					break;
+				}
+			}
+			MapChanged?.Invoke();
+			_battleToMapData.Loser = BattleSideInfo.InvalidSide;
 		}
 
 		void TransferHeroToCity(string cityName) {
@@ -86,21 +117,30 @@ namespace Hmm3Clone.Manager {
 			ShowCity(cityName);
 		}
 
-		void InteractWithNonEmptyLastCell(Vector3Int endPosition) {
+		void InteractWithNonEmptyLastCell(Hero hero, Vector3Int endPosition) {
 			if (_mapInfo.IsCityCell(endPosition)) {
 				TransferHeroToCity(_mapInfo.GetCityName(endPosition));	
 			}
 			if ( _neutralArmyController.IsNeutralArmyCell(endPosition) ) {
-				SceneManager.LoadScene("BattleScene");
+				var neutralArmy = _neutralArmyController.GetNeutralArmyOnCell(endPosition);
+				Assert.IsNotNull(neutralArmy);
+				var heroSide    = new BattleSideInfo(hero.Name, hero.Army, SideType.Hero);
+				var neutralSide = new BattleSideInfo(neutralArmy.Position.ToString(), new Army(neutralArmy.UnitsStacks), SideType.Neutral);
+				TransferToBattleScene(heroSide, neutralSide);
 			}
 		}
 
+		void TransferToBattleScene(BattleSideInfo leftSide, BattleSideInfo rightSide) {
+			_mapToBattleSceneData.LeftSide  = leftSide;
+			_mapToBattleSceneData.RightSide = rightSide;
+			SceneManager.LoadScene("BattleScene");
+		}
+		
 		void InteractWithNonEmptyFirstCell(Vector3Int startPosition, string heroName) {
 			if (_mapInfo.IsCityCell(startPosition)) {
 				_cityController.RemoveGuestHero(heroName);
 			}
 		}
-
 
 		public float[,] GetCostArray() {
 			return _pathFinder.GetCostMap();

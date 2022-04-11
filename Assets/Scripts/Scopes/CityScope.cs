@@ -1,5 +1,6 @@
 using Hmm3Clone.Behaviour;
 using Hmm3Clone.Controller;
+using Hmm3Clone.Scopes.Mediators;
 using Hmm3Clone.State;
 using UnityEngine.Assertions;
 using VContainer;
@@ -11,7 +12,7 @@ namespace Hmm3Clone.Scopes {
 			builder.RegisterEntryPoint<CitySceneStarter>();
 
 			builder.Register(resolver => {
-				var transmissionData = resolver.Resolve<SceneTransmissionData>();
+				var transmissionData = resolver.Resolve<MapToCitySceneData>();
 				var cityController   = resolver.Resolve<CityController>();
 				var cityName         = transmissionData.ActiveCityName;
 				// var cityName = "TestCity";

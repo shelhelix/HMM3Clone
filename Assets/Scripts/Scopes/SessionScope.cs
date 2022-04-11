@@ -1,4 +1,5 @@
 using Hmm3Clone.Controller;
+using Hmm3Clone.Scopes.Mediators;
 using Hmm3Clone.Service;
 using Hmm3Clone.State;
 using Hmm3Clone.Utils;
@@ -25,7 +26,9 @@ namespace Hmm3Clone.Scopes {
 
 			AutoSaver.Instance.State = state;
 
-			builder.Register<SceneTransmissionData>(Lifetime.Singleton);
+			builder.Register<MapToCitySceneData>(Lifetime.Singleton);
+			builder.Register<MapToBattleSceneData>(Lifetime.Singleton);
+			builder.Register<BattleToMapData>(Lifetime.Singleton);
 		}
 
 		void AddController<T>(IContainerBuilder builder) {

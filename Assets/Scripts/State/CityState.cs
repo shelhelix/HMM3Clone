@@ -33,5 +33,9 @@ namespace Hmm3Clone.State {
 		public void ErectBuilding(BuildingType buildingName) {
 			ErectedBuildings.Add(buildingName);
 		}
+
+		public void EraseGarrison() {
+			Garrison = new UnitStack[MaxUnitStacksCount];
+		}
 	}
 }

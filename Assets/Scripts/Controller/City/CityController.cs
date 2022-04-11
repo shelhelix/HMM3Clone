@@ -307,6 +307,12 @@ namespace Hmm3Clone.Controller {
 			state.GuestHero = selectedHeroName;
 		}
 
+		public void RemoveGarrison(string cityName) {
+			var cityState = GetCityState(cityName);
+			cityState.HeroInGarrison = null;
+			cityState.EraseGarrison();
+		}
+		
 		public void RemoveGuestHero(string heroName) {
 			var cityState = _mapState.CityStates.Find(x => x.GuestHero == heroName);
 			Assert.IsNotNull(cityState);

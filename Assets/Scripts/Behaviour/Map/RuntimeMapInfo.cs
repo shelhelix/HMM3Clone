@@ -35,7 +35,11 @@ namespace Hmm3Clone.Behaviour.Map {
 		}
 
 		public bool IsNeutralArmyCell(Vector3Int endPosition) {
-			return GameplayMapInfo.NeutralUnits.Exists(x => x.Position == endPosition);
+			return GetNeutralArmyInfo(endPosition) != null;
+		}
+
+		public MapNeutralArmyInfo GetNeutralArmyInfo(Vector3Int position) {
+			return GameplayMapInfo.NeutralUnits.Find(x => x.Position == position);
 		}
 	}
 }

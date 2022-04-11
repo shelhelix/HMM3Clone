@@ -15,7 +15,7 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		[Inject] MapManager _mapManager;
 
-		[Inject] CityController          _cityController;
+		[Inject] CityController           _cityController;
 		[Inject] DeadMapObjectsController _deadMapObjectsController;
 		
 		public void Start() {
@@ -29,7 +29,6 @@ namespace Hmm3Clone.Behaviour.Map {
 				return;
 			}
 			_mapInfo.GameplayMapInfo.MapCities.ForEach(AddCity);
-			
 			_state.FirstInitializationCompleted = true;
 		}
 

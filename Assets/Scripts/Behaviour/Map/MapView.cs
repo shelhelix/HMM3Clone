@@ -29,16 +29,16 @@ namespace Hmm3Clone.Behaviour.Map {
 
 		[Inject] MapManager _mapManager;
 		
-		[Inject] HeroController _heroController;
-		[Inject] TurnController _turnController;
-		[Inject] RuntimeMapInfo _mapInfo;
-		[Inject] CityController _cityController;
+		[Inject] HeroController           _heroController;
+		[Inject] TurnController           _turnController;
+		[Inject] RuntimeMapInfo           _mapInfo;
+		[Inject] CityController           _cityController;
+		[Inject] DeadMapObjectsController _deadMapObjectsController;
 
 		BoundsInt _mapSize;
 
 		[Inject]
 		void Init() {
-			
 			_objects = _mapInfo.Objects;
 			_heroes  = _mapInfo.Heroes;
 			_mapSize = _mapInfo.MapBounds;
@@ -113,20 +113,34 @@ namespace Hmm3Clone.Behaviour.Map {
 			_heroController.GetAllHeroes().ForEach(TryPlaceHero);
 		}
 
+		void RefreshObjectsTilemap() {
+			RemoveStaticObjects(_mapInfo.GameplayMapInfo);
+			PlaceStaticObjects(_mapInfo.GameplayMapInfo);
+		}
+
+		void RemoveStaticObjects(MapInfo mapInfo) {
+			mapInfo.MapCities.ForEach(x => _objects.SetTile(x.Position, null));
+			mapInfo.NeutralUnits.ForEach(x => _objects.SetTile(x.Position, null));
+		}
+		
 		void PlaceStaticObjects(MapInfo mapInfo) {
 			mapInfo.MapCities.ForEach(PlaceCity);
-			mapInfo.NeutralUnits.ForEach(PlaceNeutralArmy);
+			mapInfo.NeutralUnits.ForEach(PlaceAliveNeutralArmy);
 		}
 
 		void PlaceCity(MapCityConstructionInfo cityInfo) {
 			_objects.SetTile(cityInfo.Position, CityTile);
 		}
 		
-		void PlaceNeutralArmy(MapNeutralArmyInfo neutralArmyInfo) {
+		void PlaceAliveNeutralArmy(MapNeutralArmyInfo neutralArmyInfo) {
+			if (_deadMapObjectsController.IsRemovedObject(neutralArmyInfo.Position)) {
+				return;
+			}
 			_objects.SetTile(neutralArmyInfo.Position, NeutralEnemyTile);
 		}
 		
 		void OnMapChanged() {
+			RefreshObjectsTilemap();
 			RefreshHeroesTilemap();
 		}
 
