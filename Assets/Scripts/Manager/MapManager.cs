@@ -91,7 +91,7 @@ namespace Hmm3Clone.Manager {
 				TransferHeroToCity(_mapInfo.GetCityName(endPosition));	
 			}
 			if ( _neutralArmyController.IsNeutralArmyCell(endPosition) ) {
-				Debug.LogError("TODO: add fight with neutral army");
+				SceneManager.LoadScene("BattleScene");
 			}
 		}
 
