@@ -471,6 +471,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -3676,6 +3677,156 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_141: 8374399026946078834
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_68: 5940374893438691065
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_12: -5784553919333206381
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_17: 3802696595166921927
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_122: -2779566107018161525
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_129: 8263775313088173104
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_26: -459299849433541585
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_53: -1108551780937195325
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_61: 1252316650978357680
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_56: -1827787723487942231
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_4: -1428970241241995243
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_11: -6000423318899261913
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_37: 7259715239445957105
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_74: 6015554799810903337
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_85: -1063799337705406564
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_45: -5979935812409964169
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_38: -4185851051766723667
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_139: 6264296623254106165
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_75: -228988191618588622
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_87: 5130830720768708578
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_89: -7769638064527657379
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_113: -372953347814822927
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_90: 412919020453917869
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_47: -8398793856403738596
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_19: 1208527289289648784
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_25: 5339776180141800751
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_102: -3473853225734458138
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_103: 7224066072453755755
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_104: -9018201502554008245
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_64: -4702175815708198929
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_13: -4352028652722026129
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_32: -6540243418948593906
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_34: -8888844399539647927
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_67: 3266735302082717746
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_80: -3725239835425403215
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_95: 996308151058654957
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_6: -309967888648831427
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_127: 4574974797748920744
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_51: 693279307163598354
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_98: 1497721806363718518
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_55: -3600001570202912248
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_118: -7692412258512890511
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_143: 1419224748522821115
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_73: -488994839081495396
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_111: 3036722818636761235
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_31: -2304338848027633514
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_2: -3196837121289822278
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_22: -7712561525271529151
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_100: -6643639070376329615
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_124: 2740717836432899466
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_116: 3020544010066234048
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_119: -8195048615781483961
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_0: -2058767053864619411
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_48: -7119758948833092137
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_99: 1210346925753372218
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_134: -5090327935604994400
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_49: 3296126252557770139
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_91: 1972911934437416945
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_130: 7512581319270662427
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_81: -1364968114879762390
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_109: -2895605124692431800
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_21: -1952283006795230779
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_126: -4047524715627699560
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_71: -6479531316508454947
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_59: -4625941648477769212
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_24: -6327606486072298156
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_58: 146292838115992745
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_14: 4746896410107360998
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_97: -2048652152254527372
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_131: -9037201496390197237
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_108: -3791810606142763711
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_115: -8891124720628316856
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_44: -6529943160795389953
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_92: -181933624840697979
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_105: -7336506583639121623
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_65: 7166188813740306185
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_18: 3144578899187285622
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_1: -7377094368962659592
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_28: 5347889064645061388
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_117: 4282170037670476951
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_50: -3635050575793659049
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_93: -2559852809590212156
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_8: -2854291909638093606
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_62: -4943914908666545100
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_79: -3831755810969676032
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_125: 8354323113670388134
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_16: 3634519674918230068
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_137: 8135670134053624596
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_101: -104741155212175700
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_36: -1242584552978591813
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_23: 5581618915692251363
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_54: 3346663853949734604
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_123: -3714683360539472720
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_136: -7355200412078846592
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_41: -5621305029989392744
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_78: 402817323632138397
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_121: 5772495286326491670
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_112: 2422014676534863197
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_94: -2352049779486725237
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_33: -5128188620894500064
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_35: 6612103267023066698
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_120: -8601107783949735445
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_138: 7893309276750700085
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_83: -7604856541116573834
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_148: 8994195100631201683
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_88: -9039257898624836628
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_142: -1420694594285634320
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_30: 842965744146353651
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_42: -5831195446316827920
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_66: -6909289994503547388
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_140: -8576139790342019713
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_77: -3834628568455306995
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_27: 3190900326412291856
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_106: -1613451783211747087
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_10: 445878123412086077
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_110: 3924968461667166731
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_52: -1999129825468744481
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_145: -5190001857187155944
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_146: -2074481314967523118
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_46: 3926116340436261001
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_135: 3840296820218487584
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_82: 4649010214642613987
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_3: 7512108697732452551
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_9: 244260557793212083
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_20: -6495381754957313224
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_86: -7831969290533713389
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_40: 3254154198411639559
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_107: 7557786863024307255
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_7: -8068290980151061827
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_132: 3550759441757700688
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_147: -6700489029738697316
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_133: -5452887701669653585
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_15: -5673200259614547016
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_29: -2247411390369404835
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_63: -5795256678087960776
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_5: 7774699838610341695
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_60: -8945344339674460393
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_96: 7462227542814014734
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_69: 1029268373749758379
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_144: -2920475922138377744
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_76: 7793188437527376335
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_72: 3800429160634666265
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_84: -2965509284723666895
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_43: 6105665976481692118
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_70: -610706166471400902
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_57: 1223417386628286205
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_114: 257323461927707964
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_128: -4622935733568262327
+      PC Computer - Heroes of Might and Magic 3 - Gnoll_39: -3595935859593515749
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
