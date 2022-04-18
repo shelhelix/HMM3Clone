@@ -1,10 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Hmm3Clone.State;
 using UnityEngine.Assertions;
 
 namespace Hmm3Clone.Gameplay {
-	public class Army {
+	public class Army : IEnumerable<UnitStack> {
 		public const int InvalidStackIndex = -1;
 		
 		UnitStack[] _stacks;
@@ -14,6 +15,7 @@ namespace Hmm3Clone.Gameplay {
 		public Army(UnitStack[] stacks) {
 			_stacks = stacks;
 		}
+
 
 		public bool IsStackEmpty(int stackIndex) {
 			Assert.IsTrue(stackIndex >= 0);
@@ -150,5 +152,12 @@ namespace Hmm3Clone.Gameplay {
 			return source != null && dest != null && source.Type == dest.Type;
 		}
 
+		public IEnumerator<UnitStack> GetEnumerator() {
+			return (_stacks as IEnumerable<UnitStack>).GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator() {
+			return GetEnumerator();
+		}
 	}
 }
