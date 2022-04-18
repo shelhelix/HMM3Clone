@@ -11,7 +11,7 @@ namespace Hmm3Clone.Behaviour.BattleScene {
 		public List<Vector3Int> LeftArmyStartPoints;
 		public List<Vector3Int> RightArmyStartPoints;
 	}
-	
+
 	public class StartPointPlacer : GameComponent {
 		public StartPointsConfiguration Configuration;
 
@@ -22,9 +22,8 @@ namespace Hmm3Clone.Behaviour.BattleScene {
 		void Start() {
 			MetaObjectsTilemap.gameObject.SetActive(Application.isPlaying);
 		}
-
-		protected new void OnValidate() {
-			base.OnValidate();
+		
+		public void OnValueChanged() {
 			MetaObjectsTilemap.ClearAllTiles();
 			Configuration.LeftArmyStartPoints.ForEach(x => MetaObjectsTilemap.SetTile(x, StartPointTile));
 			Configuration.RightArmyStartPoints.ForEach(x => MetaObjectsTilemap.SetTile(x, StartPointTile));
